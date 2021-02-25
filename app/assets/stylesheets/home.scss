@@ -1,3 +1,136 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+* {
+  font-family: "MS Pゴシック", "YuGothic", sans-serif;
+}
+
+a {
+  color:white;
+  text-decoration: none;/* 文字のアンダーラインを消す */
+}
+// header style sheet
+
+.top-page-header {
+  background-color: $theme-color;
+  height: 2.5rem;
+}
+
+.nav {
+  //
+}
+.user-options {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-option {
+  display: block;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+// home#index style sheet
+.content {
+  margin: 0 1vw;
+  // height: 500px;
+
+  @include pc {
+    height: 600px;
+  }
+}
+
+.top-page-logo {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+
+  @include tab {
+    font-size: 4.5rem;
+  }
+
+  @include pc {
+    font-size: 6.5rem;
+  }
+}
+
+.top-page-explanation {
+  font-size: 2.5vh;
+  margin-bottom: 2rem;
+}
+
+.examples {
+  li {
+    color: #404040;
+    border-left: 6px solid $theme-color;
+    border-bottom: 2px solid #dadada;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    padding: 0.5em;
+    width: 10rem;
+    font-weight: bold;
+  }
+}
+
+.br-sp {
+  @include tab {
+    display: none;
+  }
+}
+
+.br-tab {
+  @include pc {
+    display: none;
+  }
+}
+
+// footer style sheet
+.top-page-footer {
+  margin-top: 2rem;
+  background-color: $footer-color;
+  text-align: center;
+  .creater {
+    color: white;
+    font-size: 2rem;
+  }
+}
+
+.creater-accounts {
+  display: flex;
+  flex-direction: column;
+  @include tab {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  li {
+    font-size: 3vh;
+    font-weight: bold;
+    // padding-left: 30vw;
+  }
+}
+.icon {
+  font-size: 2rem;
+  margin: 0 2.5vw 1rem 0;
+  @include tab {
+    margin: 1rem 2.5px 2rem 20px;
+  }
+}
+
+.fa-github {
+  border-radius: 100%;
+  background-color: white;
+  color: #171515;
+}
+
+.fa-quora {
+  color: #59bb0c;
+}
+
+.fa-twitter {
+  color: #00acee;
+}
+
+.fa-blog {
+  color: pink;
+}

@@ -1,0 +1,23 @@
+// レイアウト幅
+// $layout-width-inner: 1180px;
+
+// ブレークポイント
+$responsive-tab: 767px;
+$responsive-pc: 1000px;
+
+// メディアクエリー
+@mixin tab {
+  @media (min-width: ($responsive-tab)) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: ($responsive-pc)) {
+    @content;
+  }
+}
+
+// Theme Colors
+$theme-color: #228b22;
+$footer-color: #696969;

@@ -1,10 +1,13 @@
 <header class="top-page-header">
   <div class="nav">
     <ul class="user-options">
-      <li><%= link_to 'ユーザー名', "/", class:"" %></li>
-      <li><%= link_to 'ログアウト', "/", class:"" %></li>
-      <li><%= link_to 'ログイン', "/", class:"" %></li>
-      <li><%= link_to '新規登録', "/", class:"" %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to 'ユーザー名', "/", class:"user-option" %></li>
+      <li><%= link_to 'Sign Out', "/", class:"user-option" %></li>
+    <% else %>
+      <li><%= link_to 'Sign in', "/", class:"user-option" %></li>
+      <li><%= link_to 'Sign up', "/", class:"user-option" %></li>
+    <% end %>
     </ul>
   </div>
 </header>

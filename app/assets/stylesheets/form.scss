@@ -1,0 +1,43 @@
+@import "variables";
+
+.form-wrap {
+  text-align: center;
+
+  .form-group {
+    margin-top: 1.5em;
+  }
+
+  .info-text {
+    font-size: 14px;
+  }
+}
+
+.actions {
+  //
+}
+
+.sign-up-btn {
+  @include link;
+  border: 1px solid black;
+  background-color: $theme-color;
+  color: white;
+  @include hover-green-btn-lighten;
+  @include tab {
+    // font-size: ;
+  }
+}
+
+.back-btn-wrap {
+  text-align: center;
+
+  .back-btn {
+    @include link;
+    border: 1px solid black;
+    margin-bottom: 1.2em;
+    background-color: whitesmoke;
+    color: black;
+    &:hover {
+      background-color: darken(whitesmoke, 20%);
+    }
+  }
+}

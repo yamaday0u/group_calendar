@@ -1,3 +1,10 @@
-<%= month_calendar do |date| %>
-  <%= date %>
-<% end %>
+<%= render "shared/header" %>
+
+<div class="content">
+
+  <%= month_calendar do |date| %>
+    <%= date %>
+  <% end %>
+
+</div>
+<%= render "shared/footer" %>

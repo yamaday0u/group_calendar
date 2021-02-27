@@ -3,7 +3,7 @@
     <ul class="user-options">
     <% if user_signed_in? %>
       <li><%= link_to 'ユーザー名', "/", class:"user-option" %></li>
-      <li><%= link_to 'Log out', "/", class:"user-option" %></li>
+      <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class:"user-option" %></li>
     <% else %>
       <% if current_page?(new_user_registration_path) %>
         <li><%= link_to 'Top page', root_path, class:"user-option" %></li>

@@ -1,74 +1,24 @@
 @import "variables";
 
+// Common style sheet -----------------------------------------
 * {
   font-family: "MS Pゴシック", "YuGothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
 }
 
-a {
-  color:white;
-  text-decoration: none;/* 文字のアンダーラインを消す */
-}
-// header style sheet
-
-.top-page-header {
-  background-color: $theme-color;
-  height: 2.5rem;
-}
-
-.nav {
-  //
-}
-.user-options {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.user-option {
-  display: block;
-  margin-right: 1rem;
-  font-size: 1.5rem;
-}
-
-// home#index style sheet
-.content {
-  margin: 0 1vw;
-  // height: 500px;
-
-  @include pc {
-    height: 600px;
-  }
-}
-
-.top-page-logo {
-  font-size: 3rem;
+.subtitle {
+  padding-top: 1.5em;
+  text-align: center;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 2rem;
 
   @include tab {
-    font-size: 4.5rem;
+    font-size: 22px;
   }
 
   @include pc {
-    font-size: 6.5rem;
-  }
-}
-
-.top-page-explanation {
-  font-size: 2.5vh;
-  margin-bottom: 2rem;
-}
-
-.examples {
-  li {
-    color: #404040;
-    border-left: 6px solid $theme-color;
-    border-bottom: 2px solid #dadada;
-    background-color: whitesmoke;
-    margin-bottom: 10px;
-    line-height: 1.5;
-    padding: 0.5em;
-    width: 10rem;
-    font-weight: bold;
+    font-size: 24px;
   }
 }
 
@@ -84,37 +34,54 @@ a {
   }
 }
 
-// footer style sheet
+// Header style sheet -----------------------------------------
+.top-page-header {
+  background-color: $theme-color;
+  height: $header-height;
+}
+
+.nav {
+  //
+}
+
+.user-options {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-option {
+  display: block;
+  border: 1px solid white;
+  margin-right: 1rem;
+  @include link;
+  @include hover-green-btn-lighten;
+}
+
+// footer style sheet -----------------------------------------
 .top-page-footer {
-  margin-top: 2rem;
+  height: $footer-height;
   background-color: $footer-color;
   text-align: center;
+
   .creater {
     color: white;
-    font-size: 2rem;
   }
 }
 
 .creater-accounts {
   display: flex;
-  flex-direction: column;
-  @include tab {
-    flex-direction: row;
-    justify-content: center;
-  }
-
+  justify-content: center;
   li {
-    font-size: 3vh;
-    font-weight: bold;
-    // padding-left: 30vw;
+    margin: 0 20px;;
   }
 }
+
+.account-link {
+  color: white;
+}
+
 .icon {
-  font-size: 2rem;
-  margin: 0 2.5vw 1rem 0;
-  @include tab {
-    margin: 1rem 2.5px 2rem 20px;
-  }
+  // 
 }
 
 .fa-github {
@@ -133,4 +100,46 @@ a {
 
 .fa-blog {
   color: pink;
+}
+
+// home#index style sheet -----------------------------------------
+.content {
+  margin: 0 1vw;
+  height: calc(100vh - (6em));
+}
+
+.top-page-logo {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+
+  @include tab {
+    font-size: 4.5rem;
+  }
+
+  @include pc {
+    font-size: 6.5rem;
+  }
+}
+
+.top-page-explanation {
+  margin-bottom: 1em;
+}
+
+.examples {
+  li {
+    color: #404040;
+    border-left: 6px solid $theme-color;
+    border-bottom: 2px solid #dadada;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    padding: 0.5em;
+    width: 10rem;
+    font-weight: bold;
+  }
+}
+
+.lead-to-sign-up {
+  text-align: center;
 }

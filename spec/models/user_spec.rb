@@ -37,12 +37,12 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("Email has already been taken")
+        expect(another_user.errors.full_messages).to include('Email has already been taken')
       end
       it 'emailに@が含まれていないと登録できない' do
         @user.email.slice!('@')
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include('Email is invalid')
       end
       it 'passwordが空では登録できない' do
         @user.password = ''
@@ -52,30 +52,28 @@ RSpec.describe User, type: :model do
       it 'passwordが5文字以下では登録できない' do
         @user.password = '123ab'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
       it 'passwordが英語のみだとと登録できない' do
         @user.password = 'abcdef'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password must include at least one half-width English character and a number")
+        expect(@user.errors.full_messages).to include('Password must include at least one half-width English character and a number')
       end
       it 'passwordが数字のみだと登録できない' do
         @user.password = '123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password must include at least one half-width English character and a number")
+        expect(@user.errors.full_messages).to include('Password must include at least one half-width English character and a number')
       end
       it 'passwordに全角が含まれていると登録できない' do
         @user.password = '12３abc'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password must include at least one half-width English character and a number")
+        expect(@user.errors.full_messages).to include('Password must include at least one half-width English character and a number')
       end
       it 'passwordが存在してもpassword_confirmationが空では登録できない' do
         @user.password_confirmation = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
-      end      
+      end
     end
   end
-
-
 end

@@ -59,16 +59,17 @@
 
 // footer style sheet -----------------------------------------
 .top-page-footer {
+  padding-bottom: 6em;
   height: $footer-height;
   background-color: $footer-color;
   text-align: center;
 
-  .creater {
+  .creator {
     color: white;
   }
 }
 
-.creater-accounts {
+.creator-accounts {
   display: flex;
   justify-content: center;
   li {
@@ -100,6 +101,27 @@
 
 .fa-blog {
   color: pink;
+}
+
+// Nav-bar style sheet -----------------------------------------
+.nav-bar {
+  height: $nav-bar-height;
+  width: 100%;
+  background-color: $nav-bar-color;
+  // border-top: 1px solid #000;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+
+  .creator-accounts {
+    margin-top: 1.5em;
+    justify-content: space-around;
+
+    .icon {
+      color: white;
+      font-size: 2em;
+    }
+  }
 }
 
 // home#index style sheet -----------------------------------------

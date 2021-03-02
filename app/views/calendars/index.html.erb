@@ -3,8 +3,9 @@
 <div class="content">
 
   <%= month_calendar do |date| %>
-    <%= date %>
+    <%= date.day %>
   <% end %>
 
 </div>
+<%= render "shared/nav-bar" %>
 <%= render "shared/footer" %>

@@ -16,13 +16,16 @@ $responsive-pc: 1000px;
 
 // Theme Colors
 $theme-color: #228b22;
-$footer-color: #696969;
+$footer-color: #000;
+$nav-bar-color: #696969;
 
 // Header
 $header-height: 3em;
 
 // Footer
 $footer-height: 3em;
+
+$nav-bar-height: 5em;
 
 // Link button
 @mixin link {

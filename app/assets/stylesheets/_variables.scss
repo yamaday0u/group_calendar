@@ -16,13 +16,19 @@ $responsive-pc: 1000px;
 
 // Theme Colors
 $theme-color: #228b22;
-$footer-color: #696969;
+$footer-color: #000;
+$nav-bar-color: #696969;
 
 // Header
 $header-height: 3em;
 
 // Footer
 $footer-height: 3em;
+
+$nav-bar-height: 5em;
+
+// Calendar
+$calendar-width: 90%;
 
 // Link button
 @mixin link {
@@ -31,7 +37,7 @@ $footer-height: 3em;
   border-radius: 3px;
   margin-top: 1.2em;
   text-decoration: none;/* Delete under line */
-  color:white;
+  color:#fff;
 }
 
 @mixin hover-green-btn-lighten {

@@ -1,3 +1,11 @@
+// --- Index ---
+//  1.Common style sheet
+//  2.Header style sheet
+//  3.Footer style sheet
+//  4.Nav-bar style sheet
+//  5.Nav-bar-tab style sheet
+//  6.home#index style sheet
+
 @import "variables";
 
 // Common style sheet -----------------------------------------
@@ -34,14 +42,20 @@
   }
 }
 
+.content {
+  margin: 0 1vw;
+  height: calc(100vh - (6em));
+}
+
+
 // Header style sheet -----------------------------------------
 .top-page-header {
   background-color: $theme-color;
   height: $header-height;
 }
 
-.nav {
-  //
+.header-band {
+  // background-color: yellow;
 }
 
 .user-options {
@@ -57,18 +71,23 @@
   @include hover-green-btn-lighten;
 }
 
-// footer style sheet -----------------------------------------
+// Footer style sheet -----------------------------------------
 .top-page-footer {
+  padding-bottom: 5.5em;
   height: $footer-height;
   background-color: $footer-color;
   text-align: center;
 
-  .creater {
+  @include tab {
+    padding-bottom: 0.2em;
+  }
+
+  .creator {
     color: white;
   }
 }
 
-.creater-accounts {
+.creator-accounts {
   display: flex;
   justify-content: center;
   li {
@@ -77,6 +96,7 @@
 }
 
 .account-link {
+  text-decoration: none;
   color: white;
 }
 
@@ -102,12 +122,75 @@
   color: pink;
 }
 
-// home#index style sheet -----------------------------------------
-.content {
-  margin: 0 1vw;
-  height: calc(100vh - (6em));
+// Nav-bar style sheet -----------------------------------------
+.nav-bar {
+  height: $nav-bar-height;
+  width: 100%;
+  background-color: $nav-bar-color;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+
+  @include tab {
+    display: none;
+  }
+
+  .creator-accounts {
+    margin-top: 1.5em;
+    justify-content: space-around;
+
+    .nav-bar-list {
+      text-align: center;
+      
+      .icon-center {
+        color: #fff;
+        font-size: 2.5em;
+      }
+  
+      .icon {
+        color: #fff;
+        font-size: 2em;
+        text-align: center;
+      }
+  
+      .icon-text {
+        text-align: center;
+        font-size: 8px;
+        text-decoration: none;
+      }
+    }
+
+    }
 }
 
+// Nav-bar-tab style sheet -----------------------------------------
+.nav-bar-tab {
+  display: none;
+
+  @include tab {
+    display: block;
+    height: 100%;
+    width: calc(100% - $calendar-width);
+    border-left: 1px solid #ddd;
+    margin-left: 1em;
+
+  }
+  .creator-accounts {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-top: 1.5em;
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}
+
+// home#index style sheet -----------------------------------------
 .top-page-logo {
   font-size: 2.8rem;
   font-weight: bold;

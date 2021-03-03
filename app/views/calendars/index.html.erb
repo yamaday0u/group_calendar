@@ -2,10 +2,16 @@
 
 <div class="content">
 
-  <%= month_calendar do |date| %>
-    <%= date.day %>
-  <% end %>
-
+  <div class="my-page">
+    <div class="calendar">
+      <%= month_calendar do |date| %>
+        <%= date.day %>
+      <% end %>
+    </div>
+    
+    <%= render "shared/nav-bar-tab" %>
+  </div>
 </div>
+
 <%= render "shared/nav-bar" %>
 <%= render "shared/footer" %>

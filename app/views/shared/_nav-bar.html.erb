@@ -1,29 +1,33 @@
 <nav class="nav-bar">
   
   <ul class="creator-accounts">
-    <li>
+    <li class="nav-bar-list">
       <%= link_to "/", class: "account-link" do %>
-        <i class="fas fa-home icon"></i>
+        <i class="fas fa-users icon"></i>
+        <p class="icon-text">Groups</p>
       <% end %>
     </li>
-    <li>
+    <li class="nav-bar-list">
+      <%= link_to "/", class: "account-link" do %>
+        <i class="fas fa-user icon"></i>
+        <p class="icon-text">Mates</p>
+      <% end %>
+    </li>
+    <li class="nav-bar-list">
+      <%= link_to "/", class: "account-link" do %>
+        <i class="fas fa-plus-circle icon-center"></i>
+      <% end %>
+    </li>
+    <li class="nav-bar-list">
       <%= link_to "/", class: "account-link" do %>
         <i class="fas fa-comments icon"></i>
+        <p class="icon-text">Chats</p>
       <% end %>
     </li>
-    <li>
-      <%= link_to "/", class: "account-link" do %>
-        <i class="fas fa-plus-circle icon"></i>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to "/", class: "account-link" do %>
-        <i class="fas fa-user-friends icon"></i>
-      <% end %>
-    </li>
-    <li>
+    <li class="nav-bar-list">
       <%= link_to "/", class: "account-link" do %>
         <i class="fas fa-bell icon"></i>
+        <p class="icon-text">Notification</p>
       <% end %>
     </li>
   </ul>

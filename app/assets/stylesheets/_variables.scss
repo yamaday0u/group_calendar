@@ -27,6 +27,9 @@ $footer-height: 3em;
 
 $nav-bar-height: 5em;
 
+// Calendar
+$calendar-width: 90%;
+
 // Link button
 @mixin link {
   display: inline-block;
@@ -34,7 +37,7 @@ $nav-bar-height: 5em;
   border-radius: 3px;
   margin-top: 1.2em;
   text-decoration: none;/* Delete under line */
-  color:white;
+  color:#fff;
 }
 
 @mixin hover-green-btn-lighten {

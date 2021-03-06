@@ -13,11 +13,23 @@
         <p class="icon-text">Mates</p>
       <% end %>
     </li>
-    <li class="nav-bar-list">
-      <%= link_to new_calendar_path, class: "account-link" do %>
-        <i class="fas fa-plus-circle icon-center"></i>
-      <% end %>
-    </li>
+
+    <%# Switch the btn new_calendar_apth & calendars_path %>
+    <% if current_page?(calendars_path) %>
+      <li class="nav-bar-list">
+        <%= link_to new_calendar_path, class: "account-link" do %>
+          <i class="fas fa-plus-circle icon-center"></i>
+        <% end %>
+      </li>
+    <% else %>
+      <li class="nav-bar-list">
+        <%= link_to calendars_path, class: "account-link" do %>
+          <i class="fas fa-home icon-center"></i>
+        <% end %>
+      </li>
+    <% end %>
+    <%# Switch the btn new_calendar_apth & calendars_path %>
+
     <li class="nav-bar-list">
       <%= link_to "/", class: "account-link" do %>
         <i class="fas fa-comments icon"></i>

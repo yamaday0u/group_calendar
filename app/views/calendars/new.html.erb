@@ -4,22 +4,22 @@
   <%= form_with model:@calendar, local:true do |f| %>
     <div class="form-wrap">
       <div class="form-group">
-        <%= f.label :title %><br class="br-sp">
-        <%= f.text_area :title, cols:40, rows:1 %>
+        <%= f.label :title %><br>
+        <%= f.text_area :title, autofocus: true, cols:40, rows:1 %>
       </div>
 
       <div class="form-group">
-        <%= f.label :content %><br class="br-sp">
+        <%= f.label :content %><br>
         <%= f.text_area :content, cols:40, rows:10 %>
       </div>
 
       <div class="form-group">
-        <%= f.label :start_time %><br class="br-sp">
+        <%= f.label :start_time %><br>
         <%= f.datetime_select :start_time, minute_step:5 %>
       </div>
 
       <div class="form-group">
-        <%= f.label :end_time %><br class="br-sp">
+        <%= f.label :end_time %><br>
         <%= f.datetime_select :end_time, minute_step:5 %>
       </div>
 
@@ -37,4 +37,5 @@
 
 </div>
 
+<%= render "shared/nav-bar" %>
 <%= render "shared/footer" %>

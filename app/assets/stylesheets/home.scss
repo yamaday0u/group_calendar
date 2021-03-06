@@ -44,7 +44,7 @@
 
 .content {
   margin: 0 1vw;
-  height: calc(100vh - (6em));
+  min-height: calc(100vh - (6em));
 }
 
 
@@ -66,7 +66,13 @@
 .user-option {
   display: block;
   border: 1px solid white;
-  margin-right: 1rem;
+  margin-right: 1em;
+  @include link;
+  @include hover-green-btn-lighten;
+}
+
+.logged-in-user {
+  margin-right: auto;
   @include link;
   @include hover-green-btn-lighten;
 }
@@ -105,9 +111,9 @@
 }
 
 .fa-github {
-  border-radius: 100%;
-  background-color: white;
-  color: #171515;
+  border: 1px solid #fff;
+  background-color: #171515;
+  color: #fff;
 }
 
 .fa-quora {
@@ -136,7 +142,7 @@
   }
 
   .creator-accounts {
-    margin-top: 1.5em;
+    margin-top: 1em;
     justify-content: space-around;
 
     .nav-bar-list {
@@ -159,8 +165,7 @@
         text-decoration: none;
       }
     }
-
-    }
+  }
 }
 
 // Nav-bar-tab style sheet -----------------------------------------
@@ -211,14 +216,13 @@
 
 .examples {
   li {
-    color: #404040;
+    width: 10em;
+    background-color: whitesmoke;
+    padding: 0.5em;
     border-left: 6px solid $theme-color;
     border-bottom: 2px solid #dadada;
-    background-color: whitesmoke;
     margin-bottom: 10px;
     line-height: 1.5;
-    padding: 0.5em;
-    width: 10rem;
     font-weight: bold;
   }
 }

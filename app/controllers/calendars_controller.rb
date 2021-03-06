@@ -1,6 +1,7 @@
 class CalendarsController < ApplicationController
   def index
-    @calendars = Calendar.all
+    @user = current_user
+    @calendars = @user.calendars
   end
 
   def new
@@ -23,6 +24,10 @@ class CalendarsController < ApplicationController
     @calendar =  @user.calendars.find(params[:id])
   end
 
+  def destroy
+  
+    
+  end
   private
   def calendar_params
     params.require(:calendar).permit(

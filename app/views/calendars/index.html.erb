@@ -4,8 +4,14 @@
 
   <div class="my-page">
     <div class="calendar">
-      <%= month_calendar do |date| %>
+      <%= month_calendar events:@calendars do |date, calendars| %>
         <%= date.day %>
+
+        <% calendars.each do |calendar| %>
+          <div class="schejule">
+            <%= calendar.title %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     

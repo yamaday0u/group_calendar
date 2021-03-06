@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
   before_action :set_user, only: [:index, :create]
-  before_action :set_calendar, only: [:show, :destroy]
+  before_action :set_calendar, only: [:show, :edit, :destroy]
 
   def index
     @calendars = @user.calendars
@@ -21,6 +21,10 @@ class CalendarsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+    
   end
 
   def destroy

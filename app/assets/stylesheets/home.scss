@@ -66,13 +66,13 @@
 .user-option {
   display: block;
   border: 1px solid white;
-  margin-right: 1rem;
+  margin-right: 1em;
   @include link;
   @include hover-green-btn-lighten;
 }
 
 .logged-in-user {
-  margin-right: 1rem;
+  margin-right: auto;
   @include link;
   @include hover-green-btn-lighten;
 }
@@ -142,7 +142,7 @@
   }
 
   .creator-accounts {
-    margin-top: 1.5em;
+    margin-top: 1em;
     justify-content: space-around;
 
     .nav-bar-list {
@@ -165,8 +165,7 @@
         text-decoration: none;
       }
     }
-
-    }
+  }
 }
 
 // Nav-bar-tab style sheet -----------------------------------------

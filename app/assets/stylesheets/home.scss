@@ -211,14 +211,14 @@
 
 .examples {
   li {
-    color: #404040;
+    width: 10em;
+    background-color: whitesmoke;
+    padding: 0.5em;
     border-left: 6px solid $theme-color;
     border-bottom: 2px solid #dadada;
-    background-color: whitesmoke;
     margin-bottom: 10px;
     line-height: 1.5;
-    padding: 0.5em;
-    width: 10rem;
+    color: #404040;
     font-weight: bold;
   }
 }

@@ -9,8 +9,8 @@
         <%= date.day %>
 
         <% calendars.each do |calendar| %>
-          <div class="schejule">
-            <%= link_to calendar.title+calendar.start_time.strftime("%H:%M")+"-"+calendar.end_time.strftime("%H:%M"), calendar_path(calendar.id) %>
+          <div class="schedule">
+            <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", calendar_path(calendar.id) %>
           </div>
         <% end %>
       <% end %>

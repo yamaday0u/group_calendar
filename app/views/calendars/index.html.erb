@@ -9,7 +9,7 @@
 
         <% calendars.each do |calendar| %>
           <div class="schejule">
-            <%= calendar.title %>
+            <%= link_to calendar.title, calendar_path(calendar.id) %>
           </div>
         <% end %>
       <% end %>

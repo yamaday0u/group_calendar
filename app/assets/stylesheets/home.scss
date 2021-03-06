@@ -71,6 +71,12 @@
   @include hover-green-btn-lighten;
 }
 
+.logged-in-user {
+  margin-right: 1rem;
+  @include link;
+  @include hover-green-btn-lighten;
+}
+
 // Footer style sheet -----------------------------------------
 .top-page-footer {
   padding-bottom: 5.5em;

@@ -1,7 +1,7 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:index, :create]
-  before_action :set_calendar, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: %i[index create]
+  before_action :set_calendar, only: %i[show edit update destroy]
 
   def index
     @calendars = @user.calendars
@@ -14,22 +14,20 @@ class CalendarsController < ApplicationController
   def create
     @calendar = @user.calendars.new(calendar_params)
     if @user.save
-      redirect_to calendars_path, notice:"Added schejule"
+      redirect_to calendars_path, notice: 'Added schejule'
     else
       render 'new'
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @calendar.update(calendar_params)
     if @calendar.valid?
-      flash[:notice] = "Updated schejule"
+      flash[:notice] = 'Updated schejule'
       redirect_to calendar_path(@calendar.id)
     else
       render 'edit'
@@ -38,11 +36,12 @@ class CalendarsController < ApplicationController
 
   def destroy
     @calendar.destroy
-    flash[:notice] = "Deleted schejule"
+    flash[:notice] = 'Deleted schejule'
     redirect_to calendars_path
   end
 
   private
+
   def set_calendar
     set_user
     @calendar = @user.calendars.find(params[:id])
@@ -60,5 +59,4 @@ class CalendarsController < ApplicationController
       :end_time
     )
   end
-
 end

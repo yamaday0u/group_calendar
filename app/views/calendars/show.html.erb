@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+
+<div class="content">
+    <div class="form-wrap">
+      <table>
+        <tbody>
+          <tr>
+            <th>Schejuled By</th>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th>Title</th>
+            <td><%= @calendar.title %></td>
+          </tr>
+          <tr>
+            <th>Content</th>
+            <td><%= @calendar.content %></td>
+          </tr>
+          <tr>
+            <th>Start_time: </th>
+            <td><%= @calendar.start_time.strftime("%F %H:%M") %></td>
+          </tr>
+          <tr>
+            <th>End_time: </th>
+            <td><%= @calendar.end_time.strftime("%F %H:%M") %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  <div class="back-btn-wrap">
+    <%= link_to 'Back to Top page', calendars_path, class:"back-btn" %>
+  </div>
+
+</div>
+
+<%= render "shared/footer" %>

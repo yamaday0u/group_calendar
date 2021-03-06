@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :user_calendars
+  has_many :calendars, through: :user_calendars
+
   with_options presence: true do
     validates :name
 

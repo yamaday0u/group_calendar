@@ -11,8 +11,8 @@ const checkedStatus = () => {
 
   console.log("set")
 
-  if (sessionStorage.key(1)==="key") {
-    console.log(sessionStorage.key(1));
+  if (sessionStorage.key(0)==='month') {
+    console.log(sessionStorage.key(0));
     monthCalendar.checked = "true";
   }else if (sessionStorage.key(1)==='week') {
     console.log(sessionStorage.key(1));

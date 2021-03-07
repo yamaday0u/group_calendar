@@ -4,6 +4,11 @@
   <h2 class="subtitle">Log in</h2>
 
   <%= form_with model: @user, url: user_session_path, class: "", local: true do |f| %>
+
+    <div class="login-flash-message">
+      <%= flash[:alert] %>
+    </div>
+
     <div class="form-wrap">
       <div class="form-group">
       <%= f.label :email %><br />
@@ -31,9 +36,3 @@
 </div>
 
 <%= render "shared/footer" %>
-<%# if devise_mapping.rememberable? %>
-    <%# <div class="field"> %>
-      <%#= f.check_box :remember_me %>
-      <%#= f.label :remember_me %>
-    <%# </div> %>
-  <%# <% end %>

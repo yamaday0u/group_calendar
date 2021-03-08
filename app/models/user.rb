@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :user_groups
   has_many :groups, through: :user_groups
 
-  has_many :user_calendars
-  has_many :calendars, through: :user_calendars
+
+  has_many :calendars
 
   with_options presence: true do
     validates :name

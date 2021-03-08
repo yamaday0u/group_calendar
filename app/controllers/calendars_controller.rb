@@ -4,7 +4,7 @@ class CalendarsController < ApplicationController
   before_action :set_calendar, only: %i[show edit update destroy]
 
   def index
-    @calendars = @user.calendars
+    @calendars = Calendar.where(user_id: current_user)
   end
 
   def new

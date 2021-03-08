@@ -5,10 +5,12 @@
     <div class="main">
     
       <%= form_with model:@calendar, local:true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+
         <div class="form-wrap">
           <div class="form-group">
             <%= f.label :title %><br>
-            <%= f.text_area :title, cols:40, rows:1 %>
+            <%= f.text_area :title, autofocus: true, cols:40, rows:1 %>
           </div>
 
           <div class="form-group">

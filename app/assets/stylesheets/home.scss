@@ -47,6 +47,28 @@
   min-height: calc(100vh - (6em));
 }
 
+.flex-parent-wrap {
+  @include tab {
+    display: flex;
+    height: 100%;
+  }
+}
+
+.main {
+  @include tab {
+    width: $main-width;
+  }
+
+  .actions {
+    display: none;
+
+    @include tab {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
 
 // Header style sheet -----------------------------------------
 .top-page-header {
@@ -174,8 +196,8 @@
 
   @include tab {
     display: block;
-    height: 100%;
-    width: calc(100% - $calendar-width);
+    min-height: calc(100vh - (6em));
+    width: calc(100% - $main-width);
     border-left: 1px solid #ddd;
     margin-left: 1em;
 

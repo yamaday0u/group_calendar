@@ -2,49 +2,53 @@
 
 <div class="content">
   <%= render "shared/flash_message" %>
-  
-    <div class="form-wrap">
-      <table>
-        <tbody>
-          <tr>
-            <th>Schejuled By</th>
-            <td><%= @user.name %></td>
-          </tr>
-          <tr>
-            <th>Title</th>
-            <td><%= @calendar.title %></td>
-          </tr>
-          <tr>
-            <th>Content</th>
-            <td><%= @calendar.content %></td>
-          </tr>
-          <tr>
-            <th>Start_time: </th>
-            <td><%= @calendar.start_time.strftime("%F %H:%M") %></td>
-          </tr>
-          <tr>
-            <th>End_time: </th>
-            <td><%= @calendar.end_time.strftime("%F %H:%M") %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
-  <% if current_user.id == @user.id %>
-    <div class="back-btn-wrap">
-      <%= link_to 'Edit schedule', edit_calendar_path, class:"sign-up-btn" %>
-    </div>
+  <div class="flex-parent-wrap">
+    <div class="main">
 
-    <div class="back-btn-wrap">
-      <%= link_to 'Delete schedule', calendar_path(@calendar.id), method: :delete, data: { confirm: 'Are you sure to delete a schedule?'}, class:"sign-up-btn" %>
-    </div>
-  <% end %>
-  
-  <div class="back-btn-wrap">
-    <%= link_to 'Back to Top page', calendars_path, class:"back-btn" %>
-  </div>
+      <div class="form-wrap">
+        <div class="form-group">
+          <p>Scheduled by</p>
+          <p><%= @user.name %></p>
+        </div>
 
+        <div class="form-group">
+          <p>Title</p>
+          <textarea cols="40" rows="1"><%= @calendar.title %></textarea>
+        </div>
+        
+        <div class="form-group">
+          <p>Content</p>
+          <textarea cols="40" rows="10"><%= @calendar.content %></textarea>
+        </div>
 
+        <div class="form-group">
+          <p>Start_time:<%= @calendar.start_time.strftime("%F %H:%M") %></p>
+        </div>
+
+        <div class="form-group">
+          <p>End_time:<%= @calendar.end_time.strftime("%F %H:%M") %></p>
+        </div>
+
+        <% if current_user.id == @user.id %>
+          <div class="actions">
+            <%= link_to 'Edit schedule', edit_calendar_path, class:"sign-up-btn" %>
+          </div>
+
+          <div class="actions">
+            <%= link_to 'Delete schedule', calendar_path(@calendar.id), method: :delete, data: { confirm: 'Are you sure to delete a schedule?'}, class:"sign-up-btn" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="back-btn-wrap">
+        <%= link_to 'Back to Top page', calendars_path, class:"back-btn" %>
+      </div>
+    </div><%# end of main %>
+
+    <%= render "shared/nav-bar-tab" %>
+  </div><%# end of flex-parent-wrap %>
 </div>
 
+<%= render "shared/nav-bar" %>
 <%= render "shared/footer" %>

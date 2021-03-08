@@ -6,20 +6,7 @@
 }
 
 // index.html.erb -----------------------------------------
-.my-page {
-  // display: block When the size with smaller than the smartphone screen
-  // display: flex When the size with larger than the tablet screen
-  @include tab {
-    display: flex;
-    height: 100%;
-  }
-}
 
-.calendar {
-  @include tab {
-    width: $calendar-width;
-  }
-}
 
 .schedule {
   a {
@@ -37,13 +24,5 @@
 
 // _month_calendar.html/.erb -----------------------------------------
 .simple-calendar {
-
-  .actions {
-    display: none;
-
-    @include tab {
-      display: block;
-      text-align: center;
-    }
-  }
+  // 
 }

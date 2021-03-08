@@ -6,54 +6,11 @@
   <div class="flex-parent-wrap">
     <div class="main">
 
-        <div id="month_calendar"><%# Default calendar%>
-          <%= month_calendar events:@calendars do |date, calendars| %>
-            <%= date.day %>
-            <% calendars.each do |calendar| %>
-              <div class="schedule">
-                <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", calendar_path(calendar.id) %>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
+      <%= render "calendars/switch_calendar" %>
 
-        <div id="week_calendar">
-          <%= week_calendar events:@calendars do |date, calendars| %>
-            <%= date.day %>
-            <% calendars.each do |calendar| %>
-              <div class="schedule">
-                <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", calendar_path(calendar.id) %>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-
-        <div id="custom_calendar">
-          <%= calendar events:@calendars do |date, calendars| %>
-            <%= date.day %>
-            <% calendars.each do |calendar| %>
-              <div class="schedule">
-                <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", calendar_path(calendar.id) %>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-
-        <div class="switch-calendar-wrap">
-          <p>switch calendar</p>
-          <div class="calendars">
-            <%= radio_button_tag "calendar", "month"%>
-            <%= label "calendar", "month" %>
-            <%= radio_button_tag "calendar", "week" %>
-            <%= label "calendar", "week" %>
-            <%= radio_button_tag "calendar", "custom" %>
-            <%= label "calendar", "custom" %>
-          </div>
-        </div>
-
-        <div class="actions">
-          <%= link_to "Add Schejule", new_calendar_path, class: "sign-up-btn" %>
-        </div>
+      <div class="actions">
+        <%= link_to "Add Schejule", new_calendar_path, class: "sign-up-btn" %>
+      </div>
 
     </div><%# end of main %>
 

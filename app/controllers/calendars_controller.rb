@@ -1,10 +1,9 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: %i[index create]
   before_action :set_calendar, only: %i[show edit update destroy]
 
   def index
-    @calendars = @user.calendars
+    @calendars = Calendar.where(user_id: current_user)
   end
 
   def new
@@ -12,15 +11,17 @@ class CalendarsController < ApplicationController
   end
 
   def create
-    @calendar = @user.calendars.new(calendar_params)
-    if @user.save
+    @calendar = Calendar.new(calendar_params)
+    if @calendar.save
       redirect_to calendars_path, notice: 'Added schejule'
     else
       render 'new'
     end
   end
 
-  def show; end
+  def show
+    @user = User.find(@calendar.user_id)
+  end
 
   def edit; end
 
@@ -43,12 +44,7 @@ class CalendarsController < ApplicationController
   private
 
   def set_calendar
-    set_user
-    @calendar = @user.calendars.find(params[:id])
-  end
-
-  def set_user
-    @user = current_user
+    @calendar = Calendar.find(params[:id])
   end
 
   def calendar_params
@@ -57,6 +53,6 @@ class CalendarsController < ApplicationController
       :content,
       :start_time,
       :end_time
-    )
+    ).merge(user_id: current_user.id)
   end
 end

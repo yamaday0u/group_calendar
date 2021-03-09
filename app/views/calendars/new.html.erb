@@ -7,6 +7,10 @@
       <%= form_with model:@calendar, local:true do |f| %>
         <%= render "shared/error_messages", model: f.object %>
         <%= render partial: "calendars/form", locals: {f: f} %>
+
+        <div class="actions">
+          <%= f.submit 'Create new schejule', class:"sign-up-btn" %>
+        </div>
       <% end %>
 
       <div class="back-btn-wrap">

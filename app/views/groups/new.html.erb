@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+
+<div class="content">
+
+  <div class="flex-parent-wrap">
+    <div class="main">
+
+      <%= form_with model:@group, local:true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+        <%= render partial: "groups/form", locals: {f: f} %>
+      <% end %>
+
+      <div class="back-btn-wrap">
+        <%= link_to 'Back to Top page', calendars_path, class:"back-btn" %>
+      </div>
+
+    </div><%# end of main %>
+    
+      <%= render "shared/nav-bar-tab" %>
+  </div>
+  

@@ -13,12 +13,4 @@
     <%= f.label :task %><br>
     <%= f.text_area :task, cols:40, rows:10 %>
   </div>
-
-  <div class="actions">
-    <% if current_page?(new_group_path) %>
-      <%= f.submit 'Create new group', class:"sign-up-btn" %>
-    <%# elsif current_page?(edit_calendar_path) %>
-      <%#= f.submit 'Update new schejule', class:"sign-up-btn" %>
-    <% end %>
-  </div>
 </div>

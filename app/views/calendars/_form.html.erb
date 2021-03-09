@@ -20,6 +20,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Create new schejule', class:"sign-up-btn" %>
+    <% if current_page?(new_calendar_path) %>
+      <%= f.submit 'Create new schejule', class:"sign-up-btn" %>
+    <% elsif current_page?(edit_calendar_path) %>
+      <%= f.submit 'Update new schejule', class:"sign-up-btn" %>
+    <% end %>
   </div>
 </div>

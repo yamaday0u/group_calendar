@@ -1,24 +1,24 @@
 @import "variables";
 
 // index.html.erb -----------------------------------------
-.group-index {
+.item-list {
   border-top: 1px solid #ddd;
 }
 
-.group-index-header {
+.item-list-header {
   margin-top: 1em;
   text-align: center;
 }
 
-.group-index-content {
+.item-list-content {
   // 
 }
 
-.each-group {
+.each-item {
   // 
 }
 
-.each-group-content {
+.each-item-content {
   height: 100px;
   width: 350px;
   display: flex;
@@ -31,26 +31,23 @@
   }
 }
 
-.group-content-left {
+.item-content-left {
   height: 80px;
   width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid $separator-color;
-  // background-color: yellow;
   margin: auto 3px;
 }
 
-.group-content-right {
+.item-content-right {
   height: 80px;
   display: flex;
   justify-content: center;
-  // background-color: yellow;
   margin: auto 3px;
   position: absolute;
   top: 50%;
   left: 83px;
   transform: translateY(-15%);
-  
 }

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :users, only: :index
   resources :calendars
   resources :groups, only: [:index, :new, :create, :show]
-  deevise_for :users
+  devise_for :users
 end

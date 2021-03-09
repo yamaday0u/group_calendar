@@ -1,19 +1,55 @@
 <%= render "shared/header" %>
 
 <div class="content">
-  <div class="group">
-    <div class="group-index">
-    </div>
-  </div>
-  <h1>Groups#index</h1>
-  <p>Find me in app/views/groups/index.html.erb</p>
-  
-  
-  <%= render "shared/nav-bar-tab" %>
 
-  <div class="actions">
-    <%= link_to "Create Group", new_group_path, class: "sign-up-btn" %>
+  <div class="flex-parent-wrap">
+    <div class="main">
+
+      <div class="create-group">
+        <div class="actions">
+          <%= link_to "Create Group", new_group_path, class: "sign-up-btn" %>
+        </div>
+        <div class="back-btn-wrap">
+          <%= link_to 'Back to Top page', calendars_path, class:"back-btn" %>
+        </div>
+      </div>
+
+      <div class="group-index">
+      
+        <div class="group-index-header">
+          <p class="bold">Group list</p>
+        </div>
+
+        <div class="group-index-content">
+          <ul>
+            <% @groups.each do |group| %>
+              <div class="each-group">
+                <li>
+                  <div class="each-group-content">
+
+                    <div class="group-content-left">
+                      <p>Group<br>image</p>
+                    </div>
+
+                    <div class="group-content-right">
+                      <p><%= group.name %></p>
+                    </div>
+                  </div>
+
+                </li>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+    </div><%# end of main %>
+    
+      <%= render "shared/nav-bar-tab" %>
   </div>
+  
+  
+  
 
 </div>
 

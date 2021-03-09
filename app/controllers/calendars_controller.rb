@@ -12,7 +12,8 @@ class CalendarsController < ApplicationController
 
   def create
     @calendar = Calendar.new(calendar_params)
-    if @calendar.save
+    if @calendar.valid?
+      @calendar.save
       redirect_to calendars_path, notice: 'Added schejule'
     else
       render 'new'

@@ -4,12 +4,12 @@
   <div class="flex-parent-wrap">
     <div class="main">
 
-      <%= form_with model:@calendar, local:true do |f| %>
+      <%= form_with model:@group, local:true do |f| %>
         <%= render "shared/error_messages", model: f.object %>
-        <%= render partial: "calendars/form", locals: {f: f} %>
+        <%= render partial: "groups/form", locals: {f: f} %>
 
         <div class="actions">
-          <%= f.submit 'Create new schejule', class:"sign-up-btn" %>
+          <%= f.submit 'Create new group', class:"sign-up-btn" %>
         </div>
       <% end %>
 
@@ -17,8 +17,8 @@
         <%= link_to 'Back to Top page', calendars_path, class:"back-btn" %>
       </div>
     </div><%# end of main %>
-
-    <%= render "shared/nav-bar-tab" %>
+    
+      <%= render "shared/nav-bar-tab" %>
   </div><%# end of flex-parent-wrap %>
 </div>
 

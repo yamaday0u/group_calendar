@@ -8,26 +8,58 @@
 
       <div class="form-wrap">
         <div class="form-group">
-          <p>Scheduled by</p>
-          <p><%= @user.name %></p>
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Scheduled by</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @user.name %></p>
+            </div>
+          </div>
         </div>
 
         <div class="form-group">
-          <p>Title</p>
-          <textarea cols="40" rows="1"><%= @calendar.title %></textarea>
-        </div>
-        
-        <div class="form-group">
-          <p>Content</p>
-          <textarea cols="40" rows="10"><%= @calendar.content %></textarea>
-        </div>
-
-        <div class="form-group">
-          <p>Start_time:<%= @calendar.start_time.strftime("%F %H:%M") %></p>
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Title</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p class=""><%= @calendar.title %></p>
+            </div>
+          </div>
         </div>
 
         <div class="form-group">
-          <p>End_time:<%= @calendar.end_time.strftime("%F %H:%M") %></p>
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Content</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @calendar.content %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Start_time</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @calendar.start_time.strftime("%F %H:%M") %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">End_time</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @calendar.end_time.strftime("%F %H:%M") %></p>
+            </div>
+          </div>
         </div>
 
         <% if current_user.id == @user.id %>

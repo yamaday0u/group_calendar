@@ -59,7 +59,7 @@
     width: $main-width;
   }
 
-  .actions {
+  .actions-tab {
     display: none;
 
     @include tab {
@@ -67,6 +67,14 @@
       text-align: center;
     }
   }
+}
+
+.text-left {
+  text-align: start;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 
@@ -198,7 +206,7 @@
     display: block;
     min-height: calc(100vh - (6em));
     width: calc(100% - $main-width);
-    border-left: 1px solid #ddd;
+    border-left: 1px solid $separator-color;
     margin-left: 1em;
 
   }

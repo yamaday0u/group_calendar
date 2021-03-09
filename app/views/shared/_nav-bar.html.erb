@@ -8,7 +8,7 @@
       <% end %>
     </li>
     <li class="nav-bar-list">
-      <%= link_to "/", class: "account-link" do %>
+      <%= link_to users_path, class: "account-link" do %>
         <i class="fas fa-user icon"></i>
         <p class="icon-text">Mates</p>
       <% end %>
@@ -35,13 +35,13 @@
     <%# Switch the btn new_calendar_path, calendars_path & groups_path %>
 
     <li class="nav-bar-list">
-      <%= link_to "/", class: "account-link" do %>
+      <%= link_to 'home/new', class: "account-link" do %>
         <i class="fas fa-comments icon"></i>
         <p class="icon-text">Chats</p>
       <% end %>
     </li>
     <li class="nav-bar-list">
-      <%= link_to "/", class: "account-link" do %>
+      <%= link_to 'home/new', class: "account-link" do %>
         <i class="fas fa-bell icon"></i>
         <p class="icon-text">Notification</p>
       <% end %>

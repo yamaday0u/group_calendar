@@ -22,6 +22,28 @@
   display: none;
 }
 
+// show.html.erb -----------------------------------------
+
+.schedule-item {
+  display: inline-block;
+  width: 300px;
+  
+  @include tab {
+    width: 400px;
+  }
+}
+
+.schedule-item-header {
+  border-bottom: 1px solid $nav-bar-color;
+}
+.show-schedule {
+  display: inline-block;
+  
+  
+}
+
+
+
 // _month_calendar.html/.erb -----------------------------------------
 .simple-calendar {
   // 

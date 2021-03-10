@@ -33,7 +33,7 @@
                       </div>
 
                       <div class="item-content-right">
-                        <p><%= user.name %></p>
+                        <p><%= link_to user.name, user_path(user.id) %></p>
                         <p><%= user.identity %></p>
                       </div>
                     </div>

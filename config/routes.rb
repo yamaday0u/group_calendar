@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :calendars
   resources :groups, only: [:index, :new, :create, :show]
-  devise_for :users
+  devise_for :users, controllers: {
+    ragistrations: "users/registrations"
+  }
 end

@@ -31,7 +31,7 @@
 
         <% if current_user.id == @user.id %>
           <div class="actions">
-            <%= link_to 'Edit profile', calendars_path, class:"sign-up-btn" %>
+            <%= link_to 'Edit profile', edit_user_registration_path, class:"sign-up-btn" %>
           </div>
         <% end %>
       </div>

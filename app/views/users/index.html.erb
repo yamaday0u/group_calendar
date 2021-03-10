@@ -7,7 +7,7 @@
 
       <div class="create-group">
         <div class="actions">
-          <%= link_to "Create Group", new_group_path, class: "sign-up-btn" %>
+          <%= link_to "Explore mate", 'home/new', class: "sign-up-btn" %>
         </div>
         <div class="back-btn-wrap">
           <%= link_to 'Back to Top page', calendars_path, class:"back-btn" %>
@@ -33,7 +33,7 @@
                       </div>
 
                       <div class="item-content-right">
-                        <p><%= user.name %></p>
+                        <p><%= link_to user.name, user_path(user.id) %></p>
                         <p><%= user.identity %></p>
                       </div>
                     </div>

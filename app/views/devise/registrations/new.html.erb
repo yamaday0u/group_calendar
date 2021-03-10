@@ -7,42 +7,41 @@
 
     <%= render "shared/error_messages", model: f.object %>
 
-  <div class="form-wrap">
-    <div class="form-group">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true %>
-    </div>
+    <div class="form-wrap">
+      <div class="form-group">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :email %><br />
-      <%= f.email_field :email %>
-    </div>
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password %>
-    </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
-    </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :identity %>
-      <p class="info-text">(What are you doing, your position, etc...)</p>
-      <%= f.text_field :identity %>
-    </div>
+      <div class="form-group">
+        <%= f.label :identity %>
+        <p class="info-text">(What are you doing, your position, etc...)</p>
+        <%= f.text_field :identity %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up", class: "sign-up-btn" %>
-    </div>
-  </div><%# End of "form-wrap" %>
+      <div class="actions">
+        <%= f.submit "Sign up", class: "sign-up-btn" %>
+      </div>
+    </div><%# end of "form-wrap" %>
   <% end %>
-
 
   <div class="back-btn-wrap">
     <%= link_to 'Back to Top page', root_path, class:"back-btn" %>

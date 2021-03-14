@@ -1,2 +1,19 @@
-<h1>Chats#index</h1>
-<p>Find me in app/views/chats/index.html.erb</p>
+<%= render "shared/header" %>
+
+<div class="content">
+
+  <div class="flex-parent-wrap">
+    <div class="main">
+
+      <% @chats.each do |chat| %>
+        <%= chat.textq %>
+      <% end %>
+      
+    </div><%# End of main %>
+    
+      <%= render "shared/nav-bar-tab" %>
+  </div><%# End of flex-parent-warp %>
+</div>
+
+<%= render "shared/nav-bar" %>
+<%= render "shared/footer" %>

@@ -5,9 +5,18 @@
   <div class="flex-parent-wrap">
     <div class="main">
 
-      <% @chats.each do |chat| %>
-        <%= chat.textq %>
+      <%= form_with model: @chat, url: group_chats_path(params[:group_id]) do |f| %>
+        <%= f.text_area :text %>
+        <%= f.submit 'submit' %>
       <% end %>
+
+      <div id="chats">
+        <% @chats.each do |chat| %>
+        <div class="chat">
+          <p><%= chat.text %></p>
+        </div>
+        <% end %>
+      </div>
       
     </div><%# End of main %>
     

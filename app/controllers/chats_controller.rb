@@ -1,6 +1,6 @@
 class ChatsController < ApplicationController
   def index
-    @chats = Chat.includes(:group).where(group_id: params[:id])
+    @chats = Chat.includes(:group).where(group_id: params[:group_id])
     @chat = Chat.new
   end
 

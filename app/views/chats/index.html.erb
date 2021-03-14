@@ -6,15 +6,25 @@
     <div class="main">
 
       <%= form_with model: @chat, url: group_chats_path(params[:group_id]) do |f| %>
-        <%= f.text_area :text %>
-        <%= f.submit 'submit' %>
+        <div class="form-wrap">
+          <div class="form-group">
+            <%= f.label :text %><br>
+            <%= f.text_area :text, autofocus: true %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit 'Chat', class:"sign-up-btn" %>
+          </div>
+        </div>
       <% end %>
 
       <div id="chats">
         <% @chats.each do |chat| %>
-        <div class="chat">
-          <p><%= chat.text %></p>
-        </div>
+          <div class="each-chat">
+            <p class="chat-time"><%= chat.created_at.strftime("%Y-%m-%-d %-H:%-M") %></p>
+            <p class="chat-text"><%= chat.text %></p>
+            <p class="chat-user"><%= chat.user.name %></p>
+          </div>
         <% end %>
       </div>
       

@@ -1,5 +1,6 @@
 class CalendarForGroupsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_g_calendar, only: %i[show edit update destroy]
 
   def index
     @g_calendars = CalendarForGroup.includes(:group).where(group_id: params[:group_id])
@@ -20,7 +21,16 @@ class CalendarForGroupsController < ApplicationController
     end    
   end
 
+  def show
+    @user = User.find(@g_calendar.user_id)
+    @group = Group.find(@g_calendar.group_id)
+  end
+
   private
+
+  def set_g_calendar
+    @g_calendar = CalendarForGroup.find(params[:group_id])
+  end
 
   def g_calendar_params
     params.require(:calendar_for_group).permit(

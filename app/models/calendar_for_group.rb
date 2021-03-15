@@ -1,0 +1,2 @@
+class CalendarForGroup < ApplicationRecord
+end

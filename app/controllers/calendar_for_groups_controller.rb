@@ -40,6 +40,12 @@ class CalendarForGroupsController < ApplicationController
     end
   end
 
+  def destroy
+    @g_calendar.destroy
+    flash[:notice] = 'Deleted schejule'
+    redirect_to group_calendar_for_groups_path
+  end
+
   private
 
   def set_g_calendar

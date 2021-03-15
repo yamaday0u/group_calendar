@@ -54,9 +54,11 @@
 - belongs_to :groups
 
 ## chats table
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| text   | string | null: false |
+| Column | Type       | Options                       |
+| ------ | ---------- | ----------------------------- |
+| text   | string     | null: false                   |
+| user   | references | null: false, foreign_key true |
+| group  | references | null: false, foreign_key true |
 
 - belongs_to :user
 - belongs_to :group

@@ -1,0 +1,97 @@
+<%= render "shared/header" %>
+
+<div class="content">
+  <%= render "shared/flash_message" %>
+
+  <div class="flex-parent-wrap">
+    <div class="main">
+
+      <div class="form-wrap">
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Group</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @group.name %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Scheduled by</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @user.name %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Title</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p class=""><%= @g_calendar.title %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Content</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @g_calendar.content %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Start_time</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @g_calendar.start_time.strftime("%F %H:%M") %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">End_time</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @g_calendar.end_time.strftime("%F %H:%M") %></p>
+            </div>
+          </div>
+        </div>
+
+        <% if current_user.id == @user.id %>
+          <div class="actions">
+            <%= link_to 'Edit schedule', edit_group_calendar_for_group_path, class:"sign-up-btn" %>
+          </div>
+
+          <div class="actions">
+            <%= link_to 'Delete schedule', group_calendar_for_group_path(@g_calendar.id), method: :delete, data: { confirm: 'Are you sure to delete a schedule?'}, class:"sign-up-btn" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="back-btn-wrap">
+        <%= link_to 'Back', group_calendar_for_group_path, class:"back-btn" %>
+      </div>
+    </div><%# end of main %>
+
+    <%= render "shared/nav-bar-tab" %>
+  </div><%# end of flex-parent-wrap %>
+</div>
+
+<%= render "shared/nav-bar" %>
+<%= render "shared/footer" %>

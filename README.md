@@ -31,27 +31,31 @@
 
 ## calendars table
 
-| Column     | Type     | Options     |
-| ---------- | -------- | ----------- |
-| title      | string   | null: false |
-| content    | string   | null: false |
-| start_time | datetime | null: false |
-| end_time   | datetime | null: false |
+| Column     | Type       | Options                       |
+| ---------- | ---------- | ----------------------------- |
+| title      | string     | null: false                   |
+| content    | string     | null: false                   |
+| start_time | datetime   | null: false                   |
+| end_time   | datetime   | null: false                   |
+| user       | references | null: false, foreign_key true |
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## group calendars table
 
-| Column     | Type     | Options     |
-| ---------- | -------- | ----------- |
-| title      | string   | null: false |
-| content    | string   | null: false |
-| start_time | datetime | null: false |
-| end_time   | datetime | null: false |
+| Column     | Type       | Options                       |
+| ---------- | ---------- | ----------------------------- |
+| title      | string     | null: false                   |
+| content    | string     | null: false                   |
+| start_time | datetime   | null: false                   |
+| end_time   | datetime   | null: false                   |
+| user       | references | null: false, foreign_key true |
+| group      | references | null: false, foreign_key true |
 
 ### Association
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 ## chats table
 | Column | Type       | Options                       |

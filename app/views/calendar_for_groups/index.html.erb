@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+
+<div class="content">
+  <%= render "shared/flash_message" %>
+
+  <div class="flex-parent-wrap">
+    <div class="main">
+
+      <%= render "calendar_for_groups/switch_calendar" %>
+
+      <div class="actions-tab">
+        <%= link_to "Add Schejule", new_calendar_path, class: "sign-up-btn" %>
+      </div>
+
+    </div><%# end of main %>
+
+    <%= render "shared/nav-bar-tab" %>
+  </div><%# end of flex-parent-wrap %>
+</div>
+
+<%= render "shared/nav-bar" %>
+<%= render "shared/footer" %>

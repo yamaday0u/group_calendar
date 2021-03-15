@@ -30,6 +30,16 @@ class CalendarForGroupsController < ApplicationController
     
   end
 
+  def update
+    @g_calendar.update(g_calendar_params)
+    if @g_calendar.valid?
+      flash[:notice] = 'Updated schejule'
+      redirect_to group_calendar_for_group_path(@g_calendar.id)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def set_g_calendar

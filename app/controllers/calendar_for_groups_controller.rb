@@ -26,6 +26,10 @@ class CalendarForGroupsController < ApplicationController
     @group = Group.find(@g_calendar.group_id)
   end
 
+  def edit
+    
+  end
+
   private
 
   def set_g_calendar

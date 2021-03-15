@@ -1,0 +1,26 @@
+<%= render "shared/header" %>
+
+<div class="content">
+  <div class="flex-parent-wrap">
+    <div class="main">
+    
+      <%= form_with model:@g_calendar, url:group_calendar_for_group_path, local:true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+        <%= render partial: "calendars/form", locals: {f: f} %>
+
+        <div class="actions">
+          <%= f.submit 'Update new schejule', class:"sign-up-btn" %>
+        </div>
+      <% end %>
+
+      <div class="back-btn-wrap">
+        <%= link_to 'Back', group_calendar_for_group_path(@g_calendar.id), class:"back-btn" %>
+      </div>
+    </div><%# end of main %>
+
+    <%= render "shared/nav-bar-tab" %>
+  </div><%# end of flex-parent-wrap %>
+</div>
+
+<%= render "shared/nav-bar" %>
+<%= render "shared/footer" %>

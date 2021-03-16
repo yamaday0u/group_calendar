@@ -1,7 +1,7 @@
 class CalendarForGroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_g_calendar, only: %i[show edit update destroy]
-  before_action :check_member 
+  before_action :check_member
 
   def index
     @g_calendars = CalendarForGroup.includes(:group).where(group_id: params[:group_id])
@@ -19,7 +19,7 @@ class CalendarForGroupsController < ApplicationController
       redirect_to group_calendar_for_groups_path(@g_calendar.group_id), notice: 'Added schejule'
     else
       render 'new'
-    end    
+    end
   end
 
   def show
@@ -27,9 +27,7 @@ class CalendarForGroupsController < ApplicationController
     @group = Group.find(@g_calendar.group_id)
   end
 
-  def edit
-    
-  end
+  def edit; end
 
   def update
     @g_calendar.update(g_calendar_params)
@@ -66,7 +64,7 @@ class CalendarForGroupsController < ApplicationController
   end
 
   def check_member
-    unless UserGroup.find_by(user_id: current_user.id, group_id: params[:group_id]).present? 
+    unless UserGroup.find_by(user_id: current_user.id, group_id: params[:group_id]).present?
       redirect_to group_path(params[:group_id])
     end
   end

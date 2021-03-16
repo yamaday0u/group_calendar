@@ -8,12 +8,13 @@ class ChatsController < ApplicationController
     @chat = Chat.new(chat_params)
     if @chat.save
       @user = current_user
-      @time = @chat.created_at.strftime("%Y-%m-%-d %-H:%-M")
+      @time = @chat.created_at.strftime('%Y-%m-%-d %-H:%-M')
       ActionCable.server.broadcast 'chat_channel', content: @chat, user: @user, time: @time
     end
   end
 
   private
+
   def chat_params
     params.require(:chat).permit(:text).merge(
       user_id: current_user.id,

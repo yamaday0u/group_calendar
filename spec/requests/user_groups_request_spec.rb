@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "UserGroups", type: :request do
-
+RSpec.describe 'UserGroups', type: :request do
 end

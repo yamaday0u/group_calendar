@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "CalendarForGroups", type: :request do
-
+RSpec.describe 'CalendarForGroups', type: :request do
 end

@@ -1,6 +1,7 @@
 class CalendarForGroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_g_calendar, only: %i[show edit update destroy]
+  before_action :check_member 
 
   def index
     @g_calendars = CalendarForGroup.includes(:group).where(group_id: params[:group_id])
@@ -62,5 +63,11 @@ class CalendarForGroupsController < ApplicationController
       user_id: current_user.id,
       group_id: params[:group_id]
     )
+  end
+
+  def check_member
+    unless UserGroup.find_by(user_id: current_user.id, group_id: params[:group_id]).present? 
+      redirect_to group_path(params[:group_id])
+    end
   end
 end

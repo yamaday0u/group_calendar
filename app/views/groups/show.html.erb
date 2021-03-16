@@ -5,7 +5,50 @@
   <div class="flex-parent-wrap">
     <div class="main">
 
-      <%= link_to "Chat", group_chats_path(@group.id) %>
+      <div class="form-wrap">
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Group name</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @group.name %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">Outline</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <p><%= @group.outline %></p>
+            </div>
+          </div>
+        </div>
+
+        <% if @userGroup.present? %>
+          <div class="form-group">
+            <div class="schedule-item">
+              <div class="schedule-item-header text-left">
+                <p class="bold">Task</p>
+              </div>
+              <div class="schedule-item-body text-left">
+                <p><%= @group.task %></p>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="actions">
+            <%= link_to 'Join this group',  group_user_groups_path(@group.id), method: :post, data: { confirm: 'Are you sure to join this group?'}, class:"sign-up-btn" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="back-btn-wrap">
+        <%= link_to 'Back', calendars_path, class:"back-btn" %>
+      </div>
       
     </div><%# End of main %>
     

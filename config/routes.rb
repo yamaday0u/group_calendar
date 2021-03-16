@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :groups, only: [:index, :new, :create, :show] do
     resources :chats, only: [:index, :create]
     resources :calendar_for_groups
+    resources :user_groups, only: :create
   end
   devise_for :users, controllers: {
     registrations: "users/registrations"

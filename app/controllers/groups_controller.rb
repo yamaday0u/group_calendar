@@ -21,6 +21,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @userGroup = UserGroup.find_by(user_id: current_user.id, group_id: params[:id])
   end
 
   private
@@ -32,4 +33,5 @@ class GroupsController < ApplicationController
       :task
     )
   end
+
 end

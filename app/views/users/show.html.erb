@@ -38,7 +38,7 @@
             </div>
           <% else %>
             <div class="actions">
-              <%= link_to 'Cancel to your request', user_relationships_path(@user.id), method: :post, class:"sign-up-btn" %>
+              <%= link_to 'Cancel to your request', user_relationship_path(@user.id), method: :delete, class:"sign-up-btn" %>
             </div>
           <% end %>
         <% end %>

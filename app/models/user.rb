@@ -4,13 +4,53 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # Associations
   has_many :user_groups
   has_many :groups, through: :user_groups
   has_many :calendar_for_groups
   has_many :chats
-
   has_many :calendars
 
+  # user who is following others (active relationship)
+  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :followings, through: :active_relationships, source: :followed
+
+  # user who is followed by others (passive relationship)
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  has_many :followers, through: :passive_relationships, source: :follower
+
+  # Methods
+  # To follow other user
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
+
+  # To unfollow other user
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  # If current user follows other user, return "true"
+  def following?(other_user)
+    active_relationships.find_by(followed_id: other_user.id)
+  end
+
+  # Get mates
+  def matchers
+    followings & followers
+  end
+
+  # If current user is already mate with other user, return "true"
+  def matchers?(other_user)
+    active_relationships.find_by(followed_id: other_user.id) && passive_relationships.find_by(follower_id: other_user.id)
+  end
+
+  # If current user is followed by other user & doesn't follow that user, return "true" 
+  def follow_request?(user, other_user)
+    !user.matchers?(other_user) && other_user.following?(user)
+  end
+
+  # Validation
   with_options presence: true do
     validates :name
 

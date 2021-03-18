@@ -1,5 +1,5 @@
 <div id="month_calendar"><%# Default calendar%>
-  <%= month_calendar events:@g_calendars do |date, calendars| %>
+  <%= month_calendar events:@group_calendars do |date, calendars| %>
     <%= date.day %>
     <% calendars.each do |calendar| %>
       <div class="schedule">
@@ -10,22 +10,22 @@
 </div>
 
 <div id="week_calendar">
-  <%= week_calendar events:@g_calendars do |date, calendars| %>
+  <%= week_calendar events:@group_calendars do |date, calendars| %>
     <%= date.day %>
     <% calendars.each do |calendar| %>
       <div class="schedule">
-        <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", calendar_path(id: calendar.id) %>
+        <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id) %>
       </div>
     <% end %>
   <% end %>
 </div>
 
 <div id="custom_calendar">
-  <%= calendar events:@g_calendars do |date, calendars| %>
+  <%= calendar events:@group_calendars do |date, calendars| %>
     <%= date.day %>
     <% calendars.each do |calendar| %>
       <div class="schedule">
-        <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", calendar_path(id: calendar.id) %>
+        <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id) %>
       </div>
     <% end %>
   <% end %>

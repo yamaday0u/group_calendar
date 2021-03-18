@@ -29,8 +29,27 @@
           </div>
         </div>
 
+        <% if @user.follow_request?(current_user, @user) %>
+          <div class="form-group">
+            <div class="schedule-item">
+              <div class="schedule-item-header text-left">
+                <p class="bold"><i class="fas fa-star"></i>You have follow request<i class="fas fa-star"></i></p>
+              </div>
+              <div class="schedule-item-body text-left">
+                <p><%= @user.name %> requests you to be mate</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
         <% if current_user.matchers?(@user) %>
-          <p>You are already mate with <%= @user.name %></p>
+          <div class="form-group">
+            <div class="schedule-item">
+              <div class="schedule-item-header text-left">
+                <p class="bold"><%= @user.name %> is your mate</p>
+              </div>
+            </div>
+          </div>
         <% else %>
           <% unless current_user.following?(@user) %>
             <div class="actions">

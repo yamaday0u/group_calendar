@@ -3,7 +3,9 @@ class CalendarsController < ApplicationController
   before_action :set_calendar, only: %i[show edit update destroy]
 
   def index
-    @calendars = Calendar.where(user_id: current_user)
+    user_calendars = Calendar.where(user_id: current_user)
+    group_calendars = get_group_calendars
+    @calendars = user_calendars + group_calendars
   end
 
   def new
@@ -55,5 +57,14 @@ class CalendarsController < ApplicationController
       :start_time,
       :end_time
     ).merge(user_id: current_user.id)
+  end
+
+  def get_group_calendars
+    usergroups = UserGroup.where(user_id: 1)
+    group_ids = []
+    usergroups.each do |usergroup|
+      group_ids << usergroup.group_id
+    end
+    return CalendarForGroup.where(group_id: group_ids)
   end
 end

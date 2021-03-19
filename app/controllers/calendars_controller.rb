@@ -60,7 +60,7 @@ class CalendarsController < ApplicationController
   end
 
   def get_group_calendars
-    usergroups = UserGroup.where(user_id: 1)
+    usergroups = UserGroup.where(user_id: current_user.id)
     group_ids = []
     usergroups.each do |usergroup|
       group_ids << usergroup.group_id

@@ -9,9 +9,7 @@
         <div class="actions">
           <%= link_to "Create Group", new_group_path, class: "sign-up-btn" %>
         </div>
-        <div class="back-btn-wrap">
-          <%= link_to 'Back', calendars_path, class:"back-btn" %>
-        </div>
+        <%= render "shared/back_button" %>
       </div>
 
       <div class="item-list">

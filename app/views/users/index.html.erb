@@ -9,9 +9,7 @@
         <div class="actions">
           <%= link_to "Explore mate", 'home/new', class: "sign-up-btn" %>
         </div>
-        <div class="back-btn-wrap">
-          <%= link_to 'Back to Top page', calendars_path, class:"back-btn" %>
-        </div>
+        <%= render "shared/back_button" %>
       </div>
 
       <div class="item-list">

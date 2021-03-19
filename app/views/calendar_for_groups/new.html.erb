@@ -13,9 +13,7 @@
         </div>
       <% end %>
 
-      <div class="back-btn-wrap">
-        <%= link_to 'Back', group_calendar_for_groups_path(params[:group_id]), class:"back-btn" %>
-      </div>
+      <%= render "shared/back_button" %>
     </div><%# end of main %>
 
     <%= render "shared/nav-bar-tab" %>

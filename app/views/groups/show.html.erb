@@ -12,7 +12,7 @@
               <p class="bold">Group name</p>
             </div>
             <div class="schedule-item-body text-left">
-              <p><%= @group.name %></p>
+              <p><%= link_to @group.name, group_calendar_for_groups_path(@group.id) %></p>
             </div>
           </div>
         </div>
@@ -46,15 +46,13 @@
         <% end %>
       </div>
 
-      <div class="back-btn-wrap">
-        <%= link_to 'Back', calendars_path, class:"back-btn" %>
-      </div>
+      <%= render "shared/back_button" %>
       
     </div><%# End of main %>
     
-      <%= render "shared/nav-bar-tab" %>
+    <%= render "calendar_for_groups/nav-bar-tab" %>
   </div><%# End of flex-parent-warp %>
 </div>
 
-<%= render "shared/nav-bar" %>
+<%= render "calendar_for_groups/nav-bar" %>
 <%= render "shared/footer" %>

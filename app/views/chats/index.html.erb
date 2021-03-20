@@ -6,6 +6,7 @@
     <div class="main">
 
       <%= form_with model: @chat, url: group_chats_path(params[:group_id]) do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
         <div class="form-wrap">
           <div class="form-group">
             <%= f.label :text %><br>
@@ -17,6 +18,7 @@
           </div>
         </div>
       <% end %>
+      <%= render "shared/back_button" %>
 
       <div id="chats">
         <% @chats.each do |chat| %>
@@ -30,9 +32,9 @@
       
     </div><%# End of main %>
     
-      <%= render "shared/nav-bar-tab" %>
+    <%= render "calendar_for_groups/nav-bar-tab" %>
   </div><%# End of flex-parent-warp %>
 </div>
 
-<%= render "shared/nav-bar" %>
+<%= render "calendar_for_groups/nav-bar" %>
 <%= render "shared/footer" %>

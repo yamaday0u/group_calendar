@@ -10,6 +10,7 @@ class CalendarForGroupsController < ApplicationController
 
   def new
     @group_calendar = CalendarForGroup.new
+    @group = Group.find(params[:group_id])
   end
 
   def create

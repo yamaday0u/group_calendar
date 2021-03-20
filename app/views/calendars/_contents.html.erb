@@ -1,5 +1,6 @@
 <% calendars.each do |calendar| %>
   <div class="schedule">
+    <%# In case of the calendar has "group_id" %>
     <% if calendar.respond_to?(:group_id) %>
       <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id, group_id: calendar.group_id) %>
       <%= link_to "by #{calendar.group.name}", group_calendar_for_group_path(group_id: calendar.group_id, id: calendar.id) %>

@@ -21,10 +21,6 @@
           <%= link_to new_calendar_path, class: "account-link" do %>
             <i class="fas fa-plus-circle icon-center"></i>
           <% end %>
-        <% elsif current_page?(groups_path) %>
-          <%= link_to new_group_path, class: "account-link" do %>
-            <i class="fas fa-plus-circle icon-center"></i>
-          <% end %>
         <% else %>
           <%= link_to calendars_path, class: "account-link" do %>
             <i class="fas fa-home icon-center"></i>

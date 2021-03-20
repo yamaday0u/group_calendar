@@ -1,0 +1,23 @@
+<nav class="nav-bar-tab">
+  
+  <ul class="creator-accounts">
+    <li>
+      <%= link_to 'Home', calendars_path, class: "account-link" %>
+    </li>
+    <li>
+      <%= link_to 'Group Home', group_calendar_for_groups_path(@group.id), class: "account-link" %>
+    </li>
+    <li>
+      <%= link_to "Outline", group_path(@group.id), class: "account-link" %>
+    </li>
+    <li>
+      <%= link_to "Member", home_new_path, class: "account-link" %>
+    </li>
+    <li>
+      <%= link_to "Chat", group_chats_path(@group.id), class: "account-link" %>
+    </li>
+    <li>
+      <%= link_to "Groups", groups_path, class: "account-link" %>
+    </li>
+  </ul>
+</nav>

@@ -50,6 +50,10 @@
               </div>
             </div>
           </div>
+        <% end %>
+
+        <% if current_user.id == @user.id %>
+          
         <% else %>
           <% unless current_user.following?(@user) %>
             <div class="actions">

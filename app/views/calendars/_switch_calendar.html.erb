@@ -1,10 +1,12 @@
-<div id="month_calendar"><%# Default calendar%>
+<%# Month Calendar (Default) %>
+<div id="month_calendar">
   <%= month_calendar events:@calendars do |date, calendars| %>
     <%= date.day %>
     <%= render partial: "calendars/contents", locals: {calendars: calendars} %>
   <% end %>
 </div>
 
+<%# Week Calendar %>
 <div id="week_calendar">
   <%= week_calendar events:@calendars do |date, calendars| %>
     <%= date.day %>
@@ -12,6 +14,7 @@
   <% end %>
 </div>
 
+<%# Custom Calendar %>
 <div id="custom_calendar">
   <%= calendar events:@calendars do |date, calendars| %>
     <%= date.day %>

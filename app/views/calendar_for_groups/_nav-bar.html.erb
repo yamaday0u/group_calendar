@@ -2,44 +2,40 @@
   
   <ul class="creator-accounts">
     <li class="nav-bar-list">
-      <%= link_to groups_path, class: "account-link" do %>
-        <i class="fas fa-users icon"></i>
-        <p class="icon-text">Groups</p>
+      <%= link_to group_path(@group.id), class: "account-link" do %>
+        <i class="fas fa-clipboard-list icon"></i>
+        <p class="icon-text">Outline</p>
       <% end %>
     </li>
     <li class="nav-bar-list">
       <%= link_to users_path, class: "account-link" do %>
         <i class="fas fa-user icon"></i>
-        <p class="icon-text">Mates</p>
+        <p class="icon-text">Member</p>
       <% end %>
     </li>
 
     <%# Switch the btn new_calendar_path, calendars_path & groups_path %>
     
+    <% if current_page?(group_calendar_for_groups_path(@group.id)) %>
       <li class="nav-bar-list">
-        <% if current_page?(calendars_path) %>
-          <%= link_to new_calendar_path, class: "account-link" do %>
+          <%= link_to new_group_calendar_for_group_path, class: "account-link" do %>
             <i class="fas fa-plus-circle icon-center"></i>
           <% end %>
-        <% else %>
-          <%= link_to calendars_path, class: "account-link" do %>
+      </li>
+    <% end %>
+    
+    <li class="nav-bar-list">
+      <%= link_to calendars_path, class: "account-link" do %>
             <i class="fas fa-home icon-center"></i>
           <% end %>
-        <% end %>
-      </li>
+    </li>
 
     <%# Switch the btn new_calendar_path, calendars_path & groups_path %>
 
     <li class="nav-bar-list">
-      <%= link_to 'home/new', class: "account-link" do %>
+      <%= link_to group_chats_path(@group.id), class: "account-link" do %>
         <i class="fas fa-comments icon"></i>
-        <p class="icon-text">Chats</p>
-      <% end %>
-    </li>
-    <li class="nav-bar-list">
-      <%= link_to 'home/new', class: "account-link" do %>
-        <i class="fas fa-bell icon"></i>
-        <p class="icon-text">Notification</p>
+        <p class="icon-text">Chat</p>
       <% end %>
     </li>
   </ul>

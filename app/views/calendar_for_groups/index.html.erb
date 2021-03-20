@@ -9,7 +9,6 @@
       <p class="subtitle"><%= @group.name %></p>
 
       <%= render "calendar_for_groups/switch_calendar" %>
-      <%= link_to "Chat", group_chats_path(@group.id) %>
 
       <div class="actions-tab">
         <%= link_to "Add Schejule", new_group_calendar_for_group_path, class: "sign-up-btn" %>
@@ -17,9 +16,9 @@
 
     </div><%# end of main %>
 
-    <%= render "shared/nav-bar-tab" %>
+    <%= render "calendar_for_groups/nav-bar-tab" %>
   </div><%# end of flex-parent-wrap %>
 </div>
 
-<%= render "shared/nav-bar" %>
+<%= render "calendar_for_groups/nav-bar" %>
 <%= render "shared/footer" %>

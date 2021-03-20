@@ -1,8 +1,8 @@
 class CalendarForGroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_group_calendar, only: %i[show edit update destroy]
-  before_action :set_group, only: %i[index new show create edit]
   before_action :check_member
+  before_action :set_group, only: %i[index new show create edit]
+  before_action :set_group_calendar, only: %i[show edit update destroy]
 
   def index
     @group_calendars = CalendarForGroup.includes(:group).where(group_id: params[:group_id])

@@ -1,16 +1,15 @@
 class CalendarForGroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_group_calendar, only: %i[show edit update destroy]
+  before_action :set_group, only: %i[index new show create edit]
   before_action :check_member
 
   def index
     @group_calendars = CalendarForGroup.includes(:group).where(group_id: params[:group_id])
-    @group = Group.find(params[:group_id])
   end
 
   def new
     @group_calendar = CalendarForGroup.new
-    @group = Group.find(params[:group_id])
   end
 
   def create
@@ -25,16 +24,16 @@ class CalendarForGroupsController < ApplicationController
 
   def show
     @user = User.find(@group_calendar.user_id)
-    @group = Group.find(@group_calendar.group_id)
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @group_calendar.update(group_calendar_params)
     if @group_calendar.valid?
       flash[:notice] = 'Updated schejule'
-      redirect_to group_calendar_for_group_path(@group_calendar.id)
+      redirect_to group_calendar_for_group_path(@group_calendar.group_id)
     else
       render 'edit'
     end
@@ -43,13 +42,17 @@ class CalendarForGroupsController < ApplicationController
   def destroy
     @group_calendar.destroy
     flash[:notice] = 'Deleted schejule'
-    redirect_to group_calendar_for_groups_path
+    redirect_to group_calendar_for_groups_path(@group_calendar.group_id)
   end
 
   private
 
   def set_group_calendar
     @group_calendar = CalendarForGroup.find(params[:id])
+  end
+
+  def set_group
+    @group = Group.find(params[:group_id])
   end
 
   def group_calendar_params

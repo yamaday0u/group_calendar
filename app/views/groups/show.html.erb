@@ -12,7 +12,7 @@
               <p class="bold">Group name</p>
             </div>
             <div class="schedule-item-body text-left">
-              <p><%= @group.name %></p>
+              <p><%= link_to @group.name, group_calendar_for_groups_path(@group.id) %></p>
             </div>
           </div>
         </div>

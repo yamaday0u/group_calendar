@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :users, only: %i[index show] do
-    resources :relationships, only: [:create, :destroy]
+    resources :relationships, only: %i[create destroy]
   end
 end

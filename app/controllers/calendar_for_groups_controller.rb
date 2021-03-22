@@ -26,8 +26,7 @@ class CalendarForGroupsController < ApplicationController
     @user = User.find(@group_calendar.user_id)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @group_calendar.update(group_calendar_params)

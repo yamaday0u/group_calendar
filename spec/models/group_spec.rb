@@ -11,18 +11,18 @@ RSpec.describe Group, type: :model do
         expect(@group).to be_valid
       end
       it 'is valid without content' do
-        @group.outline = ""
+        @group.outline = ''
         expect(@group).to be_valid
       end
       it 'is valid without task' do
-        @group.task = ""  
+        @group.task = ''
         expect(@group).to be_valid
       end
     end
 
     context 'unsuccessfully' do
       it 'is invalid without name' do
-        @group.name = '' 
+        @group.name = ''
         @group.valid?
         expect(@group.errors.full_messages).to include("Name can't be blank")
       end

@@ -12,11 +12,11 @@ class User < ApplicationRecord
   has_many :calendars
 
   # user who is following others (active relationship)
-  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  has_many :active_relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
   has_many :followings, through: :active_relationships, source: :followed
 
   # user who is followed by others (passive relationship)
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  has_many :passive_relationships, class_name: 'Relationship', foreign_key: 'followed_id', dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
 
   # Methods
@@ -45,7 +45,7 @@ class User < ApplicationRecord
     active_relationships.find_by(followed_id: other_user.id) && passive_relationships.find_by(follower_id: other_user.id)
   end
 
-  # If current user is followed by other user & doesn't follow that user, return "true" 
+  # If current user is followed by other user & doesn't follow that user, return "true"
   def follow_request?(user, other_user)
     !user.matchers?(other_user) && other_user.following?(user)
   end

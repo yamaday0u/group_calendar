@@ -8,8 +8,5 @@ class CreateChats < ActiveRecord::Migration[6.0]
     end
   end
 
-  def down
-    
-  end
+  def down; end
 end
-

@@ -11,21 +11,21 @@ RSpec.describe Calendar, type: :model do
         expect(@calendar).to be_valid
       end
       it 'is valid without content' do
-        @calendar.content = ""
+        @calendar.content = ''
         expect(@calendar).to be_valid
       end
     end
 
     context 'unsuccessfully' do
       it 'is invalid without title' do
-        @calendar.title = '' 
+        @calendar.title = ''
         @calendar.valid?
         expect(@calendar.errors.full_messages).to include("Title can't be blank")
       end
       it 'is invalid without user' do
         @calendar.user = nil
         @calendar.valid?
-        expect(@calendar.errors.full_messages).to include("User must exist")
+        expect(@calendar.errors.full_messages).to include('User must exist')
       end
     end
   end

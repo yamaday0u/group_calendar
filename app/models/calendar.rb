@@ -1,7 +1,6 @@
 class Calendar < ApplicationRecord
-
   # Associations
-  belongs_to :users, optional: true
+  belongs_to :user
 
   # Validation
   validates :title, presence: true

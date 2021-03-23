@@ -24,12 +24,12 @@ RSpec.describe CalendarForGroup, type: :model do
       it 'is invalid without user' do
         @group_calendar.user = nil
         @group_calendar.valid?
-        expect(@group_calendar.errors.full_messages).to include("User must exist")
+        expect(@group_calendar.errors.full_messages).to include('User must exist')
       end
       it 'is invalid without group' do
         @group_calendar.group = nil
         @group_calendar.valid?
-        expect(@group_calendar.errors.full_messages).to include("Group must exist")
+        expect(@group_calendar.errors.full_messages).to include('Group must exist')
       end
     end
   end

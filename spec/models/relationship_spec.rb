@@ -18,12 +18,12 @@ RSpec.describe Relationship, type: :model do
       it 'is invalid without follower_id(active relationship)' do
         @relationship.follower_id = ''
         @relationship.valid?
-        expect(@relationship.errors.full_messages).to include("Follower must exist")
+        expect(@relationship.errors.full_messages).to include('Follower must exist')
       end
       it 'is invalid without followed_id(passive relationship' do
         @relationship.followed_id = ''
         @relationship.valid?
-        expect(@relationship.errors.full_messages).to include("Followed must exist")
+        expect(@relationship.errors.full_messages).to include('Followed must exist')
       end
       it 'is invalid with duplicate relationship' do
         @relationship.save
@@ -33,7 +33,7 @@ RSpec.describe Relationship, type: :model do
         another_relationship.follower_id = @relationship.follower_id
         another_relationship.followed_id = @relationship.followed_id
         another_relationship.valid?
-        expect(another_relationship.errors.full_messages).to include("Follower has already been taken")
+        expect(another_relationship.errors.full_messages).to include('Follower has already been taken')
       end
     end
   end

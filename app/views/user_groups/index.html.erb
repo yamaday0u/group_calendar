@@ -1,0 +1,49 @@
+<%= render "shared/header" %>
+
+<div class="content">
+
+  <div class="flex-parent-wrap">
+    <div class="main">
+
+        <div class="item-list-header">
+          <p class="bold">Member list</p>
+        </div>
+
+        <div class="item-list-content">
+          <ul>
+            <% @userGroups.each do |userGroup| %>
+              <% unless current_user.id == userGroup.user_id %>
+                <div class="each-item">
+                  <li>
+                    <div class="each-item-content">
+
+                      <div class="item-content-left">
+                        <p>User<br>image</p>
+                      </div>
+
+                      <div class="item-content-right">
+                        <p><%= link_to userGroup.user.name, user_path(userGroup.id) %></p>
+                        <p><%= userGroup.user.identity %></p>
+                        <% if userGroup.user.follow_request?(current_user, userGroup.user) %>
+                          <p><i class="fas fa-star"></i></p>
+                        <% end %>
+                      </div>
+
+                    </div>
+                  </li>
+                </div>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+
+        <%= render "shared/back_button" %>
+
+    </div><%# end of main %>
+    <%= render "calendar_for_groups/nav-bar-tab" %>
+  </div><%# end of flex-parent-wrap %>
+
+</div>
+
+<%= render "calendar_for_groups/nav-bar" %>
+<%= render "shared/footer" %>

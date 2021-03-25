@@ -65,6 +65,6 @@ class CalendarsController < ApplicationController
     usergroups.each do |usergroup|
       group_ids << usergroup.group_id
     end
-    return CalendarForGroup.where(group_id: group_ids)
+    CalendarForGroup.where(group_id: group_ids)
   end
 end

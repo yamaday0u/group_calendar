@@ -10,10 +10,11 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
-    if @group.valid?
-      @group.save
-      redirect_to groups_path, notice: 'Created new group'
+    group = Group.new(group_params)
+    if group.valid?
+      group.save
+      UserGroup.create(user_id: current_user.id, group_id: group.id)
+      redirect_to  group_calendar_for_groups_path(group.id), notice: 'Created new group'
     else
       render 'new'
     end

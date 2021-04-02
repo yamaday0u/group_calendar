@@ -60,3 +60,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 gem 'pry-rails'
 gem 'simple_calendar', '~> 2.0'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'

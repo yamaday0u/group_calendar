@@ -27,7 +27,11 @@
                     <div class="each-item-content">
 
                       <div class="item-content-left">
-                        <p>Mate<br>image</p>
+                        <% if user.user_image.present? %>
+                          <%= image_tag user.user_image, class: "image" %>
+                        <% else %>
+                          <p>Mate<br>Image</p>
+                        <% end %>
                       </div>
 
                       <div class="item-content-right">
@@ -56,7 +60,11 @@
                     <div class="each-item-content">
 
                       <div class="item-content-left">
-                        <p>User<br>image</p>
+                        <% if user.user_image.present? %>
+                          <%= image_tag user.user_image, class: "image" %>
+                        <% else %>
+                          <p>User<br>Image</p>
+                        <% end %>
                       </div>
 
                       <div class="item-content-right">

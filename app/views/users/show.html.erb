@@ -1,16 +1,27 @@
 <%= render "shared/header" %>
 
 <div class="content">
-  <%= render "shared/flash_message" %>
 
   <div class="flex-parent-wrap">
     <div class="main">
+      <%= render "shared/flash_message" %>
 
       <div class="form-wrap">
         <div class="form-group">
           <div class="schedule-item">
             <div class="schedule-item-header text-left">
-              <p class="bold">User name</p>
+              <p class="bold">User Image</p>
+            </div>
+            <div class="schedule-item-body text-left">
+              <%= image_tag @user.user_image, class:"image" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="schedule-item">
+            <div class="schedule-item-header text-left">
+              <p class="bold">User Name</p>
             </div>
             <div class="schedule-item-body text-left">
               <p><%= @user.name %></p>

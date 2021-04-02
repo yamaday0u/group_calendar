@@ -132,6 +132,14 @@ a {
   transform: translateY(-15%);
 }
 
+.image {
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 // Header style sheet -----------------------------------------
 .top-page-header {
   background-color: $theme-color;

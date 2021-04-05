@@ -13,7 +13,11 @@
               <p class="bold">User Image</p>
             </div>
             <div class="schedule-item-body text-left">
-              <%= image_tag @user.user_image, class:"image" %>
+              <% if @user.user_image.present? %>
+                <%= image_tag @user.user_image, class:"image" %>
+              <% else %>
+                <p>No Image</p>
+              <% end %>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :groups do
     resources :chats, only: %i[index create]
     resources :calendar_for_groups
-    resources :user_groups, only: [:index, :create]
+    resources :user_groups, only: %i[index create]
   end
   devise_for :users, controllers: {
     registrations: 'users/registrations'

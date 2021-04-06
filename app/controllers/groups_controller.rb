@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   def index
     @groups = Group.all
@@ -21,14 +22,37 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
     @userGroup = UserGroup.find_by(user_id: current_user.id, group_id: params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    @group.update(group_params)
+    if @group.valid?
+      flash[:notice] = 'Updated group'
+      redirect_to group_path(@group.id)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @group.destroy
+    flash[:notice] = 'Deleted group'
+    redirect_to calendars_path
   end
 
   private
 
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
   def group_params
     params.require(:group).permit(
+      :group_image,
       :name,
       :outline,
       :task

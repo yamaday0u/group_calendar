@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :calendar_for_groups
   has_many :chats
   has_many :calendars
+  has_one_attached :user_image
 
   # user who is following others (active relationship)
   has_many :active_relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy

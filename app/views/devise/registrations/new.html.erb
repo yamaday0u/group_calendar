@@ -9,6 +9,11 @@
 
     <div class="form-wrap">
       <div class="form-group">
+        <%= f.label :user_image %><br />
+        <%= f.file_field :user_image %>
+      </div>
+      
+      <div class="form-group">
         <div class="form-label"><%= f.label :name %></div>
           <p class="info-text">(Required)</p>
         <div class="form-content"><%= f.text_field :name, autofocus: true %></div>

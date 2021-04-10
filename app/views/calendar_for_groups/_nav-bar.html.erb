@@ -1,47 +1,47 @@
-<nav class="nav-bar">
+<nav class="nav__bar">
   
-  <ul class="creator-accounts">
-    <li class="nav-bar-list">
-      <%= link_to group_path(@group.id), class: "account-link" do %>
+  <ul class="creator__accounts">
+    <li class="nav__bar__list">
+      <%= link_to group_path(@group.id), class: "account__link" do %>
         <i class="fas fa-clipboard-list icon"></i>
-        <p class="icon-text">Outline</p>
+        <p class="icon__text">Outline</p>
       <% end %>
     </li>
-    <li class="nav-bar-list">
-      <%= link_to group_user_groups_path(@group.id), class: "account-link" do %>
+    <li class="nav__bar__list">
+      <%= link_to group_user_groups_path(@group.id), class: "account__link" do %>
         <i class="fas fa-user icon"></i>
-        <p class="icon-text">Members</p>
+        <p class="icon__text">Members</p>
       <% end %>
     </li>
 
     <%# Switch the btn new_calendar_path, calendars_path & groups_path %>
     <% if current_page?(group_calendar_for_groups_path(@group.id)) %>
-      <li class="nav-bar-list">
-        <%= link_to new_group_calendar_for_group_path, class: "account-link" do %>
-          <i class="fas fa-plus-circle icon-center"></i>
+      <li class="nav__bar__list">
+        <%= link_to new_group_calendar_for_group_path, class: "account__link" do %>
+          <i class="fas fa-plus-circle icon__center"></i>
         <% end %>
       </li>
     <% else %>
-      <li class="nav-bar-list">
-        <%= link_to group_calendar_for_groups_path(@group.id), class: "account-link" do %>
+      <li class="nav__bar__list">
+        <%= link_to group_calendar_for_groups_path(@group.id), class: "account__link" do %>
           <i class="fas fa-calendar-alt icon"></i>
-        <p class="icon-text">Group</p>
+        <p class="icon__text">Group</p>
         <% end %>
       </li>
     <% end %>
 
-    <li class="nav-bar-list">
-      <%= link_to calendars_path, class: "account-link" do %>
+    <li class="nav__bar__list">
+      <%= link_to calendars_path, class: "account__link" do %>
         <i class="fas fa-home icon"></i>
-        <p class="icon-text">Home</p>
+        <p class="icon__text">Home</p>
       <% end %>
     </li>
     <%# Switch the btn new_calendar_path, calendars_path & groups_path %>
 
-    <li class="nav-bar-list">
-      <%= link_to group_chats_path(@group.id), class: "account-link" do %>
+    <li class="nav__bar__list">
+      <%= link_to group_chats_path(@group.id), class: "account__link" do %>
         <i class="fas fa-comments icon"></i>
-        <p class="icon-text">Chat</p>
+        <p class="icon__text">Chat</p>
       <% end %>
     </li>
   </ul>

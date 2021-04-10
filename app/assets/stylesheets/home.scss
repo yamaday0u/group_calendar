@@ -73,7 +73,7 @@ a {
   }
 }
 
-.text-left {
+.text__left {
   text-align: start;
 }
 
@@ -137,21 +137,17 @@ a {
 }
 
 // 2.Header style sheet -----------------------------------------
-.top-page-header {
+.top__page__header {
   background-color: $theme-color;
   height: $header-height;
 }
 
-.header-band {
-  // background-color: yellow;
-}
-
-.user-options {
+.user__options {
   display: flex;
   justify-content: flex-end;
 }
 
-.user-option {
+.user__option {
   display: block;
   border: 1px solid white;
   margin-right: 1em;
@@ -159,14 +155,14 @@ a {
   @include hover-green-btn-lighten;
 }
 
-.logged-in-user {
+.logged__in__user {
   margin-right: auto;
   @include link;
   @include hover-green-btn-lighten;
 }
 
 // 3.Footer style sheet -----------------------------------------
-.top-page-footer {
+.top__page__footer {
   padding-bottom: 5.8em;
   height: $footer-height;
   background-color: $footer-color;
@@ -181,7 +177,7 @@ a {
   }
 }
 
-.creator-accounts {
+.creator__accounts {
   display: flex;
   justify-content: center;
   li {
@@ -189,13 +185,9 @@ a {
   }
 }
 
-.account-link {
+.account__link {
   text-decoration: none;
   color: white;
-}
-
-.icon {
-  // 
 }
 
 .fa-github {
@@ -217,7 +209,7 @@ a {
 }
 
 // 4.Nav-bar style sheet -----------------------------------------
-.nav-bar {
+.nav__bar {
   height: $nav-bar-height;
   width: 100%;
   background-color: $nav-bar-color;
@@ -229,14 +221,14 @@ a {
     display: none;
   }
 
-  .creator-accounts {
+  .creator__accounts {
     margin-top: 1em;
     justify-content: space-around;
 
-    .nav-bar-list {
+    .nav__bar__list {
       text-align: center;
       
-      .icon-center {
+      .icon__center {
         color: #fff;
         font-size: 2.5em;
       }
@@ -247,7 +239,7 @@ a {
         text-align: center;
       }
   
-      .icon-text {
+      .icon__text {
         text-align: center;
         font-size: 8px;
         text-decoration: none;
@@ -257,7 +249,7 @@ a {
 }
 
 // 5.Nav-bar-tab style sheet -----------------------------------------
-.nav-bar-tab {
+.nav__bar__tab {
   display: none;
 
   @include tab {
@@ -268,7 +260,7 @@ a {
     margin-left: 1em;
 
   }
-  .creator-accounts {
+  .creator__accounts {
     display: flex;
     flex-direction: column;
 
@@ -284,7 +276,7 @@ a {
 }
 
 // 6.home#index style sheet -----------------------------------------
-.top-page-logo {
+.top__page__logo {
   font-size: 2.6rem;
   font-weight: bold;
   margin-bottom: 2rem;
@@ -298,7 +290,7 @@ a {
   }
 }
 
-.top-page-explanation {
+.top__page__explanation {
   margin-bottom: 1em;
 }
 
@@ -315,11 +307,12 @@ a {
   }
 }
 
-.lead-to-sign-up {
+.lead__to__sign__up {
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.yellow {
+.gest__btn {
   background-color: #ff8c00;
   &:hover {
     background-color: lighten(#ffbc00, 20%);

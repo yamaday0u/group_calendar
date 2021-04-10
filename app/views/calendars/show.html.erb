@@ -3,60 +3,60 @@
 <div class="content">
   <%= render "shared/flash_message" %>
 
-  <div class="flex-parent-wrap">
+  <div class="flex__parent__wrap">
     <div class="main">
 
-      <div class="form-wrap">
-        <div class="form-group">
-          <div class="schedule-item">
-            <div class="schedule-item-header text-left">
+      <div class="form__wrap">
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
               <p class="bold">Scheduled by</p>
             </div>
-            <div class="schedule-item-body text-left">
+            <div class="schedule__item__body text__left">
               <p><%= @user.name %></p>
             </div>
           </div>
         </div>
 
-        <div class="form-group">
-          <div class="schedule-item">
-            <div class="schedule-item-header text-left">
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
               <p class="bold">Title</p>
             </div>
-            <div class="schedule-item-body text-left">
+            <div class="schedule__item__body text__left">
               <p class=""><%= @calendar.title %></p>
             </div>
           </div>
         </div>
 
-        <div class="form-group">
-          <div class="schedule-item">
-            <div class="schedule-item-header text-left">
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
               <p class="bold">Content</p>
             </div>
-            <div class="schedule-item-body text-left">
+            <div class="schedule__item__body text__left">
               <p><%= @calendar.content %></p>
             </div>
           </div>
         </div>
 
-        <div class="form-group">
-          <div class="schedule-item">
-            <div class="schedule-item-header text-left">
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
               <p class="bold">Start_time</p>
             </div>
-            <div class="schedule-item-body text-left">
+            <div class="schedule__item__body text__left">
               <p><%= @calendar.start_time.strftime("%F %H:%M") %></p>
             </div>
           </div>
         </div>
 
-        <div class="form-group">
-          <div class="schedule-item">
-            <div class="schedule-item-header text-left">
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
               <p class="bold">End_time</p>
             </div>
-            <div class="schedule-item-body text-left">
+            <div class="schedule__item__body text__left">
               <p><%= @calendar.end_time.strftime("%F %H:%M") %></p>
             </div>
           </div>

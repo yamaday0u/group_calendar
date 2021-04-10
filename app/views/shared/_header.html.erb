@@ -1,15 +1,15 @@
-<header class="top-page-header">
-  <div class="header-band">
-    <ul class="user-options">
+<header class="top__page__header">
+  <div class="header__band">
+    <ul class="user__options">
       <% if user_signed_in? %>
-        <li><%= link_to "Hi, #{current_user.name}", user_path(current_user.id), class:"logged-in-user" %></li>
-        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class:"user-option" %></li>
+        <li><%= link_to "Hi, #{current_user.name}", user_path(current_user.id), class:"logged__in__user" %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class:"user__option" %></li>
       <% else %>
         <% if current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
-          <li><%= link_to 'Top page', root_path, class:"user-option" %></li>
+          <li><%= link_to 'Top page', root_path, class:"user__option" %></li>
         <% end %>
-        <li><%= link_to 'Log in', new_user_session_path, class:"user-option" %></li>
-        <li><%= link_to 'Sign up',  new_user_registration_path, class:"user-option" %></li>
+        <li><%= link_to 'Log in', new_user_session_path, class:"user__option" %></li>
+        <li><%= link_to 'Sign up',  new_user_registration_path, class:"user__option" %></li>
       <% end %>
     </ul>
   </div>

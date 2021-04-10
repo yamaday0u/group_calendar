@@ -10,10 +10,14 @@ consumer.subscriptions.create("ChatChannel", {
   },
 
   received(data) {
-    const html = `<div class="each-chat">
-                    <p class="chat-time">${data.time}</p>
-                    <p class="chat-text">${data.content.text}</p>
-                    <p class="chat-user">${data.user.name}</p>
+    const html = `<div class="each__chat">
+                    <div class="chat__top">
+                      <p class="chat__text">${data.content.text}</p> 
+                    </div>
+                    <div class="chat__bottom">
+                      <p class="chat__information">${data.time}</p>
+                      <p class="chat__information"><a href="/users/${data.user.id}">${data.user.name}</a></p>
+                    </div>
                   </div>`;
     const chats = document.getElementById("chats");
     chats.insertAdjacentHTML("afterbegin", html);

@@ -54,7 +54,7 @@ class User < ApplicationRecord
   # Log in as a guest user
   def self.guest
     find_or_create_by!(email: 'guest@guest.mail') do |user|
-      user.name = "ゲストユーザー"
+      user.name = 'ゲストユーザー'
       user.password = SecureRandom.urlsafe_base64
     end
   end

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[name identity user_image])
   end
 
-  #Specify the path after sign in(log in)
+  # Specify the path after sign in(log in)
   def after_sign_in_path_for(_resource)
     calendars_path
   end

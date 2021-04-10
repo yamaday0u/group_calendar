@@ -51,6 +51,14 @@ class User < ApplicationRecord
     !user.matchers?(other_user) && other_user.following?(user)
   end
 
+  # Log in as a guest user
+  def self.guest
+    find_or_create_by!(email: 'guest@guest.mail') do |user|
+      user.name = 'ゲストユーザー'
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
   # Validation
   with_options presence: true do
     validates :name

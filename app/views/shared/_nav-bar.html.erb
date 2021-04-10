@@ -1,45 +1,46 @@
-<nav class="nav-bar">
+<nav class="nav__bar">
   
-  <ul class="creator-accounts">
-    <li class="nav-bar-list">
-      <%= link_to groups_path, class: "account-link" do %>
+  <ul class="creator__accounts">
+    <li class="nav__bar__list">
+      <%= link_to groups_path, class: "account__link" do %>
         <i class="fas fa-users icon"></i>
-        <p class="icon-text">Groups</p>
+        <p class="icon__text">Groups</p>
       <% end %>
     </li>
-    <li class="nav-bar-list">
-      <%= link_to users_path, class: "account-link" do %>
+    <li class="nav__bar__list">
+      <%= link_to users_path, class: "account__link" do %>
         <i class="fas fa-user icon"></i>
-        <p class="icon-text">Mates</p>
+        <p class="icon__text">Mates</p>
       <% end %>
     </li>
 
     <%# Switch the btn new_calendar_path, calendars_path & groups_path %>
     
-      <li class="nav-bar-list">
+      <li class="nav__bar__list">
         <% if current_page?(calendars_path) %>
-          <%= link_to new_calendar_path, class: "account-link" do %>
-            <i class="fas fa-plus-circle icon-center"></i>
+          <%= link_to new_calendar_path, class: "account__link" do %>
+            <i class="fas fa-plus-circle icon__center"></i>
           <% end %>
         <% else %>
-          <%= link_to calendars_path, class: "account-link" do %>
-            <i class="fas fa-home icon-center"></i>
+          <%= link_to calendars_path, class: "account__link" do %>
+            <i class="fas fa-home icon"></i>
+            <p class="icon__text">Home</p>
           <% end %>
         <% end %>
       </li>
 
     <%# Switch the btn new_calendar_path, calendars_path & groups_path %>
 
-    <li class="nav-bar-list">
-      <%= link_to 'home/new', class: "account-link" do %>
+    <li class="nav__bar__list">
+      <%= link_to 'home/new', class: "account__link" do %>
         <i class="fas fa-comments icon"></i>
-        <p class="icon-text">Chats</p>
+        <p class="icon__text">Chats</p>
       <% end %>
     </li>
-    <li class="nav-bar-list">
-      <%= link_to 'home/new', class: "account-link" do %>
+    <li class="nav__bar__list">
+      <%= link_to 'home/new', class: "account__link" do %>
         <i class="fas fa-bell icon"></i>
-        <p class="icon-text">Notification</p>
+        <p class="icon__text">Notification</p>
       <% end %>
     </li>
   </ul>

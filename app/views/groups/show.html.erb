@@ -1,18 +1,17 @@
 <%= render "shared/header" %>
 
 <div class="content">
-
-  <div class="flex-parent-wrap">
+  <div class="flex__parent__wrap">
     <div class="main">
       <%= render "shared/flash_message" %>
 
-      <div class="form-wrap">
-        <div class="form-group">
-          <div class="schedule-item">
-            <div class="schedule-item-header text-left">
+      <div class="form__wrap">
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
               <p class="bold">Group image</p>
             </div>
-            <div class="schedule-item-body text-left">
+            <div class="schedule__item__body text__left">
               <% if @group.group_image.present? %>
                 <%= image_tag @group.group_image, class:"image" %>
               <% else %>
@@ -22,35 +21,35 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <div class="schedule-item">
-            <div class="schedule-item-header text-left">
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
               <p class="bold">Group name</p>
             </div>
-            <div class="schedule-item-body text-left">
+            <div class="schedule__item__body text__left">
               <p><%= link_to @group.name, group_calendar_for_groups_path(@group.id) %></p>
             </div>
           </div>
         </div>
 
-        <div class="form-group">
-          <div class="schedule-item">
-            <div class="schedule-item-header text-left">
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
               <p class="bold">Outline</p>
             </div>
-            <div class="schedule-item-body text-left">
+            <div class="schedule__item__body text__left">
               <p><%= @group.outline %></p>
             </div>
           </div>
         </div>
 
         <% if @userGroup.present? %>
-          <div class="form-group">
-            <div class="schedule-item">
-              <div class="schedule-item-header text-left">
+          <div class="form__group">
+            <div class="schedule__item">
+              <div class="schedule__item__header text__left">
                 <p class="bold">Task</p>
               </div>
-              <div class="schedule-item-body text-left">
+              <div class="schedule__item__body text__left">
                 <p><%= @group.task %></p>
               </div>
             </div>

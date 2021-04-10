@@ -1,8 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="content">
-
-  <div class="flex-parent-wrap">
+  <div class="flex__parent__wrap">
     <div class="main">
 
       <div class="create-group">
@@ -12,32 +11,31 @@
         <%= render "shared/back_button" %>
       </div>
 
-      <div class="item-list">
+      <div class="list">
       
-        <div class="item-list-header">
+        <div class="list__header">
           <p class="bold">Group list</p>
         </div>
 
-        <div class="item-list-content">
+        <div class="list__content">
           <ul>
             <% @groups.each do |group| %>
               <div class="each-item">
                 <li>
-                  <div class="each-item-content">
+                  <div class="each__item__content">
 
-                    <div class="item-content-left">
+                    <div class="item__content__left">
                       <% if group.group_image.present? %>
-                        <%= image_tag group.group_image, class:"image-index" %>
+                        <%= image_tag group.group_image, class:"image__list" %>
                       <% else %>
                         <p>Group<br>image</p>
                       <% end %>
                     </div>
 
-                    <div class="item-content-right">
+                    <div class="item__content__right">
                       <p><%= link_to group.name, group_calendar_for_groups_path(group.id) %></p>
                     </div>
                   </div>
-
                 </li>
               </div>
             <% end %>

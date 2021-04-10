@@ -1,14 +1,15 @@
 @import "variables";
 
-.form-wrap {
+.form__wrap {
   text-align: center;
 
-  .form-group {
+  .form__group {
     margin-top: 1.5em;
   }
 
-  .info-text {
+  .required {
     font-size: 14px;
+    color: red;
   }
 }
 

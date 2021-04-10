@@ -5,21 +5,18 @@
   margin: 0 auto;
 }
 
-.each-chat {
-  margin-top: 0.6em;
+.each__chat {
+  margin-top: 1em;
 }
 
-.chat-time {
+.chat__information {
   font-size: 14px;
 }
 
-.chat-text {
-  // background-color: green;
-  min-height: 100px;
-  border: 1px solid $nav-bar-color;
-  border-radius: 6px;
+.chat__bottom {
+  display: flex;
+  justify-content: space-between;
 }
-.chat-user {
-  text-align: right;
-  font-size: 14px;
+.chat__text {
+  border-bottom: 1px solid $nav-bar-color;
 }

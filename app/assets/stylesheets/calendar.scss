@@ -24,7 +24,7 @@
 
 // show.html.erb -----------------------------------------
 
-.schedule-item {
+.schedule__item {
   display: inline-block;
   width: 300px;
   
@@ -33,18 +33,11 @@
   }
 }
 
-.schedule-item-header {
+.schedule__item__header {
   border-bottom: 1px solid $separator-color;
 }
-.show-schedule {
+.show__schedule {
   display: inline-block;
-  
-  
 }
-
-
 
 // _month_calendar.html/.erb -----------------------------------------
-.simple-calendar {
-  // 
-}

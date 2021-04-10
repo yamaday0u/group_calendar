@@ -16,6 +16,10 @@
     <div class="actions">
       <%= link_to "Sign up", new_user_registration_path, class: "sign-up-btn" %>
     </div>
+    <h2 class="subtitle">or<br>Log in as a guest</h2>
+      <div class="actions">
+        <%= link_to "Log in as a guest", users_guest_log_in_path, method: :post, class: "sign-up-btn yellow" %>
+      </div>
   </div>
 </div>
 

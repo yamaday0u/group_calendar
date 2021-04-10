@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
+  def guest_log_in
+    user = User.find(8)
+    sign_in user
+    redirect_to calendars_path, notice: 'Logged in as a guest'
+  end
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in

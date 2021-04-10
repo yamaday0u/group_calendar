@@ -8,7 +8,7 @@
 
 @import "variables";
 
-// Common style sheet -----------------------------------------
+// 1.Common style sheet -----------------------------------------
 * {
   font-family: "MS Pゴシック", "YuGothic", sans-serif;
   font-size: 16px;
@@ -81,37 +81,25 @@ a {
   font-weight: bold;
 }
 
-.item-list {
+.list {
   border-top: 1px solid #ddd;
 }
 
-.item-list-header {
+.list__header {
   margin-top: 1em;
   text-align: center;
 }
 
-.item-list-content {
-  // 
-}
-
-.each-item {
-  // 
-}
-
-.each-item-content {
+.each__item__content {
   height: 100px;
   width: 350px;
   display: flex;
   margin: 1em auto;
   border: 1px solid $separator-color;
   position: relative;
-
-  @include tab {
-
-  }
 }
 
-.item-content-left {
+.item__content__left {
   height: 80px;
   width: 80px;
   display: flex;
@@ -121,7 +109,7 @@ a {
   margin: auto 3px;
 }
 
-.item-content-right {
+.item__content__right {
   height: 80px;
   display: flex;
   justify-content: center;
@@ -140,7 +128,7 @@ a {
   object-fit: contain;
 }
 
-.image-index {
+.image__list {
   display: block;
   height: 5rem;
   width: 5rem;
@@ -148,7 +136,7 @@ a {
   object-fit: contain;
 }
 
-// Header style sheet -----------------------------------------
+// 2.Header style sheet -----------------------------------------
 .top-page-header {
   background-color: $theme-color;
   height: $header-height;
@@ -177,7 +165,7 @@ a {
   @include hover-green-btn-lighten;
 }
 
-// Footer style sheet -----------------------------------------
+// 3.Footer style sheet -----------------------------------------
 .top-page-footer {
   padding-bottom: 5.8em;
   height: $footer-height;
@@ -228,7 +216,7 @@ a {
   color: pink;
 }
 
-// Nav-bar style sheet -----------------------------------------
+// 4.Nav-bar style sheet -----------------------------------------
 .nav-bar {
   height: $nav-bar-height;
   width: 100%;
@@ -268,7 +256,7 @@ a {
   }
 }
 
-// Nav-bar-tab style sheet -----------------------------------------
+// 5.Nav-bar-tab style sheet -----------------------------------------
 .nav-bar-tab {
   display: none;
 
@@ -295,7 +283,7 @@ a {
   }
 }
 
-// home#index style sheet -----------------------------------------
+// 6.home#index style sheet -----------------------------------------
 .top-page-logo {
   font-size: 2.6rem;
   font-weight: bold;

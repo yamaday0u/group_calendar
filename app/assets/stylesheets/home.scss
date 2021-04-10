@@ -51,7 +51,7 @@ a {
   min-height: calc(100vh - (6em));
 }
 
-.flex-parent-wrap {
+.flex__parent__wrap {
   @include tab {
     display: flex;
     height: 100%;

@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :ensure_normal_user, only: :edit
 
   def ensure_normal_user
-    redirect_to user_path(@user.id), notice: 'You can not edit guest user' if resource.email == 'guest@guest.mail'
+    # redirect_to user_path(@user.id), notice: 'You can not edit guest user' if resource.email == 'guest@guest.mail'
   end
   # GET /resource/sign_up
   # def new

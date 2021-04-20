@@ -17,7 +17,11 @@
                     <div class="each__item__content">
 
                       <div class="item__content__left">
-                        <p>User<br>image</p>
+                        <% if userGroup.user.user_image.present? %>
+                          <%= image_tag userGroup.user.user_image, class: "image__list" %>
+                        <% else %>
+                          <p>Member<br>Image</p>
+                        <% end %>
                       </div>
 
                       <div class="item__content__right">

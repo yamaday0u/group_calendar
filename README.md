@@ -1,3 +1,17 @@
+# Application
+Group Calendar
+
+# Outline
+You can manage your schedules & communicate with
+- your family
+- your friends
+- your project team
+in this app.
+
+# Entity Relationship Diagram(ERD)
+[![Image from Gyazo](https://i.gyazo.com/1418453bfd6165bf6edffe9b9dd59b0a.png)](https://gyazo.com/1418453bfd6165bf6edffe9b9dd59b0a)
+
+
 # Table Design
 
 ## users table

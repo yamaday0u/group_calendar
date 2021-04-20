@@ -136,6 +136,20 @@ a {
   object-fit: contain;
 }
 
+.pagination {
+  text-align: center;
+  li {
+    a {
+      color: $theme-color;
+    }
+  }
+  .active {
+    a {
+      background-color: $theme-color;
+    }
+  }
+}
+
 // 2.Header style sheet -----------------------------------------
 .top__page__header {
   background-color: $theme-color;

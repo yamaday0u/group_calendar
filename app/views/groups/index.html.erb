@@ -20,7 +20,7 @@
         <div class="list__content">
           <ul>
             <% @groups.each do |group| %>
-              <div class="each-item">
+              <div class="each__item">
                 <li>
                   <div class="each__item__content">
 
@@ -39,8 +39,8 @@
                 </li>
               </div>
             <% end %>
-          </ul>
           <%= paginate @groups %>
+          </ul>
         </div>
       </div>
 

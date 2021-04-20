@@ -25,7 +25,7 @@
                       </div>
 
                       <div class="item__content__right">
-                        <p><%= link_to userGroup.user.name, user_path(userGroup.id) %></p>
+                        <p><%= link_to userGroup.user.name, user_path(userGroup.user_id) %></p>
                         <p><%= userGroup.user.identity %></p>
                         <% if userGroup.user.follow_request?(current_user, userGroup.user) %>
                           <p><i class="fas fa-star"></i></p>

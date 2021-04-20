@@ -2,7 +2,7 @@ class ChatsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @chats = Chat.includes(:group).where(group_id: params[:group_id]).order(created_at: :desc).limit(10)
+    @chats = Chat.includes(:group).where(group_id: params[:group_id]).order(created_at: :desc).page(params[:page]).per(10)
     @chat = Chat.new
     @group = Group.find(params[:group_id])
   end

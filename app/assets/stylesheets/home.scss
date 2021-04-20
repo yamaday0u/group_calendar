@@ -59,6 +59,8 @@ a {
 }
 
 .main {
+  margin-bottom: 5px;
+
   @include tab {
     width: $main-width;
   }
@@ -137,14 +139,19 @@ a {
 }
 
 .pagination {
-  text-align: center;
+  display: flex;
+
   li {
     a {
+      padding: 5px;
+      border: 1px solid $theme-color;
       color: $theme-color;
     }
   }
+
   .active {
     a {
+      color: #fff;
       background-color: $theme-color;
     }
   }

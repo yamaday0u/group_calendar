@@ -8,88 +8,59 @@ You can manage your schedules & communicate with
 - your project team
 in this app.
 
+# URL
+
+# テスト用アカウント
+トップページの「Log in as a guest」ボタンでログインできます。
+
+# 利用方法
+スケジュール管理アプリです。
+マイページのカレンダーに自分が所属するグループのカレンダーの情報も反映されるので、仕事もプライベートも一括で管理できます。
+同じグループに所属する人には同じスケジュールが登録されるので、一方の人が予定を把握していなかったという事態を防げます。
+またチャット機能も実装しているので、コミュニケーションが取れます。
+
+# 目指した課題解決
+プライベートや仕事のスケジュール管理やコミュニケーションを一括管理できるようにすることで、カレンダーアプリやコミュニケーションアプリをそれぞれ起動する煩わしさを省きたいと思い、Group Calendarを開発しました。
+
+# 洗い出した要件
+家族やグループのスケジュールと自分のスケジュールをまとめて管理できるようにすること
+グループを作成できるようにしたい
+グループ内で簡単なコミュニーケーションができるようにする。
+
+つながったユーザーの一覧を表示したい
+
+# 実装した機能
+- ユーザー機能
+  - ユーザー登録機能
+  - ユーザー編集機能
+  - ゲストログイン機能
+  - メイト機能（友だち機能）
+- カレンダー機能
+  - カレンダー登録機能
+  - カレンダー表示機能
+  - カレンダー共有機能
+- グループ機能
+  - グループ新規作成機能
+  - チャット機能
+  - グループ参加機能
+
+# アピールポイント
+1. スケジュールの集約
+このアプリで一番実現したかったのが、スケジュールの集約です。自分のカレンダーに自分が所属するグループ（家族や友達、仕事のチームなど）のスケジュールが集約して表示できるようにしました。
+グループのカレンダーを開けば、そのグループだけのスケジュールが表示されます。
+マイページのカレンダーでは、グループのカレンダーからのスケジュールは、「どこのグループ」のスケジュールなのかが明記されます。
+
+2. レスポンシブ対応（モバイルファースト）のデザイン
+いつでもどこでもスケジュールを登録できるようにするため、モバイルファーストのデザインを実装しました。
+スマホサイズの画面(767px未満）
+
+タブレット以上のサイズの画面(767px以上)
+
+技術面
+JavaScriptを使い、非同期通信による画面表示を随所に導入しました。
+
+修正しやすいコーディング
+重複するコードは集約して部分テンプレートにしています。
+
 # Entity Relationship Diagram(ERD)
 [![Image from Gyazo](https://i.gyazo.com/1418453bfd6165bf6edffe9b9dd59b0a.png)](https://gyazo.com/1418453bfd6165bf6edffe9b9dd59b0a)
-
-
-# Table Design
-
-## users table
-
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
-| identity | string |             |
-
-### Association
-- has_many :user_groups
-- has_many :groups, through: :user_groups
-- has_many :calendars
-- has_many :chats
-
-## groups table
-
-| Column  | Type   | Options     |
-| ------- | ------ | ----------- |
-| name    | string | null: false |
-| outline | string |  |
-| task    | string |             |
-
-### Association
-- has_many :user_groups
-- has_many :users, through: :user_groups
-- has_many :group_calendars
-- has_many :chats
-
-## calendars table
-
-| Column     | Type       | Options                       |
-| ---------- | ---------- | ----------------------------- |
-| title      | string     | null: false                   |
-| content    | string     | null: false                   |
-| start_time | datetime   | null: false                   |
-| end_time   | datetime   | null: false                   |
-| user       | references | null: false, foreign_key true |
-
-### Association
-- belongs_to :user
-
-## group calendars table
-
-| Column     | Type       | Options                       |
-| ---------- | ---------- | ----------------------------- |
-| title      | string     | null: false                   |
-| content    | string     | null: false                   |
-| start_time | datetime   | null: false                   |
-| end_time   | datetime   | null: false                   |
-| user       | references | null: false, foreign_key true |
-| group      | references | null: false, foreign_key true |
-
-### Association
-- belongs_to :user
-- belongs_to :group
-
-## chats table
-| Column | Type       | Options                       |
-| ------ | ---------- | ----------------------------- |
-| text   | string     | null: false                   |
-| user   | references | null: false, foreign_key true |
-| group  | references | null: false, foreign_key true |
-
-- belongs_to :user
-- belongs_to :group
-
-## Intermediate Tables
-
-## user_groups table
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| group  | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user 
-- belongs_to :group 

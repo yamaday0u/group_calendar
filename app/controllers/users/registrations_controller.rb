@@ -3,7 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  before_action :ensure_normal_user, only: :edit
+  # before_action :ensure_normal_user, only: :edit
 
   # Regulate editting guest information
   # def ensure_normal_user

@@ -3,12 +3,12 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  # before_action :ensure_normal_user, only: :edit
+  before_action :ensure_normal_user, only: :edit
 
   # Regulate editting guest information
-  # def ensure_normal_user
-  #   redirect_to user_path(@user.id), notice: 'You can not edit guest user' if resource.email == 'guest@guest.mail'
-  # end
+  def ensure_normal_user
+    redirect_to user_path(@user.id), notice: 'You can not edit guest user' if resource.email == 'guest@guest.mail'
+  end
 
   # GET /resource/sign_up
   # def new

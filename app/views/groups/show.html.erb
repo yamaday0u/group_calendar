@@ -57,9 +57,6 @@
           <div class="actions">
             <%= link_to 'Edit group', edit_group_path(@group.id), class:"sign-up-btn" %>
           </div>
-          <div class="actions">
-            <%= link_to 'Delete schedule', group_path(@group.id), method: :delete, data: { confirm: 'Are you sure to delete group?'}, class:"sign-up-btn" %>
-          </div>
         <% else %>
           <div class="actions">
             <%= link_to 'Join this group',  group_user_groups_path(@group.id), method: :post, data: { confirm: 'Are you sure to join this group?'}, class:"sign-up-btn" %>

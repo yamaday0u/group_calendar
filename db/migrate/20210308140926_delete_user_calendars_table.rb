@@ -4,6 +4,5 @@ class DeleteUserCalendarsTable < ActiveRecord::Migration[6.0]
   end
 
   def down
-    fail ActiveRecord::IrreversibleMigration
   end
 end

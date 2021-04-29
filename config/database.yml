@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: group_calendar_production
-  username: group_calendar
-  password: <%= ENV['GROUP_CALENDAR_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock

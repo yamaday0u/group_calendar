@@ -52,7 +52,7 @@ Group Calendar
 2. レスポンシブ対応（モバイルファースト）のデザイン
 いつでもどこでもスケジュールを登録できるようにするため、モバイルファーストのデザインを実装しました。
 スマホサイズの画面(767px未満）
-[![Image from Gyazo](https://i.gyazo.com/054352c70cb6bbdb810bb3fbd829b49f.png)](https://gyazo.com/054352c70cb6bbdb810bb3fbd829b49f)
+<img src="https://gyazo.com/054352c70cb6bbdb810bb3fbd829b49f" width="300px">
 [![Image from Gyazo](https://i.gyazo.com/825d159fa28476b34eb92362788cd4cf.png)](https://gyazo.com/825d159fa28476b34eb92362788cd4cf)
 タブレット以上のサイズの画面(767px以上)
 [![Image from Gyazo](https://i.gyazo.com/a303ff2845625c828882835856c88445.png)](https://gyazo.com/a303ff2845625c828882835856c88445)

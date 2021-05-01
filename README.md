@@ -69,15 +69,14 @@ Group Calendar
 
 いつでもどこでもスケジュールを登録できるよう、スマホでの使用を想定していたため、モバイルファーストのデザインを実装しました。
 
-#### スマホサイズの画面(767px未満）
+<center>スマホサイズの画面(767px未満）</center>
 
-<img src="https://i.gyazo.com/054352c70cb6bbdb810bb3fbd829b49f.png" width="320px" style="border: 1px solid #000;">
-<img src="https://i.gyazo.com/825d159fa28476b34eb92362788cd4cf.png" width="320px" style="border: 1px solid #000;">
+<center><img src="https://i.gyazo.com/054352c70cb6bbdb810bb3fbd829b49f.png" width="320px" style="border: 1px solid #000;"> <img src="https://i.gyazo.com/825d159fa28476b34eb92362788cd4cf.png" width="320px" style="border: 1px solid #000;"></center>
 
-#### タブレット以上のサイズの画面(767px以上)
+<center>タブレット以上のサイズの画面(767px以上)</center>
 
-<img src="https://i.gyazo.com/a303ff2845625c828882835856c88445.png" width="640px" style="border: 1px solid #000;">
-<img src="https://i.gyazo.com/dc71111ac550a2238351f8afeca3d7d0.png" width="640px" style="border: 1px solid #000;">
+<center><img src="https://i.gyazo.com/a303ff2845625c828882835856c88445.png" width="640px" style="border: 1px solid #000;"></center>
+<center><img src="https://i.gyazo.com/dc71111ac550a2238351f8afeca3d7d0.png" width="640px" style="border: 1px solid #000;"></center>
 
 ## 3. 技術面
 

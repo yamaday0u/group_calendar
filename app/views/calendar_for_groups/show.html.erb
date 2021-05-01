@@ -83,9 +83,8 @@
         <% end %>
       </div>
 
-      <div class="back-btn-wrap">
-        <%= link_to 'Back', group_calendar_for_groups_path(@group_calendar.group_id), class:"back-btn" %>
-      </div>
+      <%= render "shared/back_button_to_group_home" %>
+
     </div><%# end of main %>
 
     <%= render "calendar_for_groups/nav-bar-tab" %>

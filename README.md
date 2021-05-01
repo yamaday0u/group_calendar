@@ -53,15 +53,16 @@ Group Calendar
 いつでもどこでもスケジュールを登録できるようにするため、モバイルファーストのデザインを実装しました。
 スマホサイズの画面(767px未満）
 <img src="https://i.gyazo.com/054352c70cb6bbdb810bb3fbd829b49f.png" width="320px">
+<img src="https://i.gyazo.com/825d159fa28476b34eb92362788cd4cf.png" width="320px">
 
-[![Image from Gyazo](https://i.gyazo.com/054352c70cb6bbdb810bb3fbd829b49f.png)](https://gyazo.com/054352c70cb6bbdb810bb3fbd829b49f)
-[![Image from Gyazo](https://i.gyazo.com/825d159fa28476b34eb92362788cd4cf.png)](https://gyazo.com/825d159fa28476b34eb92362788cd4cf)
 タブレット以上のサイズの画面(767px以上)
-[![Image from Gyazo](https://i.gyazo.com/a303ff2845625c828882835856c88445.png)](https://gyazo.com/a303ff2845625c828882835856c88445)
-[![Image from Gyazo](https://i.gyazo.com/dc71111ac550a2238351f8afeca3d7d0.png)](https://gyazo.com/dc71111ac550a2238351f8afeca3d7d0)
-技術面
+<img src="https://i.gyazo.com/a303ff2845625c828882835856c88445.png" width="640px">
+<img src="https://i.gyazo.com/dc71111ac550a2238351f8afeca3d7d0.png" width="640px">
+
+3. 技術面
 JavaScriptを使い、非同期通信による画面表示を随所に導入しました。
 
+4. 保守性
 修正しやすいコーディング
 重複するコードは集約して部分テンプレートにしています。
 

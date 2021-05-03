@@ -1,8 +1,16 @@
 <div class="form__wrap">
+
   <div class="form__group">
     <div class="form__label"><%= f.label :group_image %></div>
     <div class="form__content"><%= f.file_field :group_image %></div>
   </div>
+  <% if @group.group_image.attached? %>
+    <div id="image-wrap">
+      <div>
+        <%= image_tag @group.group_image, class:"image" %>
+      </div>
+    </div>
+  <% end %>
 
   <div class="form__group">
     <div class="form__label"><%= f.label :name %></div>

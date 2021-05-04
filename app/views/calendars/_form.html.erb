@@ -12,11 +12,11 @@
 
   <div class="form__group">
     <div class="form__label"><%= f.label :start_time %></div>
-    <div class="form__content"><%= f.datetime_select :start_time, minute_step:5 %></div>
+    <div class="form__content"><%= f.datetime_field :start_time %></div>
   </div>
 
   <div class="form__group">
     <div class="form__label"><%= f.label :end_time %></div>
-    <div class="form__content"><%= f.datetime_select :end_time, minute_step:5 %></div>
+    <div class="form__content"><%= f.datetime_field :end_time %></div>
   </div>
 </div>

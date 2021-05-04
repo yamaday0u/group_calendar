@@ -114,10 +114,10 @@ Rails.application.configure do
   config.action_cable.url = 'wss://group-calendar-32344.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = ['https://group-calendar-32344.herokuapp.com',
                                                  'http://group-calendar-32344.herokuapp.com']
-  
+
   ActionCable.server.config.disable_request_forgery_protection = true
-  config.action_cable.url = "ws://54.65.8.162/cable" 
+  config.action_cable.url = 'ws://54.65.8.162/cable'
   config.action_cable.allowed_request_origins = ['http://54.65.8.162']
 
-# 省略
+  # 省略
 end

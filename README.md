@@ -1,6 +1,12 @@
 # アプリケーション名
 Group Calendar
 
+## 開発環境
+- Ruby 2.6.5
+- Ruby on Rails 6.0.3.6
+- Amazon EC2
+- Capistrano（自動デプロイ）
+
 # アプリケーション概要
 スケジュール管理アプリです。
 
@@ -18,14 +24,19 @@ http://54.65.8.162/
 # テスト用アカウント
 トップページの「Log in as a guest」ボタン一発でログインできます。
 
-# 目指した課題解決
-プライベートや仕事のスケジュール管理やコミュニケーションを一括管理できるようにすることで、カレンダーアプリやコミュニケーションアプリをそれぞれ起動する煩わしさを省きたいと思い、Group Calendarを開発しました。
-
 # 利用方法
-スケジュール登録
+<center>スケジュール登録</center>
+
 [![Image from Gyazo](https://i.gyazo.com/592fb215fd2e4604ffed7351af3dcd97.gif)](https://gyazo.com/592fb215fd2e4604ffed7351af3dcd97)
 
-グループ作成
+<center>グループ作成</center>
+
+[![Image from Gyazo](https://i.gyazo.com/f666c9b401abd554e293ec8bea212d96.gif)](https://gyazo.com/f666c9b401abd554e293ec8bea212d96)
+
+<center>チャット（グループ内）</center>
+
+[![Image from Gyazo](https://i.gyazo.com/51a62eaaf36299a5348168e1e956b2d8.gif)](https://gyazo.com/51a62eaaf36299a5348168e1e956b2d8)
+
 
 # 目指した課題解決
 主に仕事とプライベートの境目があまりないフリーランスや自営業の方をターゲットとして、家族や友人、様々なビジネスプロジェクトなどグループごとのスケジュールを管理しつつ、それらを1つのカレンダーに集約すること。
@@ -87,11 +98,7 @@ http://54.65.8.162/
 <center><img src="https://i.gyazo.com/a303ff2845625c828882835856c88445.png" width="640px" style="border: 1px solid #000;"></center>
 <center><img src="https://i.gyazo.com/dc71111ac550a2238351f8afeca3d7d0.png" width="640px" style="border: 1px solid #000;"></center>
 
-## 3. 技術面
-
-JavaScriptを使い、非同期通信による画面表示を随所に導入しました。
-
-## 4. 保守性
+## 3. 保守性
 
 アプリの保守性を高めるため、重複するコードは極力集約して部分テンプレートにしています。
 
@@ -103,3 +110,15 @@ JavaScriptを使い、非同期通信による画面表示を随所に導入し�
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/1418453bfd6165bf6edffe9b9dd59b0a.png)](https://gyazo.com/1418453bfd6165bf6edffe9b9dd59b0a)
+
+# 今後の課題
+## メイトチャット・メイトカレンダー機能の実装
+メイトとなったユーザーとの1対1のチャット機能とカレンダー機能を実装したいと考えています。
+マイページで表示される「Chats」というリンクがメイトチャットにリダイレクトされることを想定しています。
+
+## 通知機能の実装
+アプリ内には「Notification」というリンクがあるのですが、まだ実装できていません。
+将来的には、参加しているグループの未読チャットやメイトリクエストがあったときに通知されるようにしたいです。
+
+## SPA化
+チャット機能以外は画面遷移をする仕様なので、ユーザーストレスを軽減するためにReactを使って少しずつSPA化したいと考えています。

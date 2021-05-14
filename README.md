@@ -4,6 +4,7 @@ Group Calendar
 ## 開発環境
 - Ruby 2.6.5
 - Ruby on Rails 6.0.3.6
+- Docker, Docker Compose
 - Amazon EC2
 - Capistrano（自動デプロイ）
 

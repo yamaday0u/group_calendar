@@ -1,9 +1,9 @@
 version: '3' #docker-composeのバージョン
 services:
   db:
-    image: mysql:5.6.50 #既存アプリとあわせる。ターミナルに[$ mysql --version]で確認
+    image: mysql:5.6.50 #既存アプリとあわせる。ターミナルで[$ mysql --version]で確認
     environment:
-      MYSQL_ROOT_PASSWORD: password #あなたのパスワード
+      MYSQL_ROOT_PASSWORD: password #パスワード
       MYSQL_DATABASE: root
     ports:
       - "4306:3306"

@@ -3,7 +3,7 @@
 set -e
 
 # Remove a potentially pre-existing server.pid for Rails.
-# railsのpidが存在している場合に削除す
+# Railsのpidが存在している場合に削除する/Rails特有の問題への対処
 rm -f /group_calendar/tmp/pids/server.pid
 
 # Then exec the container's main process (what's set as CMD in the Dockerfile).

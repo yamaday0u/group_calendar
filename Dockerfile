@@ -20,6 +20,7 @@ COPY Gemfile.lock ./Gemfile.lock
 # bundlerをインストール
 RUN gem install bundler
 # bundlerでGemfileからgemをインストール
+RUN gem install babel-source -v 5.8.35
 RUN bundle install
 
 # ローカルのアプリ内の全てのファイルやディレクトリをコンテナの作業ディレクトリないにコピー

@@ -55,7 +55,7 @@ class User < ApplicationRecord
   def self.guest
     find_or_create_by!(email: 'guest@guest.mail') do |user|
       user.name = 'ゲストユーザー'
-      user.password = SecureRandom.urlsafe_base64
+      user.password = SecureRandom.urlsafe_base64 + "1"
       user.identity = 'アプリ試用のためのアカウントです。'
       user.user_image.attach(io: File.open('public/penguin-161387_640.png'), filename: 'geust.png')
     end

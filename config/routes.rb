@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      get 'rooms/index'
+    end
+  end
   root to: 'home#index'
   get 'home/new'
   resources :calendars

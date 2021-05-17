@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      get 'rooms/index'
-    end
-  end
   root to: 'home#index'
   get 'home/new'
   resources :calendars
@@ -20,5 +15,10 @@ Rails.application.routes.draw do
   end
   resources :users, only: %i[index show] do
     resources :relationships, only: %i[create destroy]
+  end
+  namespace :api do
+    namespace :v1 do
+      resources :rooms, only: :index
+    end
   end
 end

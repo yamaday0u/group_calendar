@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_131414) do
+ActiveRecord::Schema.define(version: 2021_05_17_115303) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -84,6 +84,15 @@ ActiveRecord::Schema.define(version: 2021_04_02_131414) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "talker_1_id", null: false
+    t.bigint "talker_2_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["talker_1_id"], name: "index_rooms_on_talker_1_id"
+    t.index ["talker_2_id"], name: "index_rooms_on_talker_2_id"
+  end
+
   create_table "user_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "group_id"
@@ -113,6 +122,8 @@ ActiveRecord::Schema.define(version: 2021_04_02_131414) do
   add_foreign_key "calendar_for_groups", "users"
   add_foreign_key "chats", "groups"
   add_foreign_key "chats", "users"
+  add_foreign_key "rooms", "users", column: "talker_1_id"
+  add_foreign_key "rooms", "users", column: "talker_2_id"
   add_foreign_key "user_groups", "groups"
   add_foreign_key "user_groups", "users"
 end

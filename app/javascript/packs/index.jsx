@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <BrowserRouter>
       <App/>
     </BrowserRouter>,
-    document.querySelector('#room-root'),
+    document.querySelector('#root'),
   );
 });

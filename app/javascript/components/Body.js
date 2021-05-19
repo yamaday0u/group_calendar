@@ -1,16 +1,16 @@
 import React from 'react'
-import Room from './Room'
+import Rooms from './Rooms'
 import NavBar from './NavBar'
 import NavBarTab from './NavBarTab'
 
 function Body() {
   return (
     <>
-      <div class="content">
-        <div class="flex__parent__wrap">
-          <div class="main">
+      <div className="content">
+        <div className="flex__parent__wrap">
+          <div className="main">
 
-            <Room />
+            <Rooms />
 
           </div>{/* end of main */}
 

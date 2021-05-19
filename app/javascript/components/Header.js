@@ -3,9 +3,9 @@ import React from 'react'
 function Header() {
   return (
     <>
-      <header class="top__page__header">
-        <div class="header__band">
-          <ul class="user__options">
+      <header className="top__page__header">
+        <div className="header__band">
+          <ul className="user__options">
               <li>Hi, user</li>
               <li>Log out</li>
           </ul>

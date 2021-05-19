@@ -19,6 +19,7 @@ COPY Gemfile.lock ./Gemfile.lock
 
 # bundlerをインストール
 RUN gem install bundler
+RUN yarn install
 # bundlerでGemfileからgemをインストール
 RUN gem install babel-source -v 5.8.35
 RUN bundle install

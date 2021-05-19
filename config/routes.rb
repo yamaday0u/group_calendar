@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/new'
+
+  get 'rooms', to: 'site#index'
+
   resources :calendars
   resources :groups do
     resources :chats, only: %i[index create]

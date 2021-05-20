@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'mate_chats/index'
+  get 'mate_chats/create'
   root to: 'home#index'
   get 'home/new'
 

@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :chats
   has_many :calendars
   has_many :rooms
+  has_many :mate_chats
   has_one_attached :user_image
 
   # user who is following others (active relationship)

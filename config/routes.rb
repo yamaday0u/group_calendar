@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   get 'mate_chats/index'
   get 'mate_chats/create'
   root to: 'home#index'
@@ -8,7 +7,6 @@ Rails.application.routes.draw do
   # post 'rooms', to: 'site#index'
   # get 'rooms/:id', to: 'site#index'
   # get 'rooms', to: 'site#index'
-
 
   resources :calendars
   resources :groups do
@@ -26,7 +24,7 @@ Rails.application.routes.draw do
     resources :relationships, only: %i[create destroy]
   end
   resources :rooms do
-    resources :mate_chats, only: [:index, :create]
+    resources :mate_chats, only: %i[index create]
   end
   # namespace :api do
   #   namespace :v1 do

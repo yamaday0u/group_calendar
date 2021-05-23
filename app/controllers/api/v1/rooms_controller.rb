@@ -5,11 +5,11 @@ class Api::V1::RoomsController < ApplicationController
   # def index
   #   mates = current_user.matchers
   #   rooms = Room.where(talker_1: current_user.id)
-    # data = []
-    # data << mates
-    # data << current_user
-    # data << rooms
-    # render json: data
+  # data = []
+  # data << mates
+  # data << current_user
+  # data << rooms
+  # render json: data
   # end
 
   # def create
@@ -20,5 +20,4 @@ class Api::V1::RoomsController < ApplicationController
   #       redirect_to "/rooms"
   #     end
   # end
-
 end

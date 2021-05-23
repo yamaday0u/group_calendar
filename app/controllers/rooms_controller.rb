@@ -11,9 +11,7 @@ class RoomsController < ApplicationController
       @mates.each do |mate|
         mate_rooms = RoomUser.where(user_id: mate.id)
         mate_rooms.each do |mate_room|
-          if user_room.room_id == mate_room.room_id
-            @room_id << user_room.room_id
-          end
+          @room_id << user_room.room_id if user_room.room_id == mate_room.room_id
         end
       end
     end
@@ -23,11 +21,8 @@ class RoomsController < ApplicationController
 
   def create
     room = Room.new(room_params)
-    if room.save
-      redirect_to room_mate_chats_path(room.id)
-    end
+    redirect_to room_mate_chats_path(room.id) if room.save
   end
-
 
   private
 
@@ -36,25 +31,19 @@ class RoomsController < ApplicationController
     first_room_users = RoomUser.where(user_id: user_ids[0])
     second_room_users = RoomUser.where(user_id: user_ids[1])
 
-    matched_room_user = ""
-    first_room_users.each do |first_room_user| 
+    matched_room_user = ''
+    first_room_users.each do |first_room_user|
       second_room_users.each do |second_room_user|
-        if first_room_user.room_id == second_room_user.room_id
-          matched_room_user = first_room_user.room_id
-        end
+        matched_room_user = first_room_user.room_id if first_room_user.room_id == second_room_user.room_id
       end
     end
 
-    if matched_room_user.present?
-      redirect_to room_mate_chats_path(matched_room_user)
-    end
+    redirect_to room_mate_chats_path(matched_room_user) if matched_room_user.present?
   end
 
   def room_params
     params.require(:room).permit(user_ids: [])
   end
 
-  def method_name
-    
-  end
+  def method_name; end
 end

@@ -1,0 +1,61 @@
+<%= render "shared/header" %>
+
+<div class="content">
+  <div class="flex__parent__wrap">
+    <div class="main">
+
+      <div class="create-group">
+        <div class="actions">
+          <%= link_to "Search mate", 'home/new', class: "sign-up-btn" %>
+        </div>
+        <%= render "shared/back_button" %>
+      </div>
+
+      <div class="list">
+        <%# Mate List %>
+        <div class="list__header">
+          <p class="bold">Mate list</p>
+        </div>
+
+        <div class="list__content">
+          <ul>
+            <% @mates.each do |user| %>
+              <% unless current_user.id == user.id %>
+                <div class="each__item">
+                  <li>
+                    <div class="each__item__content">
+                      <div class="item__content__left">
+                        <% if user.user_image.present? %>
+                          <%= image_tag user.user_image, class: "image__list" %>
+                        <% else %>
+                          <p>No<br>Image</p>
+                        <% end %>
+                      </div>
+
+                      <div class="item__content__right">
+                        <p><%= link_to user.name, user_path(user.id) %></p>
+                        <%= form_with url: rooms_path, method: :post do |f| %>
+                          <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %> >
+                          <input name="room[user_ids][]" type="hidden" value=<%= user.id %> >
+                          <%= f.submit 'Chat' %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        <%# Mate List %>
+
+      </div><%# end of list %>
+
+    </div><%# end of main %>
+    
+    <%= render "shared/nav-bar-tab" %>
+  </div>
+</div>
+
+<%= render "shared/nav-bar" %>
+<%= render "shared/footer" %>

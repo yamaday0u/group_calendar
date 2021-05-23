@@ -21,7 +21,7 @@ consumer.subscriptions.create("MateChatChannel", {
                   </div>`;
     const chats = document.getElementById("chats");
     chats.insertAdjacentHTML("afterbegin", html);
-    const newChat = document.getElementById("chat_text");
+    const newChat = document.getElementById("mate_chat_text");
     newChat.value="";
   }
 });

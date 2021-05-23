@@ -1,0 +1,48 @@
+<%= render "shared/header" %>
+
+<div class="content">
+  <div class="flex__parent__wrap">
+    <div class="main">
+
+    <div class="list">
+        <p class="bold">Chat room with <%= @room_mate.name %></p>
+    </div>
+
+      <%= form_with model: @mate_chat, url: room_mate_chats_path(params[:room_id]) do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+        <div class="form__wrap">
+          <div class="form__group">
+            <%= f.label :text %><br>
+            <%= f.text_area :text, autofocus: true %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit 'Chat', class:"sign-up-btn" %>
+          </div>
+        </div>
+      <% end %>
+      <%= render "shared/back_button_to_chats" %>
+
+      <div id="chats">
+        <% @mate_chats.each do |chat| %>
+          <div class="each__chat">
+            <div class="chat__top">
+              <p class="chat__text"><%= chat.text %></p>
+            </div>
+            <div class="chat__bottom">
+              <p class="chat__information"><%= chat.created_at.strftime("%Y-%m-%-d %-H:%-M") %></p>
+              <p class="chat__information"><%= link_to chat.user.name, user_path(chat.user.id) %></p>
+            </div>
+          </div>
+        <% end %>
+        <%= paginate @mate_chats %>
+      </div>
+      
+    </div><%# End of main %>
+    
+    <%= render "shared/nav-bar-tab" %>
+  </div><%# End of flex-parent-warp %>
+</div>
+
+<%= render "shared/nav-bar" %>
+<%= render "shared/footer" %>

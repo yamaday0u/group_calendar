@@ -4,6 +4,7 @@
   <div class="flex__parent__wrap">
     <div class="main">
 
+
       <%= form_with model: @chat, url: group_chats_path(params[:group_id]) do |f| %>
         <%= render "shared/error_messages", model: f.object %>
         <div class="form__wrap">

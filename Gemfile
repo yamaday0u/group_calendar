@@ -68,9 +68,14 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'aws-sdk-s3', require: false
 gem 'devise'
+gem 'devise_token_auth'
+gem 'dotenv-rails'
+gem 'hashie', '4.1.0'
 gem 'image_processing', '~> 1.2'
 gem 'kaminari'
 gem 'mini_magick'
+gem 'omniauth', '1.9.1'
+gem 'pry-byebug'
 gem 'pry-rails'
+gem 'react-rails'
 gem 'simple_calendar', '~> 2.0'
-gem 'dotenv-rails'

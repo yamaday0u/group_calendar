@@ -25,7 +25,9 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show] do
     resources :relationships, only: %i[create destroy]
   end
-  resources :rooms
+  resources :rooms do
+    resources :mate_chats, only: [:index, :create]
+  end
   # namespace :api do
   #   namespace :v1 do
   #     mount_devise_token_auth_for 'User', at: 'auth'

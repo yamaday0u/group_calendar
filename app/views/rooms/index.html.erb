@@ -34,7 +34,7 @@
 
                       <div class="item__content__right">
                         <p><%= link_to user.name, user_path(user.id) %></p>
-                        <%= form_with url: rooms_path, method: :post do |f| %>
+                        <%= form_with url: rooms_path, method: :post, local: true do |f| %>
                           <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %> >
                           <input name="room[user_ids][]" type="hidden" value=<%= user.id %> >
                           <%= f.submit 'Chat' %>

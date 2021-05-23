@@ -19,6 +19,7 @@ $theme-color: #228b22;
 $footer-color: #000;
 $nav-bar-color: #696969;
 $separator-color: #ddd;
+$caution-color: #ffc107;
 
 // Header
 $header-height: 3em;
@@ -45,5 +46,11 @@ $main-width: 90%;
 @mixin hover-green-btn-lighten {
   &:hover {
     background-color: lighten($theme-color, 10%);
+  }
+}
+
+@mixin hover-caution-btn-lighten {
+  &:hover {
+    background-color: lighten($caution-color, 10%);
   }
 }

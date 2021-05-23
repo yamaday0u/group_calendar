@@ -29,6 +29,12 @@
   }
 }
 
+.caution {
+  background-color: $caution-color;
+  color: #000;
+  @include hover-caution-btn-lighten;
+}
+
 .back-btn-wrap {
   text-align: center;
 

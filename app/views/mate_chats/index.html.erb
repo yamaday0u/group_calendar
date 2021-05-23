@@ -4,8 +4,11 @@
   <div class="flex__parent__wrap">
     <div class="main">
 
+    <div class="list">
+        <p class="bold">Chat room with <%= @room_mate.name %></p>
+    </div>
 
-      <%= form_with model: @chat, url: group_chats_path(params[:group_id]) do |f| %>
+      <%= form_with model: @mate_chat, url: room_mate_chats_path(params[:room_id]) do |f| %>
         <%= render "shared/error_messages", model: f.object %>
         <div class="form__wrap">
           <div class="form__group">
@@ -18,10 +21,9 @@
           </div>
         </div>
       <% end %>
-      <%= render "shared/back_button_to_group_home" %>
 
       <div id="chats">
-        <% @chats.each do |chat| %>
+        <% @mate_chats.each do |chat| %>
           <div class="each__chat">
             <div class="chat__top">
               <p class="chat__text"><%= chat.text %></p>
@@ -32,14 +34,14 @@
             </div>
           </div>
         <% end %>
-        <%= paginate @chats %>
+        <%= paginate @mate_chats %>
       </div>
       
     </div><%# End of main %>
     
-    <%= render "calendar_for_groups/nav-bar-tab" %>
+    <%= render "shared/nav-bar-tab" %>
   </div><%# End of flex-parent-warp %>
 </div>
 
-<%= render "calendar_for_groups/nav-bar" %>
+<%= render "shared/nav-bar" %>
 <%= render "shared/footer" %>

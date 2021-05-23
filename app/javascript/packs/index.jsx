@@ -8,11 +8,11 @@ import PropTypes from 'prop-types'
 import { BrowserRouter } from 'react-router-dom'; //アプリケーションにrouterを導入するためのコンポーネント
 import App from '../components/App'
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <BrowserRouter>
-      <App/>
-    </BrowserRouter>,
-    document.querySelector('#root'),
-  );
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   ReactDOM.render(
+//     <BrowserRouter>
+//       <App/>
+//     </BrowserRouter>,
+//     document.querySelector('#root'),
+//   );
+// });

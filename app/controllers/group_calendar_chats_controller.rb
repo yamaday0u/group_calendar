@@ -1,0 +1,2 @@
+class GroupCalendarChatsController < ApplicationController
+end

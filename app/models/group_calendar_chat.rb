@@ -1,0 +1,2 @@
+class GroupCalendarChat < ApplicationRecord
+end

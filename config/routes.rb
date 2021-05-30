@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :calendars
   resources :groups do
     resources :chats, only: %i[index create]
-    resources :calendar_for_groups
+    resources :calendar_for_groups do
+      resources :group_calendar_chats, only: :create
+    end
     resources :user_groups, only: %i[index create]
   end
   devise_for :users, controllers: {

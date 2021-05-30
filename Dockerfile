@@ -29,6 +29,8 @@ COPY . /group_calendar
 
 # entrypoint.shをコンテナの/usr/bin/にコピー
 COPY entrypoint.sh /usr/bin/
+# ユーザーに関わらず/usr/bin/entrypoint.shに実行権限を付与して
+# シェルスクリプトファイルを実行可能
 RUN chmod +x /usr/bin/entrypoint.sh
 # コンテナー起動時に毎回実行されるスクリプトを追加
 ENTRYPOINT ["entrypoint.sh"]

@@ -1,27 +1,45 @@
-version: '3' #docker-composeのバージョン
+#docker-composeのバージョン
+version: '3'
 services:
   db:
-    image: mysql:5.6.50 #既存アプリとあわせる。ターミナルで[$ mysql --version]で確認
+    # 既存アプリとあわせる/ターミナルで[$ mysql --version]で確認
+    image: mysql:5.6.50
+    # 環境変数の設定
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: root
+    # ポート番号を指定/[ローカル:コンテナ]
     ports:
       - "4306:3306"
+    # 名前付きボリュームでDBのデータを永続化
+    # [データボリューム名:コンテナ内のパス]
     volumes:
-      - ./mysql-confd:/etc/mysql/conf.d
+      - mysql_data:/etc/mysql/conf.d
   web:
+    # Dockerfileのパスをカレントディレクトリに指定
     build: .
+    # server.pidファイルを削除してからrailsサーバー起動
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    # 環境変数の設定
     environment:
       - MYSQL_HOST=db
       - MYSQL_PASSWORD=password
+    # ディレクトリのマウント
     volumes:
       - .:/group_calendar
     ports:
+      # ポート番号を指定/[ローカル:コンテナ]
       - 3000:3000
+    # サービス間の依存関係を指定
+    # この場合、db → webの順でサービスを起動
     depends_on:
       - db
+    # コンテナを起動させ続けるための設定
+    # make container stay launched
     tty: true
+    # stdinはstandard input（標準入力）の略
+    # コンテナの外から命令を送るための設定
     stdin_open: true
 volumes:
-  mysql-data:
+  # db:volumes:で作成したボリューム名を記述
+  mysql_data:

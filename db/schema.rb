@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_165508) do
+ActiveRecord::Schema.define(version: 2021_05_30_035859) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -77,6 +77,16 @@ ActiveRecord::Schema.define(version: 2021_05_22_165508) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["group_id"], name: "index_chats_on_group_id"
     t.index ["user_id"], name: "index_chats_on_user_id"
+  end
+
+  create_table "group_calendar_chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text", null: false
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_group_calendar_chats_on_group_id"
+    t.index ["user_id"], name: "index_group_calendar_chats_on_user_id"
   end
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -151,6 +161,8 @@ ActiveRecord::Schema.define(version: 2021_05_22_165508) do
   add_foreign_key "calendar_for_mates", "users"
   add_foreign_key "chats", "groups"
   add_foreign_key "chats", "users"
+  add_foreign_key "group_calendar_chats", "groups"
+  add_foreign_key "group_calendar_chats", "users"
   add_foreign_key "mate_chats", "rooms"
   add_foreign_key "mate_chats", "users"
   add_foreign_key "room_users", "rooms"

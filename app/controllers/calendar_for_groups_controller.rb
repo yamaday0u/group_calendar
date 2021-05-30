@@ -24,6 +24,8 @@ class CalendarForGroupsController < ApplicationController
 
   def show
     @user = User.find(@group_calendar.user_id)
+    @group_calendar_chats = GroupCalendarChat.includes(:calendar_for_group).where(calendar_for_group_id: params[:id]).order(created_at: :desc).page(params[:page]).per(10)
+    @group_calendar_chat = GroupCalendarChat.new
   end
 
   def edit; end

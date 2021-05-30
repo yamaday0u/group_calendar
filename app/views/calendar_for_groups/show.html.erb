@@ -16,61 +16,7 @@
             </div>
           </div>
         </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">Scheduled by</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p><%= @user.name %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">Title</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p class=""><%= @group_calendar.title %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">Content</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p><%= @group_calendar.content %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">Start_time</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p><%= @group_calendar.start_time.strftime("%F %H:%M") %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">End_time</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p><%= @group_calendar.end_time.strftime("%F %H:%M") %></p>
-            </div>
-          </div>
-        </div>
+        <%= render partial: "shared/calendar_show", locals: {user: @user, calendar: @group_calendar} %>
 
         <% if current_user.id == @user.id %>
           <div class="actions">

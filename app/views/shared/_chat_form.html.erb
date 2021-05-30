@@ -1,0 +1,11 @@
+<%= render "shared/error_messages", model: f.object %>
+<div class="form__wrap">
+  <div class="form__group">
+    <%= f.label :text %><br>
+    <%= f.text_area :text, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Chat', class:"sign-up-btn" %>
+  </div>
+</div>

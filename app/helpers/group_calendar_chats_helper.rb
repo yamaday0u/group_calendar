@@ -1,0 +1,2 @@
+module GroupCalendarChatsHelper
+end

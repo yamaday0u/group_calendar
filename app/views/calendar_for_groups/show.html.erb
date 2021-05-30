@@ -12,65 +12,11 @@
               <p class="bold">Group</p>
             </div>
             <div class="schedule__item__body text__left">
-              <p><%= @group.name %></p>
+              <p><%= link_to @group.name, group_calendar_for_groups_path(@group.id) %></p>
             </div>
           </div>
         </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">Scheduled by</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p><%= @user.name %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">Title</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p class=""><%= @group_calendar.title %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">Content</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p><%= @group_calendar.content %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">Start_time</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p><%= @group_calendar.start_time.strftime("%F %H:%M") %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <div class="schedule__item">
-            <div class="schedule__item__header text__left">
-              <p class="bold">End_time</p>
-            </div>
-            <div class="schedule__item__body text__left">
-              <p><%= @group_calendar.end_time.strftime("%F %H:%M") %></p>
-            </div>
-          </div>
-        </div>
+        <%= render partial: "shared/calendar_show", locals: {user: @user, calendar: @group_calendar} %>
 
         <% if current_user.id == @user.id %>
           <div class="actions">
@@ -83,7 +29,20 @@
         <% end %>
       </div>
 
-      <%= render "shared/back_button_to_group_home" %>
+      <%= render "shared/back_button" %>
+
+      <%# group_calendar_chat %>
+      <%= form_with model: @group_calendar_chat, url: group_calendar_for_group_group_calendar_chats_path(params[:group_id], params[:id]) do |f| %>
+        <%= render partial: "shared/chat_form", locals: {f: f} %>
+      <% end %>
+
+      <div id="chats">
+        <% @group_calendar_chats.each do |chat| %>
+          <%= render partial: "shared/chats", locals: {chat: chat} %>
+        <% end %>
+        <%= paginate @group_calendar_chats %>
+      </div>
+      <%# group_calendar_chat %>
 
     </div><%# end of main %>
 

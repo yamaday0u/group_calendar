@@ -25,15 +25,7 @@
 
       <div id="chats">
         <% @mate_chats.each do |chat| %>
-          <div class="each__chat">
-            <div class="chat__top">
-              <p class="chat__text"><%= chat.text %></p>
-            </div>
-            <div class="chat__bottom">
-              <p class="chat__information"><%= chat.created_at.strftime("%Y-%m-%-d %-H:%-M") %></p>
-              <p class="chat__information"><%= link_to chat.user.name, user_path(chat.user.id) %></p>
-            </div>
-          </div>
+          <%= render partial: "shared/chats", locals: {chat: chat} %>
         <% end %>
         <%= paginate @mate_chats %>
       </div>

@@ -1,8 +1,16 @@
 class User < ApplicationRecord
+  # Include default devise modules.
+  # devise :database_authenticatable, :registerable,
+  #         :recoverable, :rememberable, :trackable, :validatable,
+  #         :confirmable, :omniauthable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  include DeviseTokenAuth::Concerns::User
+
+  after_create :send_confirmation_email, if: -> { !Rails.env.test? && User.devise_modules.include?(:confirmable) }
 
   # Associations
   has_many :user_groups
@@ -72,5 +80,10 @@ class User < ApplicationRecord
 
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
     validates_format_of :password, with: PASSWORD_REGEX, message: 'must include at least one half-width English character and a number', on: :create # validate only users/registrations#create
+  end
+  
+  private
+  def send_confirmation_email
+    self.send_confirmation_instructions
   end
 end

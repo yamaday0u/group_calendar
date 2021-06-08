@@ -28,10 +28,10 @@ Rails.application.routes.draw do
   resources :rooms do
     resources :mate_chats, only: %i[index create]
   end
-  # namespace :api do
-  #   namespace :v1 do
-  #     mount_devise_token_auth_for 'User', at: 'auth'
-  #     resources :rooms, only: [:index, :create, :show]
-  #   end
-  # end
+  namespace :api do
+    scope :v1 do
+      mount_devise_token_auth_for 'User', at: 'auth'
+      # resources :rooms, only: [:index, :create, :show]
+    end
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_30_035859) do
+ActiveRecord::Schema.define(version: 2021_06_08_124400) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -46,19 +46,6 @@ ActiveRecord::Schema.define(version: 2021_05_30_035859) do
     t.index ["user_id"], name: "index_calendar_for_groups_on_user_id"
   end
 
-  create_table "calendar_for_mates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "content", null: false
-    t.datetime "start_time", null: false
-    t.datetime "end_time", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.bigint "relationship_id"
-    t.index ["relationship_id"], name: "index_calendar_for_mates_on_relationship_id"
-    t.index ["user_id"], name: "index_calendar_for_mates_on_user_id"
-  end
-
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "content", null: false
@@ -66,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_05_30_035859) do
     t.datetime "end_time", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
   end
 
   create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -137,6 +124,7 @@ ActiveRecord::Schema.define(version: 2021_05_30_035859) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["group_id"], name: "index_user_groups_on_group_id"
+    t.index ["user_id", "group_id"], name: "index_user_groups_on_user_id_and_group_id", unique: true
     t.index ["user_id"], name: "index_user_groups_on_user_id"
   end
 
@@ -150,15 +138,17 @@ ActiveRecord::Schema.define(version: 2021_05_30_035859) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "identity"
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.text "tokens"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "calendar_for_groups", "groups"
   add_foreign_key "calendar_for_groups", "users"
-  add_foreign_key "calendar_for_mates", "relationships"
-  add_foreign_key "calendar_for_mates", "users"
   add_foreign_key "chats", "groups"
   add_foreign_key "chats", "users"
   add_foreign_key "group_calendar_chats", "calendar_for_groups"

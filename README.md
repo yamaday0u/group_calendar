@@ -20,7 +20,7 @@ Group Calendar
 ちなみに自分の英語の勉強も兼ねて、アプリ内の言語は英語に統一しています。
 
 # URL
-http://54.65.8.162/
+https://group-calendar.net/
 
 # テスト用アカウント
 トップページの「Log in as a guest」ボタン一発でログインできます。

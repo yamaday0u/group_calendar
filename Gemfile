@@ -79,3 +79,6 @@ gem 'pry-byebug'
 gem 'pry-rails'
 gem 'react-rails'
 gem 'simple_calendar', '~> 2.0'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"

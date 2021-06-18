@@ -9,6 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   
   include DeviseTokenAuth::Concerns::User
+  devise :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   after_create :send_confirmation_email, if: -> { !Rails.env.test? && User.devise_modules.include?(:confirmable) }
 

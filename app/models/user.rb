@@ -36,60 +36,45 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
 
   # Methods
-    # To follow other user
-    def follow(other_user)
-      active_relationships.create(followed_id: other_user.id)
-    end
+  # To follow other user
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
 
-    # To unfollow other user
-    def unfollow(other_user)
-      active_relationships.find_by(followed_id: other_user.id).destroy
-    end
+  # To unfollow other user
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
 
-    # If current user follows other user, return "true"
-    def following?(other_user)
-      active_relationships.find_by(followed_id: other_user.id)
-    end
+  # If current user follows other user, return "true"
+  def following?(other_user)
+    active_relationships.find_by(followed_id: other_user.id)
+  end
 
-    # Get mates
-    def matchers
-      followings & followers
-    end
+  # Get mates
+  def matchers
+    followings & followers
+  end
 
-    # If current user is already mate with other user, return "true"
-    def matchers?(other_user)
-      active_relationships.find_by(followed_id: other_user.id) && passive_relationships.find_by(follower_id: other_user.id)
-    end
+  # If current user is already mate with other user, return "true"
+  def matchers?(other_user)
+    active_relationships.find_by(followed_id: other_user.id) && passive_relationships.find_by(follower_id: other_user.id)
+  end
 
-    # If current user is followed by other user & doesn't follow that user, return "true"
-    def follow_request?(user, other_user)
-      !user.matchers?(other_user) && other_user.following?(user)
-    end
+  # If current user is followed by other user & doesn't follow that user, return "true"
+  def follow_request?(user, other_user)
+    !user.matchers?(other_user) && other_user.following?(user)
+  end
 
-    # Log in as a guest user
-    def self.guest
-      find_or_create_by!(email: 'guest@guest.mail') do |user|
-        user.name = 'ゲストユーザー'
-        user.password = SecureRandom.urlsafe_base64 + '1'
-        user.identity = 'アプリ試用のためのアカウントです。'
-        user.user_image.attach(io: File.open('public/penguin-161387_640.png'), filename: 'geust.png')
-      end
+  # Log in as a guest user
+  def self.guest
+    find_or_create_by!(email: 'guest@guest.mail') do |user|
+      user.name = 'ゲストユーザー'
+      user.password = SecureRandom.urlsafe_base64 + '1'
+      user.identity = 'アプリ試用のためのアカウントです。'
+      user.user_image.attach(io: File.open('public/penguin-161387_640.png'), filename: 'geust.png')
     end
-
-    def self.from_omniauth(auth)
-      sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
-      user = User.where(email: auth.infoemail).first_or_initialize(
-        name: auth.info.name,
-        email: auth.info.email
-      )
-
-      # Register user info to SnsCredential record if user exist
-      if user.persisted?
-        sns.user = user
-        sns.save
-      end
-      { user: user, sns: sns}
-    end
+  end
 
   # Validation
   with_options presence: true do

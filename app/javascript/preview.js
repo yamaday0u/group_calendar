@@ -1,5 +1,5 @@
 // プレビュー表示機能は新規投稿("/new/")か投稿編集("/edit/")ページでのみ有効にする
-if (location.pathname.match("/users/edit") || location.pathname.match("/users/sign_up") || location.pathname.match("/groups/./edit") || location.pathname.match("/groups/new") || location.pathname.match("/omniauth/")) {
+if (location.pathname.match("/users/edit") || location.pathname.match("/users/sign_up") || location.pathname.match("/groups/./edit") || location.pathname.match("/groups/new")) {
   document.addEventListener('DOMContentLoaded', function(){
     // プレビューを表示するための要素を取得
     const ImageList = document.getElementById('image-wrap');

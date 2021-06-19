@@ -6,8 +6,7 @@ class GroupCalendarChatsController < ApplicationController
     if @group_calendar_chat.save
       @user = current_user
       @time = @group_calendar_chat.created_at.strftime('%Y-%m-%-d %-H:%-M')
-      ActionCable.server.broadcast 'group_calendar_chat_channel', content: @group_calendar_chat, user: @user,
-                                                                  time: @time
+      ActionCable.server.broadcast 'group_calendar_chat_channel', content: @group_calendar_chat, user: @user, time: @time
     end
   end
 

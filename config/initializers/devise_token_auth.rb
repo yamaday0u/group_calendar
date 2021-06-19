@@ -9,7 +9,7 @@ DeviseTokenAuth.setup do |config|
 
   # By default, users will need to re-authenticate after 2 weeks. This setting
   # determines how long tokens will remain valid after they are issued.
-  config.token_lifespan = 1.month
+  config.token_lifespan =  1.month
 
   # Limiting the token_cost to just 4 in testing will increase the performance of
   # your test suite dramatically. The possible cost value is within range from 4
@@ -42,11 +42,11 @@ DeviseTokenAuth.setup do |config|
   # config.default_callbacks = true
 
   # Makes it possible to change the headers names
-  config.headers_names = { 'access-token': 'access-token',
-                           client: 'client',
-                           expiry: 'expiry',
-                           uid: 'uid',
-                           'token-type': 'token-type' }
+  config.headers_names = {:'access-token' => 'access-token',
+                         :'client' => 'client',
+                         :'expiry' => 'expiry',
+                         :'uid' => 'uid',
+                         :'token-type' => 'token-type' }
 
   # By default, only Bearer Token authentication is implemented out of the box.
   # If, however, you wish to integrate with legacy Devise authentication, you can
@@ -58,5 +58,5 @@ DeviseTokenAuth.setup do |config|
   # send email, set it to true. (This is a setting for compatibility)
   # config.send_confirmation_email = true
 
-  config.default_confirm_success_url = 'confirmed'
+  config.default_confirm_success_url = "confirmed"
 end

@@ -1,27 +1,6 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def facebook
-    authorization
-  end
-
-  def google_oauth2
-    authorization
-  end
-
-  private
-
-  def authorization
-    sns_info = User.from_omniauth(request.env['omniauth.auth'])
-    @user = sns_info[:user]
-
-    if @user.persisted? # Sign in if @user exist
-      sign_in_and_redirect @user, event: :authentication
-    else # Redirect to sign up page if @user doesn't exist
-      @sns_id = sns_info[:sns].id
-      render template: 'devise/registrations/new'
-    end
-  end
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 

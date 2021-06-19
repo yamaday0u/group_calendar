@@ -9,7 +9,7 @@ class AddTokensToUsers < ActiveRecord::Migration[6.0]
       user.provider = 'email'
       user.save!
     end
-    add_index :users, [:uid, :provider], unique: true
+    add_index :users, %i[uid provider], unique: true
   end
 
   def down

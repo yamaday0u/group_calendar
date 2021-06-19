@@ -163,6 +163,20 @@ a {
   }
 }
 
+.sns_credential {
+  text-align: center;
+}
+
+.fa-facebook-square {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  color: #3b5998;
+}
+
+.fa-google {
+  color: #34a853;
+}
+
 // 2.Header style sheet -----------------------------------------
 .top__page__header {
   background-color: $theme-color;

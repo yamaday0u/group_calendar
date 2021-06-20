@@ -3,6 +3,16 @@
 <div class="content">
   <h2 class="subtitle">Log in</h2>
 
+  <div class="sns_credential">
+    <div >you can also log in by </div>
+    <%= link_to user_facebook_omniauth_authorize_path, method: :post do %>
+      <i class="fab fa-2x fa-facebook-square"></i>
+    <% end %>
+    <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post do %>
+      <i class="fab fa-2x fa-google"></i>
+    <% end %>
+  </div>
+
   <%= form_with model: @user, url: user_session_path, class: "", local: true do |f| %>
     <% if flash[:alert] %>
       <div class="error-alert">

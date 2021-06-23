@@ -12,40 +12,11 @@
       </div>
 
       <div class="list">
-        <%# Mate List %>
-        <div class="list__header">
-          <p class="bold">Mate list</p>
-        </div>
-
-        <div class="list__content">
-          <ul>
-            <% @mates.each do |user| %>
-              <% unless current_user.id == user.id %>
-                <div class="each__item">
-                  <li>
-                    <div class="each__item__content">
-                      <div class="item__content__left">
-                        <% if user.user_image.present? %>
-                          <%= image_tag user.user_image, class: "image__list" %>
-                        <% else %>
-                          <p>Mate<br>Image</p>
-                        <% end %>
-                      </div>
-
-                      <div class="item__content__right">
-                        <p><%= link_to user.name, user_path(user.id) %></p>
-                        <p><%= user.identity %></p>
-                      </div>
-                    </div>
-                  </li>
-                </div>
-              <% end %>
-            <% end %>
-          </ul>
-        </div>
-        <%# Mate List %>
-
         <%# User List %>
+        <div class="list__header">
+          <%= link_to "Display your mates", rooms_path, class: "bold"  %>
+        </div>
+
         <div class="list__header">
           <p class="bold">User list</p>
         </div>
@@ -55,6 +26,7 @@
             <% @users.each do |user| %>
               <% unless current_user.id == user.id %>
                 <div class="each__item">
+
                   <li>
                     <div class="each__item__content">
                       <div class="item__content__left">
@@ -65,8 +37,11 @@
                         <% end %>
                       </div>
 
-                      <div class="item__content__right">
+                      <div class="item__content__center">
                         <p><%= link_to user.name, user_path(user.id) %></p>
+                      </div>
+
+                      <div class="item__content__right">
                         <p><%= user.identity %></p>
                         <% if user.follow_request?(current_user, user) %>
                           <p><i class="fas fa-star"></i></p>
@@ -74,6 +49,7 @@
                       </div>
                     </div>
                   </li>
+
                 </div>
               <% end %>
             <% end %>

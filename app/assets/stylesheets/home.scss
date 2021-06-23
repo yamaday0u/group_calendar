@@ -108,24 +108,22 @@ a {
 }
 
 .item__content__left {
-  height: 80px;
+  @include item__content;
   width: 80px;
-  display: flex;
-  justify-content: center;
-  // align-items: center;
   border: 1px solid $separator-color;
-  margin: auto 3px;
+}
+
+.item__content__center {
+  @include item__content;
+  width: 150px;
+  align-items: center;
 }
 
 .item__content__right {
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  margin: auto 3px;
-  position: absolute;
-  top: 50%;
-  left: 83px;
-  transform: translateY(-15%);
+  @include item__content;
+  width: 120px;
+  align-items: center;
+  text-align: left;
 }
 
 .image {

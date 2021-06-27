@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      get 'test/index'
+    end
+  end
   get 'mate_chats/index'
   get 'mate_chats/create'
   root to: 'home#index'

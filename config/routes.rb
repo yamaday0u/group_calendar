@@ -39,5 +39,8 @@ Rails.application.routes.draw do
       mount_devise_token_auth_for 'User', at: 'auth'
       # resources :rooms, only: [:index, :create, :show]
     end
+    namespace :v1 do
+      resources :test, only: %i[index]
+    end
   end
 end

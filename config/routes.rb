@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'mate_chats/index'
-  get 'mate_chats/create'
+  
   root to: 'home#index'
   get 'home/new'
 
@@ -33,6 +32,9 @@ Rails.application.routes.draw do
     scope :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'
       # resources :rooms, only: [:index, :create, :show]
+    end
+    namespace :v1 do
+      resources :test, only: %i[index]
     end
   end
 end

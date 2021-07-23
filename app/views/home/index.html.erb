@@ -1,26 +1,3 @@
-<%= render "shared/header" %>
-
-<div class="content">
-  <h1 class="top__page__logo">Welcome To<br> Group Calendar !!</h1>
-  <p class="top__page__explanation">You can manage your schedules & <br class="br-sp">communicate with...</p>
-  <ul class="examples">
-    <li>your family</li>
-    <li>your friends</li>
-    <li>your project team</li>
-  </ul>
-  <p class="top__page__explanation">in this Group Calendar.</p>
-
-  <div class="lead__to__sign__up">
-    <h2 class="subtitle">Let's get started</h2>
-    <p>↓  ↓  ↓</p>
-    <div class="actions">
-      <%= link_to "Sign up", new_user_registration_path, class: "sign-up-btn" %>
-    </div>
-    <h2 class="subtitle">or<br>Log in as a guest</h2>
-      <div class="actions">
-        <%= link_to "Log in as a guest", users_guest_log_in_path, method: :post, class: "sign-up-btn gest__btn" %>
-      </div>
-  </div>
-</div>
-
-<%= render "shared/footer" %>
+<%= react_component "Header", current_user: current_user %>
+<%= react_component("Top") %>
+<%= react_component("Footer") %>

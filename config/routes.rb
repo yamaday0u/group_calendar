@@ -3,10 +3,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/new'
 
-  # post 'rooms', to: 'site#index'
-  # get 'rooms/:id', to: 'site#index'
-  # get 'rooms', to: 'site#index'
-
   resources :calendars
   resources :groups do
     resources :chats, only: %i[index create]
@@ -31,7 +27,6 @@ Rails.application.routes.draw do
   namespace :api do
     scope :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'
-      # resources :rooms, only: [:index, :create, :show]
     end
     namespace :v1 do
       resources :test, only: %i[index]

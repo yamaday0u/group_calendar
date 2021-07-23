@@ -10,7 +10,7 @@ function Header(props) {
             (
             <div>
               <ul className="user__options">
-              <li><a href="/users/{props.current_user.id}" className="logged__in__user">Hi, {props.current_user.name}</a></li>
+              <li><a href={'/users/' + props.current_user.id} className="logged__in__user">Hi, {props.current_user.name}</a></li>
               <li><a href="/users/sign_out" rel="nofollow"  data-method="delete" className="user__option">Log out</a></li>
               </ul>
             </div>

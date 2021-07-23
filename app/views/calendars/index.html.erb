@@ -1,4 +1,4 @@
-<%= render "shared/header" %>
+<%= react_component "Header", current_user: current_user %>
 
 <div class="content">
 
@@ -22,4 +22,4 @@
 </div>
 
 <%= render "shared/nav-bar" %>
-<%= render "shared/footer" %>
+<%= react_component("Footer") %>

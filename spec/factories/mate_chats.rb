@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :mate_chat do
-    text { 'MyString' }
-    room { nil }
+    text { Faker::Lorem.word }
+    association :user
+    association :room
   end
 end

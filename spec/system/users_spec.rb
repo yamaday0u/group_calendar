@@ -43,6 +43,7 @@ RSpec.describe "Users", type: :system do
         fill_in 'Email', with: ''
         fill_in 'Password', with: ''
         fill_in 'Password confirmation', with: ''
+        fill_in 'Identity', with: ''
         # Confirm that pressing the sign-up button does not increases the user model count.
         expect{
           find('input[name="commit"]').click

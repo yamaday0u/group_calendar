@@ -33,14 +33,22 @@ RSpec.describe "Users", type: :system do
     context 'Unsuccessfully' do
       it 'you cannot register as a new user & will be returned to the sign-up page uf you input incorrect information' do
         # Visit the top page.
-        # visit root_path
+        visit root_path
         # Confirm that the top page has the button to render to sign-up page.
-        # expect(page).to have_content('Sign up')
+        expect(page).to have_content('Sign up')
         # Visit sign up page.
-        # vist new_user_registration_path
+        visit new_user_registration_path
         # Input user informations.
+        fill_in 'Name', with: ''
+        fill_in 'Email', with: ''
+        fill_in 'Password', with: ''
+        fill_in 'Password confirmation', with: ''
         # Confirm that pressing the sign-up button does not increases the user model count.
+        expect{
+          find('input[name="commit"]').click
+        }.to change { User.count }.by(0)
         # Confirm that you are returned to the sign-up page.
+        expect(current_path).to eq(user_registration_path)
       end
     end
 

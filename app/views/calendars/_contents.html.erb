@@ -2,10 +2,28 @@
   <div class="schedule">
     <%# In case of the calendar has "group_id" %>
     <% if calendar.respond_to?(:group_id) %>
-      <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id, group_id: calendar.group_id) %>
-      <%= link_to "by #{calendar.group.name}", group_calendar_for_group_path(group_id: calendar.group_id, id: calendar.id) %>
+
+        <%# In case of the calendar has "end_time" %>
+        <% if calendar.end_time.present? %>
+          <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id, group_id: calendar.group_id) %>
+
+        <%# In case of the calendar DO NOT has "end_time" %>
+        <% else %>
+          <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id, group_id: calendar.group_id) %>
+        <% end %>
+        <%= link_to "by #{calendar.group.name}", group_calendar_for_group_path(group_id: calendar.group_id, id: calendar.id) %>
+
+    <%# In case of the calendar DO NOT has "group_id" %>
     <% else %>
-      <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", calendar_path(calendar.id) %>
+
+        <%# In case of the calendar has "end_time" %>
+        <% if calendar.end_time.present? %>
+          <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", calendar_path(calendar.id) %>
+
+        <%# In case of the calendar DO NOT has "end_time" %>
+        <% else %>
+          <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}]", calendar_path(calendar.id) %>
+        <% end %>
     <% end %>
   </div>
 <% end %>

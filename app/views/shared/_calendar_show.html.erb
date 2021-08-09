@@ -42,13 +42,15 @@
   </div>
 </div>
 
-<div class="form__group">
-  <div class="schedule__item">
-    <div class="schedule__item__header text__left">
-      <p class="bold">End_time</p>
-    </div>
-    <div class="schedule__item__body text__left">
-      <p><%= calendar.end_time.strftime("%F %H:%M") %></p>
+<% if calendar.end_time.present? %>
+  <div class="form__group">
+    <div class="schedule__item">
+      <div class="schedule__item__header text__left">
+        <p class="bold">End_time</p>
+      </div>
+      <div class="schedule__item__body text__left">
+        <p><%= calendar.end_time.strftime("%F %H:%M") %></p>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

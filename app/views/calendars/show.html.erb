@@ -1,10 +1,9 @@
 <%= render "shared/header" %>
 
 <div class="content">
-  <%= render "shared/flash_message" %>
-
   <div class="flex__parent__wrap">
     <div class="main">
+      <%= render "shared/flash_message" %>
 
       <div class="form__wrap">
         <%= render partial: "shared/calendar_show", locals: {user: @user, calendar: @calendar} %>

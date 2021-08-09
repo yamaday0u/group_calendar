@@ -20,5 +20,4 @@ RSpec.describe GroupCalendarChat, type: :model do
       end
     end
   end
-  
 end

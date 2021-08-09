@@ -26,7 +26,8 @@ RSpec.describe "Users", type: :system do
         }.to change { User.count }.by(1)
         # Confirm that visitting the my page.
         expect(current_path).to eq(calendars_path)
-        # Confirm that the my page has the sign-out button.
+        # Confirm that the my page has the log-out button.
+        expect(page).to have_content('Log out')
       end
     end
   

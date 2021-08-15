@@ -6,8 +6,7 @@ class ApplicationRecord < ActiveRecord::Base
     if end_time.present?
       if start_time.nil?
         # Error message is called from model/calendar.rb
-      else
-        start_time > end_time
+      elsif start_time > end_time
         errors.add(:end_time, 'must set be late than Start time')
       end
     end

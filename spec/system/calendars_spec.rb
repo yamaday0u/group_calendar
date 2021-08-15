@@ -24,7 +24,7 @@ RSpec.describe 'Calendars', type: :system do
         visit new_user_session_path
         # Input user information.
         fill_in 'Email', with: @user.email
-        fill_in 'Password', with: @user.password 
+        fill_in 'Password', with: @user.password
         find('input[name="commit"]').click
         # Visit my page.
         expect(current_path).to eq(calendars_path)
@@ -44,7 +44,7 @@ RSpec.describe 'Calendars', type: :system do
         # Confirm that visitting the my page.
         expect(current_path).to eq(calendars_path)
         # Confirm that my calendar has new schedule which is just added.
-        expect(page).to have_content("#{@calendar.title}")
+        expect(page).to have_content(@calendar.title.to_s)
         # Confirm that the my page has the log-out button.
         expect(page).to have_content('Log out')
         # Log out from Group Calendar.
@@ -64,7 +64,7 @@ RSpec.describe 'Calendars', type: :system do
         visit new_user_session_path
         # Input user information.
         fill_in 'Email', with: @user.email
-        fill_in 'Password', with: @user.password 
+        fill_in 'Password', with: @user.password
         find('input[name="commit"]').click
         # Visit my page.
         expect(current_path).to eq(calendars_path)
@@ -82,7 +82,7 @@ RSpec.describe 'Calendars', type: :system do
           find('input[name="commit"]').click
         end.to change { Calendar.count }.by(0)
         # Confirm that you are returned to the create new schedule page.
-        expect(current_path).to eq("/calendars")
+        expect(current_path).to eq('/calendars')
         # Confirm that the page has error messages.
         expect(page).to have_content("Title can't be blank")
         expect(page).to have_content("Start time can't be blank")

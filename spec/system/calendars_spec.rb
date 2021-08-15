@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Calendars", type: :system do
+RSpec.describe 'Calendars', type: :system do
   before do
     @user = FactoryBot.build(:user)
     @calendar = FactoryBot.build(:calendar)
@@ -13,9 +13,9 @@ RSpec.describe "Calendars", type: :system do
     )
   end
 
-  describe "#create" do
-    context "Successfully" do
-      it "you can create new schedule if you input information correctly" do
+  describe '#create' do
+    context 'Successfully' do
+      it 'you can create new schedule if you input information correctly' do
         # Visit the top page.
         visit root_path
         # Confirm that the top page has the button to render to log-in page.
@@ -54,8 +54,8 @@ RSpec.describe "Calendars", type: :system do
       end
     end
 
-    context "Unsuccessfully" do
-      it "you cannot create new schedule if you input no information" do
+    context 'Unsuccessfully' do
+      it 'you cannot create new schedule if you input no information' do
         # Visit the top page.
         visit root_path
         # Confirm that the top page has the button to render to log-in page.

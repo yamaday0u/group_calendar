@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :system do
+RSpec.describe 'Users', type: :system do
   before do
     @user = FactoryBot.build(:user)
   end
 
-  describe "#create" do
+  describe '#create' do
     context 'Successfully' do
       it 'you can register as a new user & visit the my page if you input correct information' do
         # Visit the top page.
@@ -21,15 +21,16 @@ RSpec.describe "Users", type: :system do
         fill_in 'Password confirmation', with: @user.password_confirmation
         fill_in 'Identity', with: @user.identity
         # Confirm that pressing the sign-up button increases the user model count by 1.
-        expect{
+        expect  do
           find('input[name="commit"]').click
-        }.to change { User.count }.by(1)
+        end.to change { User.count }.by(1)
         # Confirm that visitting the my page.
         expect(current_path).to eq(calendars_path)
-        # Confirm that the my page has the sign-out button.
+        # Confirm that the my page has the log-out button.
+        expect(page).to have_content('Log out')
       end
     end
-  
+
     context 'Unsuccessfully' do
       it 'you cannot register as a new user & will be returned to the sign-up page uf you input incorrect information' do
         # Visit the top page.
@@ -45,13 +46,12 @@ RSpec.describe "Users", type: :system do
         fill_in 'Password confirmation', with: ''
         fill_in 'Identity', with: ''
         # Confirm that pressing the sign-up button does not increases the user model count.
-        expect{
+        expect  do
           find('input[name="commit"]').click
-        }.to change { User.count }.by(0)
+        end.to change { User.count }.by(0)
         # Confirm that you are returned to the sign-up page.
         expect(current_path).to eq(user_registration_path)
       end
     end
-
   end
 end

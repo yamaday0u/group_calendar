@@ -6,6 +6,9 @@ class CalendarForGroup < ApplicationRecord
   has_many :users, through: :group_calendar_chats
 
   # Validation
-  validates :title, presence: true
+  with_options presence: true do
+    validates :title
+    validates :start_time
+  end
   validate :start_end_check # custom method from models/application_record.rb
 end

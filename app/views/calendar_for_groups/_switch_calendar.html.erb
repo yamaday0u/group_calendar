@@ -1,33 +1,24 @@
-<div id="month_calendar"><%# Default calendar%>
+<%# Month Calendar (Default) %>
+<div id="month_calendar">
   <%= month_calendar events:@group_calendars do |date, calendars| %>
     <%= date.day %>
-    <% calendars.each do |calendar| %>
-      <div class="schedule">
-        <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id) %>
-      </div>
-    <% end %>
+    <%= render partial: "calendars/contents", locals: {calendars: calendars} %>
   <% end %>
 </div>
 
+<%# Week Calendar %>
 <div id="week_calendar">
   <%= week_calendar events:@group_calendars do |date, calendars| %>
     <%= date.day %>
-    <% calendars.each do |calendar| %>
-      <div class="schedule">
-        <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id) %>
-      </div>
-    <% end %>
+    <%= render partial: "calendars/contents", locals: {calendars: calendars} %>
   <% end %>
 </div>
 
+<%# Custom Calendar %>
 <div id="custom_calendar">
   <%= calendar events:@group_calendars do |date, calendars| %>
     <%= date.day %>
-    <% calendars.each do |calendar| %>
-      <div class="schedule">
-        <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}-#{calendar.end_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id) %>
-      </div>
-    <% end %>
+    <%= render partial: "calendars/contents", locals: {calendars: calendars} %>
   <% end %>
 </div>
 

@@ -32,7 +32,9 @@ RSpec.describe Calendar, type: :model do
         expect(@calendar.errors.full_messages).to include('User must exist')
       end
       it 'is invalid without start_time' do
-        
+        @calendar.start_time = ''
+        @calendar.valid?
+        expect(@calendar.errors.full_messages).to include("Start time can't be blank")
       end
       it 'is invalid if start_time is late than end time' do
         @calendar.start_time = @calendar.end_time + 60 # Set start_time 1 minute later than end_time

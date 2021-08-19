@@ -11,7 +11,11 @@
         <% else %>
           <%= link_to "#{calendar.title}[#{calendar.start_time.strftime('%H:%M')}]", group_calendar_for_group_path(id: calendar.id, group_id: calendar.group_id) %>
         <% end %>
-        <%= link_to "by #{calendar.group.name}", group_calendar_for_group_path(group_id: calendar.group_id, id: calendar.id) %>
+
+        <%# In case of you are on my-page %>
+        <% unless current_page?("/groups/#{calendar.group_id}/calendar_for_groups") %>
+          <%= link_to "by #{calendar.group.name}", group_calendar_for_group_path(group_id: calendar.group_id, id: calendar.id) %>
+        <% end %>
 
     <%# In case of the calendar DO NOT has "group_id" %>
     <% else %>

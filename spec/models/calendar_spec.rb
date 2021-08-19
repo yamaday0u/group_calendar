@@ -15,7 +15,8 @@ RSpec.describe Calendar, type: :model do
         expect(@calendar).to be_valid
       end
       it 'is valid without end_time' do
-        
+        @calendar.end_time = ''
+        expect(@calendar).to be_valid
       end
     end
 

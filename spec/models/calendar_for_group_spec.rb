@@ -36,7 +36,9 @@ RSpec.describe CalendarForGroup, type: :model do
         expect(@group_calendar.errors.full_messages).to include('Group must exist')
       end
       it 'is invalid without start_time' do
-        
+        @group_calendar.start_time = ''
+        @group_calendar.valid?
+        expect(@group_calendar.errors.full_messages).to include("Start time can't be blank")
       end
       it 'is invalid if start time is late than end time' do
         @group_calendar.start_time = @group_calendar.end_time + 60 # Set start_time 1 minute later than end_time

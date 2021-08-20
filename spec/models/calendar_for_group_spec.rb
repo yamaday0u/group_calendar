@@ -15,7 +15,8 @@ RSpec.describe CalendarForGroup, type: :model do
         expect(@group_calendar).to be_valid
       end
       it 'is valid without end_time' do
-        
+        @group_calendar.end_time = ''
+        expect(@group_calendar).to be_valid
       end
     end
     context 'unsuccessfully' do

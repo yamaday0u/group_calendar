@@ -1,3 +1,38 @@
-<%= react_component "Header", current_user: current_user %>
-<%= react_component("Top") %>
-<%= react_component("Footer") %>
+<%#= react_component "Header", current_user: current_user %>
+<%#= react_component("Top") %>
+<%#= react_component("Footer") %>
+
+<%= render "shared/header" %>
+
+<div class="content">
+  <div class="flex__parent__wrap">
+    <div class="main">
+
+      <h1 class="top__page__logo">Welcome To<br /> Group Calendar !!</h1>
+      <p class="top__page__explanation">You can manage your schedules & <br class="br-sp" />communicate with...</p>
+      <ul class="examples">
+        <li>your family</li>
+        <li>your friends</li>
+        <li>your project team members</li>
+      </ul>
+      <p class="top__page__explanation">in this Group Calendar.</p>
+
+      <div class="lead__to__sign__up">
+        <h2 class="subtitle">Let's get started</h2>
+        <p>↓  ↓  ↓</p>
+        <div class="actions">
+          <a href="/users/sign_up" class="sign-up-btn">Sign up</a>
+        </div>
+        <h2 class="subtitle">or<br />Log in as a guest</h2>
+        <div class="actions">
+          <a href="/users/guest_log_in" data-method="post" class="sign-up-btn gest__btn">Log in as a guest</a>
+        </div>
+      </div>
+
+    </div><%# end of main %>
+
+    <%= render "news/news_release" %>
+  </div><%# end of flex-parent-wrap %>
+</div>
+
+<%= render "shared/footer" %>

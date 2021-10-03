@@ -330,17 +330,18 @@ a {
 }
 
 .top__page__explanation {
-  margin-bottom: 1em;
+  margin: 1em 0;
 }
 
 .examples {
   li {
+    display: inline;
     width: 10em;
     background-color: whitesmoke;
     padding: 0.5em;
     border-left: 6px solid $theme-color;
     border-bottom: 2px solid #dadada;
-    margin-bottom: 10px;
+    margin: 0 10px 10px 0;
     line-height: 1.5;
     font-weight: bold;
   }

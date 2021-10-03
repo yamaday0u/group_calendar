@@ -14,16 +14,16 @@ export class Top extends Component {
         <p className="top__page__explanation">in this Group Calendar.</p>
 
         <div className="lead__to__sign__up">
-        <h2 className="subtitle">Let's get started</h2>
-        <p>↓  ↓  ↓</p>
-        <div className="actions">
-          <a href="/users/sign_up" className="sign-up-btn">Sign up</a>
-        </div>
-        <h2 className="subtitle">or<br />Log in as a guest</h2>
+          <h2 className="subtitle">Let's get started</h2>
+          <p>↓  ↓  ↓</p>
           <div className="actions">
-            <a href="/users/guest_log_in" data-method="post" className="sign-up-btn gest__btn">Log in as a guest</a>
+            <a href="/users/sign_up" className="sign-up-btn">Sign up</a>
           </div>
-      </div>
+          <h2 className="subtitle">or<br />Log in as a guest</h2>
+            <div className="actions">
+              <a href="/users/guest_log_in" data-method="post" className="sign-up-btn gest__btn">Log in as a guest</a>
+            </div>
+        </div>
       </div>
     );
   }

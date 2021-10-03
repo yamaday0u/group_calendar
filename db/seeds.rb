@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(
+User.create!(
   name: "管理者",
-  eamil: ENV['ADMIN_EMAIL'],
+  email: ENV['ADMIN_EMAIL'],
   password: ENV['ADMIN_PASSWORD'],
   password_confirmation: ENV['ADMIN_PASSWORD'],
   identity: "Group Calendarの管理者アカウントです",

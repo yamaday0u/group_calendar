@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   # path for calendar actions
   resources :calendars
 
+  # path for admin/calendars actions
+  namespace :admin do
+    resources :calendars, only: %i[index]
+  end
+
   # path for group actions
   resources :groups do
     # path for group_chat actions

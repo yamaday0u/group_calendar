@@ -14,7 +14,9 @@
           </div>
           <div id="image-wrap">
             <div>
+            <% if @user.user_image.present? %>
               <%= image_tag @user.user_image, class:"image" %>
+            <% end %>
             </div>
           </div>
 

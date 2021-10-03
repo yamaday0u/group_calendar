@@ -1,0 +1,24 @@
+<%= react_component "Header", current_user: current_user %>
+
+<div class="content">
+  <div class="flex__parent__wrap">
+    <div class="main">
+
+      <%= render "shared/flash_message" %>
+
+      <p class="subtitle"><%= current_user.name %>'s calendar</p>
+
+      <%= render "calendars/switch_calendar" %>
+
+      <div class="actions-tab">
+        <%= link_to "Add Schedule", new_calendar_path, class: "sign-up-btn" %>
+      </div>
+
+    </div><%# end of main %>
+
+    <%= render "shared/nav-bar-tab" %>
+  </div><%# end of flex-parent-wrap %>
+</div>
+
+<%= render "shared/nav-bar" %>
+<%= react_component("Footer") %>

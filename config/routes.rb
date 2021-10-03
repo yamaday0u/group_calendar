@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # path for admin/calendars actions
   namespace :admin do
-    resources :caledars, only: %i[index]
+    resources :calendars, only: %i[index]
   end
 
   # path for group actions

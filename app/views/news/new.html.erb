@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+
+<div class="content">
+  <div class="flex__parent__wrap">
+    <div class="main">
+
+      <%= form_with model:@news, local:true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+        
+        <div class="form__wrap">
+          <div class="form__group">
+            <div class="form__label"><%= f.label :title %></div>
+              <p class="required">(Required)</p>
+            <div class="form__content"><%= f.text_area :title, autofocus: true, cols:40, rows:1 %></div>
+          </div>
+
+          <div class="form__group">
+            <div class="form__label"><%= f.label :content %></div>
+              <p class="required">(Required)</p>
+            <div class="form__content"><%= f.text_area :content, cols:40, rows:10 %></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit 'Create news release', class:"sign-up-btn" %>
+        </div>
+      <% end %>
+
+      <%= render "shared/back_button" %>
+    </div><%# end of main %>
+
+    <%= render "shared/nav-bar-tab" %>
+  </div><%# end of flex-parent-wrap %>
+</div>
+
+<%= render "shared/nav-bar" %>
+<%= render "shared/footer" %>

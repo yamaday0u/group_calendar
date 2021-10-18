@@ -50,6 +50,9 @@ Rails.application.routes.draw do
     resources :mate_chats, only: %i[index create]
   end
 
+  # path for news actions
+  resources :news, only: [:index, :new, :create]
+
   # path for devise_token_auth in order to implement Single Page Application
   namespace :api do
     scope :v1 do

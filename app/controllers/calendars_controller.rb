@@ -1,7 +1,6 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_calendar, only: %i[show edit update destroy]
-  before_action :check_admin?
 
   def index
     user_calendars = Calendar.where(user_id: current_user)
@@ -69,10 +68,4 @@ class CalendarsController < ApplicationController
     CalendarForGroup.where(group_id: group_ids)
   end
 
-  private
-  def check_admin?
-    if current_user.admin
-      redirect_to admin_calendars_path
-    end
-  end
 end

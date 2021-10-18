@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_03_122402) do
+ActiveRecord::Schema.define(version: 2021_10_04_120207) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -105,6 +105,13 @@ ActiveRecord::Schema.define(version: 2021_10_03_122402) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_mate_chats_on_room_id"
     t.index ["user_id"], name: "index_mate_chats_on_user_id"
+  end
+
+  create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

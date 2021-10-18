@@ -9,3 +9,15 @@
 .news_wrapper {
   padding: 2px;
 }
+
+.each__news__content__for__admin {
+  border: 1px solid $separator-color;
+  width: 500px;
+  margin: 1em auto 0;
+}
+
+.each__news__content__for__top {
+  border: 1px solid $separator-color;
+  width: calc(100% - $main-width);
+  margin: 1em auto 0;
+}

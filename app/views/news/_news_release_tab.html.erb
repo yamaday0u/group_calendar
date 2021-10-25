@@ -1,0 +1,17 @@
+<nav class="nav__bar__tab" id="overflow__tab">
+  
+  <div class="news__wrapper__tab">
+    <ul class="news__list">
+      <% @news.each do |news| %>
+        <li>
+          <div class="each__news__content__for__top">
+            <div class="news__release__day"><%= news.created_at.strftime("%Y-%m-%-d") %></div>
+            <div class="news__title"><%= news.title %></div>
+            <div class="news__content"><%= news.content %></div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  
+</nav>

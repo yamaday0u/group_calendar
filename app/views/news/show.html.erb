@@ -1,0 +1,50 @@
+<%= render "shared/header" %>
+
+<div class="content">
+  <div class="flex__parent__wrap">
+    <div class="main">
+        
+      <div class="form__wrap">
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
+              <p class="bold">Release Day</p>
+            </div>
+            <div class="schedule__item__body text__left">
+              <p><%= @news.created_at.strftime("%Y.%m.%d %-H:%-M") %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
+              <p class="bold">Title</p>
+            </div>
+            <div class="schedule__item__body text__left">
+              <p><%= @news.title %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form__group">
+          <div class="schedule__item">
+            <div class="schedule__item__header text__left">
+              <p class="bold">Content</p>
+            </div>
+            <div class="schedule__item__body text__left">
+              <p><%= @news.content %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%= render "shared/back_button" %>
+    </div><%# end of main %>
+
+    <%= render "shared/nav-bar-tab" %>
+  </div><%# end of flex-parent-wrap %>
+</div>
+
+<%= render "shared/nav-bar" %>
+<%= render "shared/footer" %>

@@ -19,6 +19,10 @@ class NewsController < ApplicationController
     end
   end
 
+  def show
+    @news = News.find_by(id: params[:id])
+  end
+
   private
   def news_params
     params.require(:news).permit(

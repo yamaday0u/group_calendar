@@ -23,6 +23,10 @@ class NewsController < ApplicationController
     @news = News.find_by(id: params[:id])
   end
 
+  def edit
+    @news = News.find_by(id: params[:id])
+  end
+
   private
   def news_params
     params.require(:news).permit(

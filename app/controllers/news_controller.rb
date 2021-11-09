@@ -1,5 +1,6 @@
 class NewsController < ApplicationController
   before_action :check_admin?
+  before_action :set_news, only: [:show, :edit, :update]
 
   def index
     @news = News.all.order(created_at: :desc)
@@ -20,15 +21,12 @@ class NewsController < ApplicationController
   end
 
   def show
-    @news = News.find_by(id: params[:id])
   end
 
   def edit
-    @news = News.find_by(id: params[:id])
   end
 
   def update
-    @news = News.find(params[:id])
     @news.update(news_params)
     if @news.valid?
       flash[:notice] = 'Updated news'
@@ -46,6 +44,10 @@ class NewsController < ApplicationController
     )
   end
 
+  def set_news
+    @news = News.find(params[:id])
+  end
+  
   def check_admin?
     unless current_user.admin
       redirect_to root_path

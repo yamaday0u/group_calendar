@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   end
 
   # path for news actions
-  resources :news, only: [:index, :new, :create]
+  resources :news
 
   # path for devise_token_auth in order to implement Single Page Application
   namespace :api do

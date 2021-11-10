@@ -3,6 +3,7 @@
 <div class="content">
   <div class="flex__parent__wrap">
     <div class="main">
+      <%= render "shared/flash_message" %>
 
       <div class="create-group">
         <div class="actions">
@@ -15,11 +16,12 @@
         <ul class="news__list">
           <% @news.each do |news| %>
             <li>
+              <%= link_to news_path(news.id) do %>
               <div class="each__news__content__for__admin">
-                <div class="news__release__day"><%= news.created_at.strftime("%Y-%m-%-d %-H:%-M") %></div>
+                <div class="news__release__day"><%= news.created_at.strftime("%Y.%m.%d %H:%M") %></div>
                 <div class="news__title"><%= news.title %></div>
-                <div class="news__content"><%= news.content %></div>
               </div>
+              <% end %>
             </li>
           <% end %>
         </ul>

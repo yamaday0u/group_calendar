@@ -9,9 +9,13 @@
         <%= render partial: "news/form", locals: {f: f} %>
 
         <div class="actions">
-          <%= f.submit 'Create news release', class:"sign-up-btn" %>
+          <%= f.submit 'Update news', class:"sign-up-btn" %>
         </div>
       <% end %>
+
+      <div class="actions">
+        <%= link_to 'Delete news', news_path(@news.id), method: :delete, data: { confirm: 'Are you sure to delete a news?'}, class:"sign-up-btn caution" %>
+      </div>
 
       <%= render "shared/back_button" %>
     </div><%# end of main %>

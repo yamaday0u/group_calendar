@@ -13,6 +13,10 @@
         </div>
       <% end %>
 
+      <div class="actions">
+        <%= link_to 'Delete news', news_path(@news.id), method: :delete, data: { confirm: 'Are you sure to delete a news?'}, class:"sign-up-btn caution" %>
+      </div>
+
       <%= render "shared/back_button" %>
     </div><%# end of main %>
 

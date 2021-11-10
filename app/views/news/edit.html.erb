@@ -6,20 +6,7 @@
 
       <%= form_with model:@news, local:true do |f| %>
         <%= render "shared/error_messages", model: f.object %>
-        
-        <div class="form__wrap">
-          <div class="form__group">
-            <div class="form__label"><%= f.label :title %></div>
-              <p class="required">(Required)</p>
-            <div class="form__content"><%= f.text_area :title, autofocus: true, cols:40, rows:1 %></div>
-          </div>
-
-          <div class="form__group">
-            <div class="form__label"><%= f.label :content %></div>
-              <p class="required">(Required)</p>
-            <div class="form__content"><%= f.text_area :content, cols:40, rows:10 %></div>
-          </div>
-        </div>
+        <%= render partial: "news/form", locals: {f: f} %>
 
         <div class="actions">
           <%= f.submit 'Update news', class:"sign-up-btn" %>

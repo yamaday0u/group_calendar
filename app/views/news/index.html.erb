@@ -18,7 +18,7 @@
             <li>
               <%= link_to news_path(news.id) do %>
               <div class="each__news__content__for__admin">
-                <div class="news__release__day"><%= news.created_at.strftime("%Y.%m.%d %-H:%-M") %></div>
+                <div class="news__release__day"><%= news.created_at.strftime("%Y.%m.%d %H:%M") %></div>
                 <div class="news__title"><%= news.title %></div>
               </div>
               <% end %>

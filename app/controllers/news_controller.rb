@@ -1,6 +1,6 @@
 class NewsController < ApplicationController
   before_action :check_admin?
-  before_action :set_news, only: [:show, :edit, :update]
+  before_action :set_news, only: [:show, :edit, :update, :destroy]
 
   def index
     @news = News.all.order(created_at: :desc)
@@ -34,6 +34,12 @@ class NewsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @news.destroy
+    flash[:notice] = 'Deleted news'
+    redirect_to news_index_path
   end
 
   private

@@ -14,9 +14,15 @@ RSpec.describe News, type: :model do
 
     context 'unsuccessfully' do
       it 'is invalid without title' do
+        @news.title = ''
+        @news.valid?
+        expect(@news.errors.full_messages).to include("Title can't be blank")
       end
 
       it 'is invalid without content' do
+        @news.content = ''
+        @news.valid?
+        expect(@news.errors.full_messages).to include("Content can't be blank")
       end
     end
   end

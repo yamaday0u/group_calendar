@@ -8,6 +8,7 @@ RSpec.describe News, type: :model do
   describe '#create' do
     context 'successfully' do
       it 'is valid with title, content' do
+        expect(@news).to be_valid
       end
     end
 

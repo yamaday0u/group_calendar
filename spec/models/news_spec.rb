@@ -1,5 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe News, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  describe '#create' do
+    context 'successfully' do
+      it 'is valid with title, content' do
+      end
+    end
+
+    context 'unsuccessfully' do
+      it 'is invalid without title' do
+      end
+
+      it 'is invalid without content' do
+      end
+    end
+  end
 end

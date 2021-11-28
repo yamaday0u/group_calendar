@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(
-  name: "管理者",
+  name: '管理者',
   email: ENV['ADMIN_EMAIL'],
   password: ENV['ADMIN_PASSWORD'],
   password_confirmation: ENV['ADMIN_PASSWORD'],
-  identity: "Group Calendarの管理者アカウントです",
+  identity: 'Group Calendarの管理者アカウントです',
   admin: true
 )

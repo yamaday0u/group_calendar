@@ -67,5 +67,4 @@ class CalendarsController < ApplicationController
     end
     CalendarForGroup.where(group_id: group_ids)
   end
-
 end

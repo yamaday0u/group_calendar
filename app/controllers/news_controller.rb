@@ -1,6 +1,6 @@
 class NewsController < ApplicationController
   before_action :check_admin?
-  before_action :set_news, only: [:show, :edit, :update, :destroy]
+  before_action :set_news, only: %i[show edit update destroy]
 
   def index
     @news = News.all.order(created_at: :desc)
@@ -20,11 +20,9 @@ class NewsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @news.update(news_params)
@@ -43,6 +41,7 @@ class NewsController < ApplicationController
   end
 
   private
+
   def news_params
     params.require(:news).permit(
       :title,
@@ -53,10 +52,8 @@ class NewsController < ApplicationController
   def set_news
     @news = News.find(params[:id])
   end
-  
+
   def check_admin?
-    unless current_user.admin
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.admin
   end
 end

@@ -52,11 +52,4 @@ Rails.application.routes.draw do
 
   # path for news actions
   resources :news
-
-  # path for devise_token_auth in order to implement Single Page Application
-  namespace :api do
-    scope :v1 do
-      mount_devise_token_auth_for 'User', at: 'auth'
-    end
-  end
 end

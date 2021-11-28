@@ -1,3 +1,4 @@
+<%# カレンダースイッチ機能は使わない。2021.11.28 %>
 <%# Month Calendar (Default) %>
 <div id="month_calendar">
   <%= month_calendar events:@calendars do |date, calendars| %>
@@ -7,29 +8,29 @@
 </div>
 
 <%# Week Calendar %>
-<div id="week_calendar">
-  <%= week_calendar events:@calendars do |date, calendars| %>
-    <%= date.day %>
-    <%= render partial: "calendars/contents", locals: {calendars: calendars} %>
-  <% end %>
-</div>
+<%# <div id="week_calendar"> %>
+  <%#= week_calendar events:@calendars do |date, calendars| %>
+    <%#= date.day %>
+    <%#= render partial: "calendars/contents", locals: {calendars: calendars} %>
+  <%# end %>
+<%# </div> %>
 
 <%# Custom Calendar %>
-<div id="custom_calendar">
-  <%= calendar events:@calendars do |date, calendars| %>
-    <%= date.day %>
-    <%= render partial: "calendars/contents", locals: {calendars: calendars} %>
-  <% end %>
-</div>
+<%# <div id="custom_calendar"> %>
+  <%#= calendar events:@calendars do |date, calendars| %>
+    <%#= date.day %>
+    <%#= render partial: "calendars/contents", locals: {calendars: calendars} %>
+  <%# end %>
+<%# </div> %>
 
-<div class="switch-calendar-wrap">
-  <p>switch calendar</p>
-  <div class="calendars">
-    <%= radio_button_tag "calendar", "month", checked: true%>
-    <%= label "calendar", "month" %>
-    <%= radio_button_tag "calendar", "week" %>
-    <%= label "calendar", "week" %>
-    <%= radio_button_tag "calendar", "custom" %>
-    <%= label "calendar", "custom" %>
-  </div>
-</div>
+<%# <div class="switch-calendar-wrap"> %>
+  <%# <p>switch calendar</p> %>
+  <%# <div class="calendars"> %>
+    <%#= radio_button_tag "calendar", "month", checked: true %>
+    <%#= label "calendar", "month" %>
+    <%#= radio_button_tag "calendar", "week" %>
+    <%#= label "calendar", "week" %>
+    <%#= radio_button_tag "calendar", "custom" %>
+    <%#= label "calendar", "custom" %>
+  <%# </div> %>
+<%# </div> %>
